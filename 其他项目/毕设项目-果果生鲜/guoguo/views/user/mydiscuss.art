@@ -1,0 +1,41 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/user/css/myorder.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<!-- `````````内容布局`````````````` -->
+<!-- ````logo```` -->
+<div class="logo">
+	<img src="images/header-logo.png">
+	<span class="logo-car">评论</span>
+</div>
+<div class="message">{{message}}</div>
+<!-- ````````循环体``````` -->
+<table class="table">
+	<thead>
+		<tr>
+			<th>名称</th>
+			<th>图示</th>
+			<th>详情</th>
+			<th>我的评论</th>
+			<th>商家回复</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{each discuss}}
+		<tr>
+			<td>{{$value.d_gid.gname}}</td>
+			<td><img class="img-show" src="{{$value.d_gid.gphoto}}"></td>
+			<td>{{$value.d_gid.ginfo}}</td>
+			<td>{{$value.dinfo}}</td>
+			<td>{{$value.drinfo}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+{{/block}}
+{{block "script"}}
+<script src="/user/js/myorder-del.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

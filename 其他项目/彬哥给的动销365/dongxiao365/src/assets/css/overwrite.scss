@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import "variables";
+
+.el-pagination {
+  margin-top: 15px;
+}
+
+.el-table .el-table-column--selection {
+  text-align: center;
+  .cell {
+    padding: 0 !important;
+  }
+}
+
+.el-input-number {
+  width: auto;
+  max-width: 150px;
+}
+
+.el-form-item__content {
+  .el-slider {
+    line-height: initial;
+  }
+}
+
+.el-button [class*="fa-"] + span {
+  margin-left: 5px;
+}
+
+.el-button--text {
+  padding: 0;
+}
+
+.el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+  background-color: $--color-primary !important;
+  color: white;
+}
+
+.el-textarea__inner {
+  font-family: inherit;
+}
+
+.el-tag {
+  margin-right: 5px;
+}
+
+.el-form--label-top {
+  .el-form-item__label {
+    line-height: 1;
+  }
+}
+
+.el-loading-mask {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.el-menu--horizontal > .el-menu-item.is-active, .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
+  color: #38adff;
+}
+
+.el-menu--horizontal .el-menu-item:not(.is-disabled).is-active:hover,
+.el-menu--horizontal .el-menu-item:not(.is-disabled).is-active:focus {
+  color: #38adff;
+}
+
+.el-table td {
+  .cell {
+    word-break: break-word;
+    .el-button--text {
+      word-break: break-all;
+      white-space: normal;
+      text-align: left;
+      font-size: inherit;
+    }
+  }
+}
+
+.el-table th > .cell {
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.el-table--small {
+  font-size: 14px;
+}
+
+.el-button--text {
+  font-size: 14px;
+}
+
+.el-input-number.is-controls-right .el-input__inner {
+  padding-left: 5px;
+  padding-right: 36px;
+}
+
+.table-dynamic-form {
+  .el-form-item {
+    margin-bottom: 0;
+    &.is-error {
+      .el-form-item__error {
+        position: relative;
+      }
+    }
+  }
+}
+.el-dialog__wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+.el-dialog {
+  width: 41%;
+  position: relative;
+  margin: 0 auto 50px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+// 表格统一
+.table-compact th, .table-compact td {
+  padding: 8px 0 !important;
+}
+.el-table td,.el-table th {
+  padding: 8px 0 !important;
+}
+.el-table .cell {
+  line-height: 32px !important;
+}
+.el-upload {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

@@ -1,0 +1,88 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/user/css/details.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<!-- 头部布局 -->
+<div class="header-box">
+	<div class="header">
+		<!-- 果果生鲜logo -->
+		<div class="header-logo">
+			<img src="images/header-logo.png">
+		</div>
+		<!-- 搜索框 -->
+		<form action="/user/search" method = "post">
+		<div class="header-search">
+			<input type="search" class="search" name="keyword" placeholder="请输入搜索内容" />
+			<input type="submit" class="search-button" value="搜索">
+		</div>
+		</form>
+		<!-- 热卖 -->
+		<div class="header-hotsale">
+			<ul class="hotsale">
+				<li><a href="">芒果</a></li>
+				<li><a href="">樱桃</a></li>
+				<li><a href="">三文鱼</a></li>
+				<li><a href="">小龙虾</a></li>
+				<li><a href="">鸡蛋</a></li>
+				<li><a href="">牛排</a></li>
+				<li><a href="">榴莲</a></li>
+			</ul>
+		</div>
+		<!-- 我的购物车 -->
+		<div class="header-trolley">
+			<i class="iconfon">&#xe600&nbsp</i>
+			<a href="/user/car">我的购物车</a>
+		</div>
+	</div>
+</div>
+
+<!-- ``````````` 详情布局``````````````````````` -->
+<div class="details-box">
+	<!-- 分割线 -->
+	<div class="divider">
+		<div class="sort-title">
+			{{goods.gfsort}}
+			<div class="icon">></div>{{goods.gcsort}}
+			<div class="icon">></div>{{goods.gname}}
+			<div class="business-title">
+				{{goods.gshop.bname}}
+				<a href="/user/collectionshop-add?id={{@goods.gshop._id}}">关注商家</a>
+			</div>
+		</div>
+	</div>
+	<!-- ``````````详情	``````````` -->
+	<div class="details-main">
+		<div class="gname">{{goods.gname}}</div>
+		<div class="ginfo">{{goods.ginfo}}</div>
+		<img src="{{goods.gphoto}}">
+		<div class="gprice">价格<span>￥{{goods.gprice}}</span></div>
+		<a href="/user/car-add?id={{@goods._id}}" class="add-car">加入购物车</a>
+		<a href="/user/collectiongoods-add?id={{@goods._id}}" class="add-collection">添加收藏</a>
+	</div>
+
+	<!-- `````````商品评价```````````` -->
+	<div class="comment-title">
+		<span>商品评价</span>
+		<form action="/user/comment-add" method="post">
+			<textarea name="dinfo" id="" cols="30" rows="10" required="required" class="comment-text"></textarea>
+			<input type="hidden" name="d_gid" value={{@goods._id}}>
+			<input type="submit" value="提交" class="comment-submit">
+		</form>
+		<p class="message">{{message}}</p>
+	</div>
+	<!-- ```````评论循环体```````` -->
+
+	{{each discuss}}
+	<div class="comment-each">
+		<img src="{{$value.d_uid.uheader}}" alt="">
+		<span>{{$value.d_uid.uname}}</span>
+		<p>{{$value.dinfo}}</p>
+		<span>{{dateFormat($value.dtime,"yyyy-mm-dd HH：MM")}}</span>
+	</div>
+	{{/each}}
+</div>
+{{/block}}
+{{block "script"}}
+{{/block}}

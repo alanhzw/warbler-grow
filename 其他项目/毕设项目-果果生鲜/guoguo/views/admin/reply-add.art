@@ -1,0 +1,39 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/admin/css/goods-add.css" />
+<link rel="stylesheet" type="text/css" href="/admin/css/reply-add.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<!-- 主体内容 -->
+<div class="content">
+	{{include "./common/sider.art"}}
+	<div class="main">
+		<!-- 标题 -->
+		<div class="title">
+			<h3>商家回复</h3>
+		</div>
+		<!-- /标题 -->
+		<!-- 表单 -->
+		<div class="form">
+			<span>商品名称:{{discuss.d_gid.gname}}</span><br>
+			<span><img class="img-show" src="{{discuss.d_gid.gphoto}}"></span><br>
+			<span>用户评价:{{discuss.dinfo}}</span><br>
+			<span>评价时间:{{dateFormat(discuss.dtime,"yyyy-mm-dd HH:MM")}}</span>
+			<form action="/admin/reply-add-fn" method="post">
+				<div class="form-group">
+					<label>添加回复</label>
+					<input type="text" class="form-control" name="rinfo" id="" />
+					<input type="hidden" name="did" value="{{id}}">
+					<input type="submit" value="提交">
+				</div>
+			</form>
+		</div>
+		<!-- /表单 -->
+	</div>
+</div>
+<!-- /主体内容 -->
+{{/block}}
+{{block "script"}}
+<script src="/admin/js/goods-add.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

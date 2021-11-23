@@ -1,0 +1,87 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/admin/css/goods-admin.css" />
+<link rel="stylesheet" type="text/css" href="/admin/css/order-admin.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<div class="content">
+	{{include "./common/sider.art"}}
+	<div class="main">
+		<!-- 标题 -->
+		<div class="title">
+			<h3>订单管理</h3>
+		</div>
+		<!-- /标题 -->
+		<!-- 内容列表 -->
+		<table class="table">
+			<thead>
+				<tr>
+					<th>名称</th>
+					<th>数量(份)</th>
+					<th>价格(元)</th>
+					<th>配送地址</th>
+					<th>下单日期</th>
+					<th>订单状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{each order.records}}
+				<tr>
+					<td>{{$value.o_gid.gname}}</td>
+					<td>{{$value.onum}}</td>
+					<td>{{$value.osum}}</td>
+					<td>{{$value.oaddress}}</td>
+					<td>{{dateFormat($value.otime,"yyyy-mm-dd HH:MM")}}</td>
+					{{if $value.ostate == 0 }}
+					<td>未发货</td>
+					{{/if}}
+					{{if $value.ostate == 1 }}
+					<td>已发货</td>
+					{{/if}}
+					{{if $value.ostate == 2 }}
+					<td>已收货</td>
+					{{/if}}
+					<td class="operation-box">
+						<a href="/admin/order-confirm?id={{@$value._id}}">
+							<input type="button" value="发货" class="operation operation1">
+						</a>
+						<form action="/admin/order-del?id={{@$value._id}}" onsubmit="return isDel()">
+							<input type="hidden" name="id" value="{{@$value._id}}">
+							<input type="submit" value="删除" class="operation operation2">
+						</form>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		<!-- /内容列表 -->
+		<!-- 分页 -->
+		<ul class="pagination">
+			{{if order.page > 1}}
+			<li>
+				<a href="/admin/order-admin?page={{order.page - 1}}">
+					<span>&laquo;</span>
+				</a>
+			</li>
+			{{/if}}
+
+			{{each order.display}}
+			<li><a href="/admin/order-admin?page={{$value}}">{{$value}}</a></li>
+			{{/each}}
+			{{if order.page < order.pages}}
+			<li>
+				<a href="/admin/order-admin?page={{order.page - 0 + 1}}">
+					<span>&raquo;</span>
+				</a>
+			</li>
+			{{/if}}
+		</ul>
+		<!-- /分页 -->
+	</div>
+</div>
+{{/block}}
+{{block "script"}}
+<script src="/admin/js/goods-admin.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

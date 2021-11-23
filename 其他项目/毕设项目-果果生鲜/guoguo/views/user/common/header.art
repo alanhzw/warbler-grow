@@ -1,0 +1,48 @@
+<!-- 顶部布局 -->
+		<div class="top-box">
+			<div class="top">
+				<ul class="fore-left">
+					<li>
+						<i class="iconfon">&#xe6b6</i>
+						<a href="/home/homepage">果果生鲜</a>
+					</li>
+					
+					
+					<!-- 
+					 <li>
+					 	<i class="iconfon">&#xe64b</i>
+					 	<span class="address">内蒙古</span>
+					 </li>
+					 
+					 -->
+				</ul>
+				<ul class="fore-right">
+					<li>
+						{{if userInfo}}
+						<a href="#">欢迎,{{userInfo && userInfo.uname}}</a>
+						{{/if}}
+						{{if userInfo == null}}
+						<a href="/login/ulogin">已有帐号,去登录</a>
+						{{/if}}
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="/register/uregister" class="register">&nbsp;免费注册</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="/user/myorder">&nbsp;我的订单</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="/user/myinfomation">&nbsp;我的果果</a>
+						<i class="iconfon jiantou">&#xe60b</i>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="/login/logout">&nbsp;退出登录</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+

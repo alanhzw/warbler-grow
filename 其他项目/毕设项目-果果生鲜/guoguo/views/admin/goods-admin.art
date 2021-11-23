@@ -1,0 +1,97 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+	<link rel="stylesheet" type="text/css" href="/admin/css/goods-admin.css" />
+{{/block}}
+{{block "main"}}
+	{{include "./common/header.art"}}
+	<!-- 主体内容 -->
+	<div class="content">
+		{{include "./common/sider.art"}}
+		<div class="main">
+			<!-- 标题 -->
+			<div class="title">
+				<h3>商品管理</h3>
+				<div class="newgoods"><a href="/admin/goods/goods-add">新增商品</a></div>
+			</div>
+			<!-- /标题 -->
+			<!-- 内容列表 -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th>名称</th>
+						<th>分类</th>
+						<th>详细分类</th>
+						<th>数量(份)</th>
+						<th>价格(元)</th>
+						<th>详情</th>
+						<th>销量(份)</th>
+						<th>图示</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{each goods.records}}
+					<tr>
+						<td>{{$value.gname}}</td>
+						<td>
+							{{if $value.gfsort == 1}}
+							 新鲜水果
+							 {{else if $value.gfsort == 2 }}
+							 海鲜水产
+							 {{else if $value.gfsort == 3 }}
+							 精选肉类
+							 {{else if $value.gfsort == 4 }}
+							 冷饮冻食
+							 {{else if $value.gfsort == 5 }}
+							 蔬菜蛋品
+							{{/if}}
+						</td>
+						<td>{{$value.gcsort}}</td>
+						<td>{{$value.gnum}}</td>
+						<td>{{$value.gprice}}</td>
+						<td>{{$value.ginfo}}</td>
+						<td>{{$value.gsale}}</td>
+						<td><img class = "img-show" src="{{$value.gphoto}}"></td>
+						<td class = "operation-box">
+							<a href="/admin/goods/goods-add?id={{@$value._id}}">
+							<input type="button" value = "修改" class = "operation operation1">
+							</a>
+							<form action="/admin/goods/goods-del"  onsubmit="return isDel()">		
+								<input type="hidden" name="id" value = "{{@$value._id}}">					
+								<input type="submit" value = "删除" class = "operation operation2">
+							</form>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+			<!-- /内容列表 -->
+			<!-- 分页 -->
+			<ul class="pagination">
+				{{if goods.page > 1}}
+					<li>
+						<a href="/admin/goods/goods-admin?page={{goods.page - 1}}">
+						<span>&laquo;</span>
+					  </a>
+					</li>
+				{{/if}}
+				
+				{{each goods.display}}
+				<li><a href="/admin/goods/goods-admin?page={{$value}}">{{$value}}</a></li>
+				{{/each}}
+				{{if goods.page < goods.pages}}	
+					<li>
+						<a href="/admin/goods/goods-admin?page={{goods.page - 0 + 1}}">
+						<span>&raquo;</span>
+					  </a>
+					</li>
+				{{/if}}	
+			</ul>
+			<!-- /分页 -->
+		</div>
+	</div>
+	<!-- /主体内容 -->
+{{/block}}
+{{block "script"}}
+	<script src="/admin/js/goods-admin.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}	

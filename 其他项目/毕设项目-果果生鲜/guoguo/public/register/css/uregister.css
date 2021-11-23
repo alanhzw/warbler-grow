@@ -1,0 +1,142 @@
+/* 网页样式初始化 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 字体不倾斜 */
+i,
+span {
+	display: inline-block;
+	font-style: normal;
+}
+
+/* a标签去掉下划线 */
+a {
+	text-decoration: none;
+}
+
+/* ------header样式---------- */
+.header-box {
+	width: 100%;
+	height: 110px;
+	background-color: white;
+}
+
+.header {
+	position: relative;
+	top: 10px;
+	width: 1000px;
+	height: 76px;
+	margin: 0 auto;
+}
+
+.header div {
+	display: inline-block;
+}
+
+img {
+	margin-top: 5px;
+	width: 140px;
+}
+
+.welcome {
+	position: absolute;
+	top: 30px;
+	left: 170px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 24px;
+	color: #333;
+}
+
+.login {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 16px;
+	color: green;
+}
+
+a {
+	color: red;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: blue;
+}
+
+/* -------content样式---------- */
+
+.content-box {
+	width: 100%;
+	height: 800px;
+	background: url(../images/background.jpg);
+}
+
+.content {
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: white;
+	position: relative;
+	top: 100px;
+	border: 1px solid #cccccc;
+	border-top: 4px solid skyblue;
+}
+
+.form {
+	width: 550px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+
+input {
+	border: 1px #aaa solid;
+	border-radius: 4px;
+	background: 0 0;
+	text-align: left;
+	font-size: 20px;
+	width: 400px;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	margin-bottom: 20px;
+}
+label{
+	font-size: 20px;
+}
+.register-submit{
+	border: 1px #3083ff solid;
+    border-radius: 4px;
+    background-color: #3487ff;
+    box-shadow: 0 5px 8px 0 rgba(24,95,255,.1);
+    color: #fff;
+    text-align: center;
+    font-weight: lighter;
+    background-image: linear-gradient(0deg,#398bff,#3083ff);/* 渐变 */
+    width: 400px;
+    height: 60px;
+    margin-left: 85px;
+    font-size: 24px;
+}
+font{
+	margin-left: 62px;
+}
+.message{
+	color: red;
+	font-size: 20px;
+	position: relative;
+	left: 200px;
+	bottom: 20px;
+}
+.login-turn{
+	font-size: 17px;
+	position: relative;
+	right: -500px;
+}
+.login-turn a{
+	color: #00C65D;
+}

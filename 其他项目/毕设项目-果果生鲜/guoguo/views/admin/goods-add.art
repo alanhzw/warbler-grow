@@ -1,0 +1,73 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+	<link rel="stylesheet" type="text/css" href="/admin/css/goods-add.css" />
+{{/block}}
+{{block "main"}}
+	{{include "./common/header.art"}}
+	<!-- 主体内容 -->
+	<div class="content">
+		{{include "./common/sider.art"}}
+		<div class="main">
+			<!-- 标题 -->
+			<div class="title">
+				<h3>新增商品</h3>
+			</div>
+			<!-- /标题 -->
+			<!-- 表单 -->
+			<div class="form">
+				<form action="{{link}}" method = "post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>名称</label>
+						<input type="text"  class="form-control" name="gname" id="" value="{{goods && goods.gname}}" placeholder=""  {{goods && goods.gname ? "readonly" : ""}}/>
+					</div>
+					<div class="form-group">
+						<label>数量</label>
+						<input type="text" class="form-control" name="gnum" id="" value="{{goods && goods.gnum}}"  oninput = "value=value.replace(/[^\d]/g,'')"  placeholder="" />
+					</div>
+					<div class="form-group">
+						<label>价格</label>
+						
+						<input type="text"  class="form-control" name="gprice" id="" value="{{goods && goods.gprice}}" onkeyup="clearNoNum(this)"  placeholder="" />
+					</div>
+					<div class="form-group">
+						<label>选择分类</label>
+						<select name = "gfsort"  class="form-control">
+							<option value="1" {{goods && goods.gfsort == "1" ? "selected" : ""}}>新鲜水果</option>
+							<option value="2" {{goods && goods.gfsort == "2" ? "selected" : ""}}>海鲜水产</option>
+							<option value="3" {{goods && goods.gfsort == "3" ? "selected" : ""}}>精选肉类</option>
+							<option value="4" {{goods && goods.gfsort == "4" ? "selected" : ""}}>冷饮冻食</option>
+							<option value="5" {{goods && goods.gfsort == "5" ? "selected" : ""}}>蔬菜蛋品</option>
+						</select>
+					</div>
+					<input type = "hidden" name = "gshop" value = "{{@businessInfo._id}}">
+					<div class="form-group">
+						<label>具体分类</label>
+						<input  class="form-control" type="text" name="gcsort" id="" value="{{goods && goods.gcsort}}" placeholder="" />
+					</div>
+					<div class="form-group">
+						<label>图示</label>
+						
+						{{if !goods}}
+						<input  class="file"  type="file" name="gphoto" id="file" value="" placeholder="" />
+						{{/if}}		
+						<div calss = "preview">
+							<img class = "img-preview" src = "{{goods && goods.gphoto}}" id="img-preview" onerror="this.src='/admin/images/img-err.png'">
+						</div>
+					</div>
+					<div class="form-group">
+						<label>介绍</label>
+						<input   class="form-control" type="text" name="ginfo" id="" value="{{goods && goods.ginfo}}" placeholder="" />
+					</div>
+					<div class="form-group">
+						<input class="submit" type="submit" name="" id="" value="{{button}}" />
+					</div>
+				</form>
+			</div>
+			<!-- /表单 -->
+		</div>
+	</div>
+	<!-- /主体内容 -->
+{{/block}}
+{{block "script"}}
+	<script src="/admin/js/goods-add.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}	

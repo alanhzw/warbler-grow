@@ -1,0 +1,90 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/user/css/car.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+
+
+<!-- `````````内容布局`````````````` -->
+
+
+<!-- ````logo```` -->
+<div class="logo">
+	<img src="/user/images/header-logo.png">
+	<span class="logo-car">购物车</span>
+</div>
+
+<!-- `````````购物车```````` -->
+<div class="all-sale">全部商品</div>
+<div class="car-thead">
+	<div class="column t-checkbox">
+		<input type="checkbox" id="father" onclick="setAllNo()" />&nbsp&nbsp全选
+	</div>
+	<div class="column t-goods">商品</div>
+	<div class="column t-info">详情</div>
+	<div class="column t-price">单价(元)</div>
+	<div class="column t-quantity">数量</div>
+	<div class="column t-sum">小计(元)</div>
+	<div class="column t-action">操作</div>
+</div>
+
+
+
+<!-- ``````循环体```````````` -->
+<table class="table">
+	<tbody>
+		{{each car}}
+		<tr id="{{@$value._id}}">
+			<td>
+				<input type="checkbox" name="son" onclick="sumall('{{@$value._id}}')" class="son" data-cid="{{@$value._id}}"
+				 data-gid="{{@$value.c_gid._id}}" />
+			</td>
+			<td class="goods">
+				<img src="{{$value.c_gid.gphoto}}" class="goods-src">
+				<a href="" class="goods-name">{{$value.c_gid.gname}}</a>
+			</td>
+			<td class="info">
+				<div>
+					{{$value.c_gid.ginfo}}
+				</div>
+			</td>
+			<td class="price">{{$value.c_gid.gprice}}</td>
+			<td class="quantity">
+				<ul class="counter">
+					<li id="minus"><input type="button" onclick="minuser('{{@$value._id}}')" value="-" /></li>
+					<li id="countnum" class="countnum">1</li>
+					<li id="plus"><input type="button" onclick="adder('{{@$value._id}}')" value="+" /></li>
+				</ul>
+				<span>有货</span>
+			</td>
+			<td class="sum">{{$value.c_gid.gprice}}</td>
+			<td class="action">
+				<a href="/user/car-delone?id={{@$value._id}}" class="del">删除</a>
+				<a href="" class="move">移到我的关注</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+
+
+
+<!-- ```````购物车结算````````````` -->
+<div class="total-box">
+	<input type="hidden" id="user" value="{{userInfo.id}}">
+	<a href="/user/car" class="del-all">删除选中商品</a>
+	<a href="" class="move-all">添加选中商品到我的关注</a>
+	<div class="options">已选择<span class="span-sum">0</span>件商品</div>
+	<div class="div-totle">总价:<span class="span-totle">￥00.00</span></div>
+	<a href="/user/myorder" class="totle">去结算</a>
+</div>
+
+
+
+{{/block}}
+{{block "script"}}
+<script src="/user/js/car.js" type="text/javascript" charset="utf-8"></script>
+<script src="/common/js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

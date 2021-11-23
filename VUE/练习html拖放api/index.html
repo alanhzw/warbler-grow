@@ -1,0 +1,99 @@
+<!--
+ * @Description: 练习html拖放api
+ * @Date: 2021-05-31 14:38:00
+ * @LastEditTime: 2021-05-31 16:34:34
+ * @FilePath: \练习html拖放api\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    margin: 0 0 20px 0;
+  }
+
+  #child {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+  }
+</style>
+
+<body>
+  <div class="box" id='box1'>
+    <div id="child" draggable="true"></div>
+  </div>
+  <div class="box" id='box2'>
+  </div>
+</body>
+<script>
+  ((doc) => {
+    const box1 = doc.querySelector("#box1")
+    const box2 = doc.querySelector("#box2")
+    const child = doc.querySelector("#child")
+    // 绑定事件函数
+    const bindEvents = () => {
+      child.addEventListener("drag", handleDrag)
+      child.addEventListener("dragstart", handleDragstart)
+      child.addEventListener("dragend", handleDragend)
+      box2.addEventListener("dragenter", handleDragenter)
+      box2.addEventListener("dragover", handleDragover)
+      box2.addEventListener("dragleave", handleDragleave)
+      box2.addEventListener("drop", handleDrop)
+    };
+    // 在元素被拖动时触发
+    const handleDrag = (ev) => {
+      console.log('🚀🚀 ~ drag  触发啦');
+    }
+    // 在元素开始被拖动时触发
+    const handleDragstart = (ev) => {
+      console.log('🚀🚀 ~ dragstart  触发啦');
+      ev.dataTransfer.setData('id', ev.target.id);
+    }
+    // 在拖动操作完成时触发
+    const handleDragend = (ev) => {
+      console.log('🚀🚀 ~ dragend  触发啦');
+    }
+    // 当被拖动元素进入到释放区所占据的屏幕空间时触发
+    const handleDragenter = (ev) => {
+      console.log('🚀🚀 ~ dragenter  触发啦');
+    }
+    // 当被拖动元素在释放区内移动时触发
+    const handleDragover = (ev) => {
+      ev.preventDefault();
+      console.log('🚀🚀 ~ dragover  触发啦');
+    }
+    // 当被拖动元素没有放下就离开释放区时触发
+    const handleDragleave = (ev) => {
+      console.log('🚀🚀 ~ dragleave  触发啦');
+    }
+    // 当被拖动元素在释放区里放下时触发
+    const handleDrop = (ev) => {
+      console.log('🚀🚀 ~ drop  触发啦');
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData("id");
+      ev.target.appendChild(document.getElementById(data));
+    }
+
+    // 初始化函数
+    const init = () => {
+      bindEvents();
+    };
+    // 执行初始化函数
+    init();
+  })(document);
+</script>
+
+</html>

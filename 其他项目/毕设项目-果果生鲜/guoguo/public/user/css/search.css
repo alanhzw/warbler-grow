@@ -1,0 +1,38 @@
+.search-box {
+	width: 1200px;
+	height: 500px;
+	margin: 0 auto;
+}
+.search-box>div{
+	float: left;
+}
+
+.list-img {
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+}
+
+.search-lists {
+	width: 240px;
+	height: 300px;
+}
+
+.search-lists span,
+.search-lists i {
+	font: bold 20px/21px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	color: #f60;
+}
+
+.search-lists a>p{
+	width: 240px;
+	height: 40px;
+	font-size: 14px;
+	color: #222222;
+	overflow: hidden;
+	text-align: center;
+}
+.search-lists i{
+	position: relative;
+	left: 195px;
+}

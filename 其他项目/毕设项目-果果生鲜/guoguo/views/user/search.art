@@ -1,0 +1,59 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/user/css/details.css" />
+<link rel="stylesheet" type="text/css" href="/user/css/search.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<!-- 头部布局 -->
+<div class="header-box">
+	<div class="header">
+		<!-- 果果生鲜logo -->
+		<div class="header-logo">
+			<img src="images/header-logo.png">
+		</div>
+		<!-- 搜索框 -->
+		<form action="/user/search" method="get">
+			<div class="header-search">
+				<input type="search" class="search" name="keyword" placeholder="请输入搜索内容" />
+				<input type="submit" class="search-button" value="搜索">
+			</div>
+		</form>
+		<!-- 热卖 -->
+		<div class="header-hotsale">
+			<ul class="hotsale">
+				<li><a href="">芒果</a></li>
+				<li><a href="">樱桃</a></li>
+				<li><a href="">三文鱼</a></li>
+				<li><a href="">小龙虾</a></li>
+				<li><a href="">鸡蛋</a></li>
+				<li><a href="">牛排</a></li>
+				<li><a href="">榴莲</a></li>
+			</ul>
+		</div>
+		<!-- 我的购物车 -->
+		<div class="header-trolley">
+			<i class="iconfon">&#xe600&nbsp</i>
+			<a href="/user/car">我的购物车</a>
+		</div>
+	</div>
+</div>
+
+<!-- `````````搜索结果`````````````` -->
+<div class="search-box">
+	{{each result}}
+	<div class="search-lists">
+		<a href="/home/details?id={{@$value._id}}">
+			<img src="{{$value.gphoto}}" class="list-img">
+			<p class="list-name">{{$value.gname}}</p>
+			<i class="iconfon">&#xe600</i>
+		</a>
+		<span>￥{{$value.gprice}}</span>
+	</div>
+	{{/each}}
+</div>
+
+</div>
+{{/block}}
+{{block "script"}}
+{{/block}}

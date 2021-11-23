@@ -1,0 +1,138 @@
+body,
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#app {
+    height: 100%;
+}
+
+.mainWrapper {
+    height: 100%;
+    padding: 75px 15px 60px;
+}
+
+.left_menu {
+    width: 200px;
+    padding: 20px;
+    display: inline-block;
+    background-color: white;
+}
+
+.content_right {
+    display: inline-block;
+    width: calc(100% - 215px);
+    padding: 30px 30px 90px;
+    background-color: white;
+    margin-left: 10px;
+    vertical-align: top;
+    min-height: 800px;
+}
+
+.content_right .content_right_title {
+    font-size: 18px;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.content_right .el-breadcrumb {
+    color: #666666;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.no-left .content_right {
+    width: 100%;
+    margin: 0;
+}
+
+.left_menu .title {
+    padding: 10px 0 25px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.left_menu .title h4 {
+    border-left: 4px solid #57ad92;
+    font-size: 18px;
+    color: #333333;
+    padding-left: 25px;
+}
+
+.left_menu .menu {
+    padding: 20px 0 30px;
+    border-bottom: 2px solid #57ad92;
+}
+
+.left_menu .menu a {
+    display: block;
+    line-height: 40px;
+    padding-left: 25px;
+    border-left: 2px solid transparent;
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.left_menu .menu a.active {
+    border-color: #57ad92;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid #dfe6ec;
+    font-size: 14px;
+}
+
+.table th, .table td {
+    padding: 5px 15px;
+}
+
+.table th {
+    background-color: #eef1f6 !important;
+    text-align: left;
+    color: #444;
+    font-weight: 400;
+    vertical-align: middle;
+    height: 40px;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.table-hover tr td {
+    transition: background-color .25s ease;
+    border-bottom: 1px solid #dfe6ec;
+    height: 40px;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    color: #1f2d3d;
+}
+
+.table-hover tr:hover td {
+    background-color: #eef1f6;
+}
+
+.table-border tr td {
+    transition: background-color .25s ease;
+    border-bottom: 1px solid #dfe6ec;
+    height: 40px;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    color: #1f2d3d;
+}

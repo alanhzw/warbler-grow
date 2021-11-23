@@ -1,0 +1,22 @@
+<!-- 头部 -->
+	<div class="header">
+		<!-- 网站标志 -->
+		<div class="logo">果果生鲜 <i>GUOGUO</i></div>
+		<!-- /网站标志 -->
+		<!-- 用户信息 -->
+		<div class="info">
+			<div class="top">商家后台管理系统</div>
+			<div class="box">
+				<div class="user">
+					<i class="iconfon">{{businessInfo.bname}}&nbsp;&#xe605</i>
+				</div>
+				<div class="open">
+					<ul>
+						<li><a href="/admin/blogout">退出登录</a></li>
+					</ul>
+				</div>
+			</div>				
+		</div>
+		<!-- /用户信息 -->
+	</div>
+<!-- /头部 -->

@@ -1,0 +1,65 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/user/css/myorder.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<!-- `````````内容布局`````````````` -->
+<!-- ````logo```` -->
+<div class="logo">
+	<img src="images/header-logo.png">
+	<span class="logo-car">订单</span>
+</div>
+<div class="message">{{message}}</div>
+<!-- ````````循环体``````` -->
+<table class="table">
+	<thead>
+		<tr>
+			<th>名称</th>
+			<th>图示</th>
+			<th>详情</th>
+			<th>数量(份)</th>
+			<th>价格(元)</th>
+			<th>配送地址</th>
+			<th>订单状态</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{each orders}}
+		<tr>
+			<td>{{$value.o_gid.gname}}</td>
+			<td><img class="img-show" src="{{$value.o_gid.gphoto}}"></td>
+			<td>{{$value.o_gid.ginfo}}</td>
+			<td>{{$value.onum}}</td>
+			<td>{{$value.osum}}</td>
+			<td>{{address.aaddress}}</td>
+			{{if $value.ostate == 0 }}
+			<td>未发货</td>
+			{{/if}}
+			{{if $value.ostate == 1 }}
+			<td>已发货</td>
+			{{/if}}
+			{{if $value.ostate == 2 }}
+			<td>已收货</td>
+			{{/if}}
+			<td class="operation-box">
+				<a href="/user/myorder-confirm?id={{@$value._id}}" class="delive">
+					<input type="button" value="确认收货" class="operation operation1">
+				</a>
+				<a href="/user/comment-is?id={{@$value._id}}" class="delive">
+					<input type="button" value="评价" class="operation operation3">
+				</a>
+				<form action="/user/myorder-del" onsubmit="return isDel()">
+					<input type="hidden" name="id" value="{{@$value._id}}">
+					<input type="submit" value="删除" class="operation operation2">
+				</form>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{/block}}
+{{block "script"}}
+<script src="/user/js/myorder-del.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

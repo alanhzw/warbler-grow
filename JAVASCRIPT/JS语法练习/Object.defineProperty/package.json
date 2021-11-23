@@ -1,0 +1,17 @@
+{
+  "name": "Object.defineProperty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "D": "^1.0.0",
+    "vite": "^2.5.0"
+  }
+}

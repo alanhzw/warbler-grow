@@ -1,0 +1,14 @@
+{
+  "name": "vuf3",
+  "version": "3.0.1",
+  "description": "this is a test package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "yiweiliuying",
+  "license": "ISC"
+}

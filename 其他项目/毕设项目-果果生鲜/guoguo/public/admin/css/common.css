@@ -1,0 +1,180 @@
+/* 网页样式初始化 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 字体不倾斜 */
+i {
+	display: inline-block;
+	font-size: 13px;
+	font-style: normal;
+}
+
+body {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'Arial';
+	color: #333;
+	line-height: 1.5;
+	background-color: #FAFAFB;
+}
+
+/* 去掉li小点 */
+ul>li {
+	list-style-type: none;
+	font-size: 12px;
+	display: inline-block;
+}
+
+/* a标签去掉下划线 */
+a {
+	text-decoration: none;
+}
+
+/* 引入字体图标 */
+@font-face {
+	font-family: 'iconfont';
+	/* project id 1679846 */
+	src: url('//at.alicdn.com/t/font_1679846_7bnq4basuqg.eot');
+	src: url('//at.alicdn.com/t/font_1679846_7bnq4basuqg.eot?#iefix') format('embedded-opentype'),
+		url('//at.alicdn.com/t/font_1679846_7bnq4basuqg.woff2') format('woff2'),
+		url('//at.alicdn.com/t/font_1679846_7bnq4basuqg.woff') format('woff'),
+		url('//at.alicdn.com/t/font_1679846_7bnq4basuqg.ttf') format('truetype'),
+		url('//at.alicdn.com/t/font_1679846_7bnq4basuqg.svg#iconfont') format('svg');
+}
+
+/* 给字体图标设置样式 */
+.iconfon {
+	font-family: "iconfont" !important;
+	font-size: 14px;
+}
+
+
+.header {
+	height: 72px;
+	width: 100%;
+	box-shadow: 0 1px 2px 0 rgba(40, 42, 49, .16);
+	z-index: 9;
+}
+
+.logo {
+	height: 72px;
+	width: 288px;
+	line-height: 72px;
+	text-align: center;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	/* 渐变 */
+	background-image: linear-gradient(100deg, #1c5de7, #1c91e7);
+	float: left;
+}
+
+.info {
+	width: 1650px;
+	position: fixed;
+	left: 288px;
+	background-color: white;
+	height: 72px;
+	z-index: 9;
+}
+
+.top {
+	font-size: 25px;
+	position: relative;
+	top: 15px;
+	left: 30px;
+}
+
+.box {
+	height: 102px;
+	width: 100px;
+	position: relative;
+	top: -37px;
+	left: 1430px;
+	z-index: 999;
+}
+
+.user {
+	height: 72px;
+	line-height: 72px;
+	text-align: center;
+	width: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.open {
+	border: 1px solid gainsboro;
+	background-color: white;
+	line-height: 30px;
+	text-align: center;
+	position: absolute;
+	top: 72px;
+	width: 200px;
+	height: 30px;
+	display: none;
+}
+
+.box:hover .open {
+	display: block;
+}
+
+
+.user:hover {
+	background-color: gainsboro;
+}
+
+.user i {
+	font-size: 15px;
+	color: #000000;
+}
+
+.content {
+	position: relative;
+}
+
+.sider {
+	width: 288px;
+	height: 866px;
+	background: #18202e;
+}
+
+.menu {
+	position: relative;
+	top: 50px;
+	left: 10px;
+}
+
+.item {
+	width: 278px;
+	height: 47px;
+	display: block;
+	padding: 15px 20px 15px 30px;
+	position: relative;
+	color: #919bae;
+	font-size: 15px;
+}
+
+.item:hover {
+	background-color: darkblue;
+}
+
+
+.title {
+	width: 1550px;
+	position: relative;
+	top: 30px;
+	left: 20px;
+}
+
+.main {
+	position: absolute;
+	top: 0px;
+	left: 300px;
+}
+.active{
+	color: white;
+}

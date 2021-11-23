@@ -1,0 +1,46 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" href="/user/css/myself.css">
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+{{include "./common/nav.art"}}
+<!-- `````````详细信息``````````````` -->
+<div class="container">
+	<div class="box">
+		<!-- ```````侧边栏``````````` -->
+		{{include "./common/sider.art"}}
+		<!-- ``````````主内容`````````````` -->
+		<div class="main-password">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>店铺名称</th>
+						<th>注册时间</th>
+						<th>店铺地址</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{each cs}}
+					<tr>
+						<td>{{$value.cs_bid.bname}}</td>
+						<td>{{dateFormat($value.cs_bid.bregdate,"yyyy-mm-dd HH:MM")}}</td>
+						<td>{{$value.cs_bid.baddress}}</td>
+						<td class="operation-box">
+							<form action="/user/myorder-del" onsubmit="return isDel()">
+								<input type="hidden" name="id" value="{{@$value._id}}">
+								<input type="submit" value="删除" class="operation operation2">
+							</form>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{{/block}}
+{{block "script"}}
+<script src="/user/js/myaddress.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

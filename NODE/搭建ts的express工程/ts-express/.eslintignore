@@ -1,0 +1,9 @@
+public/
+assets/
+dist/
+node_modules/
+src/assets/
+src/mobile/utils/
+package.json
+package-lock.json
+.history

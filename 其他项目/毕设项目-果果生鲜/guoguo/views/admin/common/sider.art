@@ -1,0 +1,10 @@
+<!-- 侧边栏 -->
+	<div class="sider">
+		<ul class="menu">
+			<li><a class="item {{currentLink == "goods" ? "active" : ""}}" href="/admin/goods/goods-admin"><span class="iconfon">&#xe66f&nbsp;&nbsp;</span>商品管理</a></li>
+			<li><a class="item {{currentLink == "shop" ? "active" : ""}}" href="/admin/shop-admin"><span class="iconfon">&#xe79e&nbsp;&nbsp;</span>店铺管理</a></li>
+			<li><a class="item {{currentLink == "order" ? "active" : ""}}" href="/admin/order-admin"><span class="iconfon">&#xe603&nbsp;&nbsp;</span>订单管理</a></li>
+			<li><a class="item {{currentLink == "discuss" ? "active" : ""}}" href="/admin/discuss-admin"><span class="iconfon">&#xe604&nbsp;&nbsp;</span>评论管理</a></li>
+		</ul>
+	</div>
+<!-- /侧边栏 -->

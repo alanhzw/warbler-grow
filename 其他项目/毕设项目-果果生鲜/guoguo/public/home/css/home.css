@@ -1,0 +1,729 @@
+
+/* ```````````顶部导航样式`````` */
+.topnav-box {
+	width: 100%;
+	height: 40px;
+}
+
+.topnav {
+	position: relative;
+	width: 1000px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.topnav-title {
+	width: 190px;
+	height: 40px;
+	line-height: 40px;
+	background: black;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	margin-left: -1px;
+}
+
+.topnav-main {
+	position: absolute;
+	top: 0;
+	left: 250px;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+}
+
+.topnav-main>ul>li {
+	margin-right: 30px;
+}
+
+.topnav-main>ul>li>a {
+	color: #000000;
+	font-size: 14px;
+	margin-left: 30px;
+}
+
+.topnav-main>ul>li>a:hover {
+	color: #00C65E;
+}
+
+.topnav-main>ul>li>a:nth-child(1) {
+	color: #00C65E;
+}
+
+.topnav-main>ul>li>i {
+	position: absolute;
+	top: 15px;
+	width: 2px;
+	height: 14px;
+	background-color: #000000;
+	color: #000000;
+}
+
+.topnav-tips>a {
+	color: #00c65e;
+	font-size: 14px;
+}
+
+.tips-icon {
+	margin-left: 80px;
+	font-size: 14px;
+	color: #00C65E;
+}
+
+.topnav-tips {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+}
+
+/* ``````````````````````````````````````` */
+/* ``````````菜单样式 ````````*/
+.menu-box {
+	width: 100%;
+	height: 400px;
+	background: url(../images/main-bg.png);
+}
+
+.menu {
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+.menu>div {
+	display: inline-block;
+}
+
+.menu-menu {
+	position: relative;
+	left: -800px;
+	top: 0;
+	width: 190px;
+	height: 400px;
+}
+
+
+.menu-notices {
+	float: right;
+	position: relative;
+	left: 0px;
+	width: 200px;
+	height: 400px;
+	margin-left: -5px;
+}
+
+.menu-menu>div {
+	width: 190px;
+	height: 80px;
+	position: relative;
+	background: white;
+	opacity: 0.95;
+}
+
+.first-menu {
+	padding-left: 40px;
+	padding-top: 19px;
+	width: 130px;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	border-top: 1px dotted #DDDDDD;
+}
+
+.menu-menu>div>i {
+	position: absolute;
+	height: 26px;
+	width: 26px;
+	left: 20px;
+	top: 20px;
+}
+
+.item1-icon {
+	background: url(../images/menu-sprite.png) no-repeat 0 0;
+}
+
+.item2-icon {
+	background: url(../images/menu-sprite.png) no-repeat -30px 0;
+}
+
+.item3-icon {
+	background: url(../images/menu-sprite.png) no-repeat 0 -30px;
+}
+
+.item4-icon {
+	background: url(../images/menu-sprite.png) no-repeat -30px -30px;
+}
+
+.item5-icon {
+	background: url(../images/menu-sprite.png) no-repeat -60px 0;
+}
+
+.item-title {
+	display: inline-block;
+	position: absolute;
+	left: 40px;
+	top: 15px;
+	width: 130px;
+	margin-bottom: 7px;
+	height: 20px;
+	font-size: 14px;
+	color: #000000;
+	font-weight: 700;
+}
+
+.item-children>a {
+	display: inline-block;
+	font-size: 12px;
+	color: #909090;
+	border-left: 1px solid #909090;
+	padding-left: 3px;
+	height: 12px;
+	line-height: 12px;
+}
+
+.item-children {
+	position: absolute;
+	top: 40px;
+	left: 37px;
+
+}
+
+.item-first-children {
+	margin-right: 0px;
+	border: none !important;
+}
+
+.item-title-iconfon {
+	font-size: 1px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.menu-menu a:hover {
+	color: #00C65E;
+}
+
+/* ````````````````````````````` */
+
+/* ```````````轮播图样式`````` */
+
+
+.menu-swiper {
+	position: relative;
+	left: 194px;
+	top: 0;
+	width: 800px;
+	height: 400px;
+	background: red;
+	overflow: hidden;
+	margin-left: -5px;
+}
+
+.menu-swiper ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600%;
+}
+
+.menu-swiper ul li {
+	float: left;
+}
+
+.left,
+.right {
+	display: none;
+	position: absolute;
+	top: 50%;
+	width: 24px;
+	height: 40px;
+	background: rgba(0, 0, 0, .3);
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-family: 'icomoon';
+	font-size: 18px;
+	z-index: 2;
+}
+
+.right {
+	right: 0;
+}
+
+.circle {
+	position: absolute;
+	bottom: 10px;
+	left: 50px;
+}
+
+.circle li {
+	list-style: none;
+	float: left;
+	width: 8px;
+	height: 8px;
+	/*background-color: #fff;*/
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	margin-right: 5px;
+	/*鼠标经过显示小手*/
+	cursor: pointer;
+}
+
+.current {
+	background-color: #fff;
+}
+
+/* `````````````````````````````` */
+.image-left {
+	position: absolute;
+	top: 540px;
+	left: 300px;
+	width: 174px;
+	height: 120px;
+	background: url(../images/fresh_left.png) no-repeat -335px -354px;
+	z-index: 3;
+}
+
+.image-bottom {
+	width: 1190px;
+	height: 24px;
+	position: absolute;
+	top: 593px;
+	left: 340px;
+	background: url(../images/fresh_bottom.png);
+}
+
+.image-right {
+	position: absolute;
+	left: 1430px;
+	top: 430px;
+	width: 150px;
+	height: 202px;
+	z-index: 9;
+	opacity: 0.9;
+	background: url(../images/fresh_right.png);
+}
+
+/* `````````````````````````````` */
+/* ```````````公告样式 ``````````````` */
+.fresh-headlines {
+	position: relative;
+	width: 200px;
+	height: 140px;
+	background: white;
+	opacity: 0.98;
+}
+
+.fresh-headlines>i,
+.fresh-meal>i {
+	position: absolute;
+	width: 15px;
+	height: 2px;
+	background: #000000;
+}
+
+.notice-title,
+.meal-title {
+	position: absolute;
+	top: 20px;
+	left: 70px;
+	color: black;
+	font-size: 16px;
+}
+
+.black-left {
+	top: 31px;
+	left: 45px;
+}
+
+.black-right {
+	top: 31px;
+	left: 145px;
+}
+
+.fresh-meal {
+	position: relative;
+	width: 200px;
+	height: 260px;
+	background: url(../images/meal-bg.png);
+}
+
+/* ```````````````````````````` */
+/* ````````宣传语布局`````````` */
+.slogan-box {
+	width: 100%;
+	height: 100px;
+	background: #F9F9FC;
+}
+
+.slogan {
+	width: 1190px;
+	height: 100px;
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.slogan i,
+.slogan-bottom i {
+	font-size: 40px;
+	padding-top: 35px;
+}
+
+.slogan span,
+.slogan-bottom span {
+	height: 40px;
+	font-size: 25px;
+	position: relative;
+	top: -7px;
+	color: #5e5f61;
+}
+
+/* ························· */
+
+/* `````````热销排行样式````````````` */
+
+.hotselling {
+	position: relative;
+	width: 1190px;
+	height: 350px;
+	/* background: red; */
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 25px;
+}
+
+.hotselling span:first-of-type {
+	font: bold 18px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+}
+
+.hotselling span:nth-of-type(2) {
+	display: block;
+	font-size: 12px;
+	color: #999999;
+}
+
+.hotselling em {
+	font-style: normal;
+	font-size: 20px;
+}
+
+.hotselling-title>div {
+	position: absolute;
+	width: 70px;
+	height: 55px;
+	top: 10px;
+}
+
+.hot-bg-left {
+	left: 460px;
+	background: url(../images/hotselling-bg.png) no-repeat -68px 0px;
+}
+
+.hot-bg-right {
+	left: 660px;
+	background: url(../images/hotselling-bg.png) no-repeat 0px 0px;
+}
+
+.hotselling-list {
+	width: 1190px;
+	height: 250px;
+	margin-top: 25px;
+}
+
+.hotselling-list>div {
+	position: relative;
+	width: 198px;
+	height: 250px;
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	box-sizing: border-box;
+	float: left;
+}
+
+.hotselling-list a>p {
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	width: 158px;
+	height: 42px;
+	overflow: hidden;
+	font-size: 14px;
+	color: #222222;
+	margin-top: 15px;
+}
+
+.hotselling-list img {
+	position: absolute;
+	top: 15px;
+	left: 0;
+}
+.hotselling-list-img{
+	width: 150px;
+	height: 150px;
+}
+.hotselling-list-info,
+.hotselling-list-img {
+	transition: all 0.2s ease 0s;
+}
+
+.hotselling-list>div:hover .hotselling-list-info {
+	color: #00C65E;
+}
+
+.hotselling-list>div:hover .hotselling-list-img {
+	top: 5px;
+}
+
+.hotselling-list>div>p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 158px;
+	height: 27px;
+	color: #ff541f;
+	text-align: left;
+	font-size: 18px;
+}
+
+/* ```````````````````````````` */
+
+/* ··········果果生鲜样式·········· */
+
+.sort-box {
+	width: 100%;
+	background: #F0F0F8;
+	position: relative;
+}
+
+.sort-header,
+.comment-header {
+	width: 1190px;
+	height: 60px;
+	background: url(../images/fresh_sort_head_bg.png) no-repeat;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	top: 60px;
+}
+
+.sort-header p {
+	font-size: 28px;
+	font-weight: 700px;
+}
+
+.sort-header i {
+	color: #909090;
+}
+
+.sort {
+	width: 1190px;
+	height: 600px;
+	margin: 0 auto;
+	margin-top: 110px;
+	position: relative;
+}
+
+.sort>img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.sort-lists {
+	width: 952px;
+	height: 600px;
+	background: #F0F0F8;
+	position: relative;
+	left: 238px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.sort-lists>div {
+	position: relative;
+	width: 235px;
+	height: 297px;
+	background: white;
+}
+
+.sort-lists a>img {
+	width: 190px;
+	height: 190px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.sort-lists a>i {
+	display: inline-block;
+	font-size: 20px;
+	color: #f60;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+
+.sort-lists a>p {
+	text-align: center;
+	position: absolute;
+	left: 10px;
+	top: 200px;
+	width: 206px;
+	height: 32px;
+	font-size: 12px;
+	color: #222222;
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+.sort-lists>div>p {
+	position: absolute;
+	bottom: 20px;
+	left: 10px;
+	font: bold 16px/21px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	color: #f60;
+}
+
+.sort-img,
+.sort-info {
+	transition: all 0.2s ease 0s;
+}
+
+.sort-img:hover {
+	margin-left: 30px;
+}
+
+.sort-info:hover {
+	color: #00C65E;
+}
+
+.meat,
+.seafood {
+	margin-top: 10px;
+}
+
+.meat {
+	padding-bottom: 50px;
+}
+
+/* `````````````````````` */
+/* ``````````````````食鲜者说样式```````````` */
+.comment-box {
+	width: 100%;
+	position: relative;
+	height: 430px;
+	background: url(../images/comment-bg.jpg);
+}
+
+.comment-header p {
+	font-size: 28px;
+	font-weight: 700px;
+	color: white;
+}
+
+.comment-header i {
+	color: white;
+}
+
+.comment-header span {
+	color: white;
+	font-size: 15px;
+}
+
+.comment-content {
+	position: absolute;
+	width: 1190px;
+	height: 230px;
+	top: 165px;
+	left: 355px;
+}
+
+.comment-content div {
+	float: left;
+	width: 383px;
+	height: 200px;
+	background: white;
+	margin-left: 7px;
+	margin-right: 6px;
+}
+
+.head {
+	width: 58px;
+	height: 58px;
+	border: 2px solid lawngreen;
+	border-radius: 50px;
+	position: absolute;
+	top: -30px;
+	left: 170px;
+}
+.comments{
+	position: relative;
+}
+.comments p:nth-of-type(1) {
+	position: absolute;
+	top: 35px;
+	left: 170px;
+}
+
+.target {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 60px;
+	left: 25px;
+}
+
+.comments p:nth-of-type(2) {
+	width: 203px;
+	height: 34px;
+	overflow: hidden;
+	font-size: 12px;
+	position: absolute;
+	top: 75px;
+	left: 170px;
+}
+
+.comments p:nth-of-type(3) {
+	position: absolute;
+	top: 160px;
+	left: 170px;
+	color: #909090;
+	font-size: 12px;
+}
+
+/* ··············bottom样式````````````` */
+.bottom-box {
+	width: 100%;
+	height: 180px;
+	background: #F0F0F8;
+	position: relative;
+}
+
+.slogan-bottom {
+	width: 1190px;
+	height: 120px;
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
+	border-bottom: 1px solid black;
+}
+
+.slogan-bttom-box {
+	background: #F0F0F8;
+}
+
+.copyright {
+	margin: 0 auto;
+	width: 1190px;
+	text-align: center;
+	font: 12px/150% tahoma, arial, Microsoft YaHei, Hiragino Sans GB, "\u5b8b\u4f53", sans-serif;
+	position: relative;
+	bottom: 40px;
+}

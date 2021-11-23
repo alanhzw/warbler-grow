@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商家后台管理系统</title>
+		<link rel="stylesheet" type="text/css" href="/admin/css/common.css"/>
+		{{block "link"}}{{/block}}
+	</head>
+	<body>
+	{{block "main"}}{{/block}}
+	</body>
+	{{block "script"}}{{/block}}
+</html>

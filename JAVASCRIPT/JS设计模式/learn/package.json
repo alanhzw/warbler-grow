@@ -1,0 +1,17 @@
+{
+  "name": "day1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "typescript": "^4.3.3",
+    "vite": "^2.3.6"
+  }
+}

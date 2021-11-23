@@ -1,0 +1,11 @@
+<div class="sider">
+	<dl>
+		<dt>设置</dt>
+		<dd><a href="/user/myinfomation">个人资料</a></dd>
+		<dd><a href="/user/myheader">我的头像</a></dd>
+		<dd><a href="/user/myaddress">收货地址</a></dd>
+		<dd><a href="/user/mypassword">修改密码</a></dd>
+		<dd><a href="/user/collectionShop">收藏店铺</a></dd>
+		<dd><a href="/user/collectionGoods">收藏商品</a></dd>
+	</dl>
+</div>

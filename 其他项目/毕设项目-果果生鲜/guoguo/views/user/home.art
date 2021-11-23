@@ -1,0 +1,351 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" type="text/css" href="/home/css/home.css" />
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+<!-- 头部布局 -->
+<div class="header-box">
+	<div class="header">
+		<!-- 果果生鲜logo -->
+		<div class="header-logo">
+			<img src="images/header-logo.png">
+		</div>
+		<!-- 搜索框 -->
+		<form action="/user/search" method = "get">
+		<div class="header-search">
+			<input type="search" class="search" name="keyword" placeholder="请输入搜索内容" />
+			<input type="submit" class="search-button" value="搜索">
+		</div>
+		</form>
+		<!-- 热卖 -->
+		<div class="header-hotsale">
+			<ul class="hotsale">
+				<li><a href="">芒果</a></li>
+				<li><a href="">樱桃</a></li>
+				<li><a href="">三文鱼</a></li>
+				<li><a href="">小龙虾</a></li>
+				<li><a href="">鸡蛋</a></li>
+				<li><a href="">牛排</a></li>
+				<li><a href="">榴莲</a></li>
+			</ul>
+		</div>
+		<!-- 我的购物车 -->
+		<div class="header-trolley">
+			<i class="iconfon">&#xe600&nbsp</i>
+			<a href="/user/car">我的购物车</a>
+		</div>
+	</div>
+</div>
+<!-- 顶部导航布局 -->
+<div class="topnav-box">
+	<div class="topnav">
+		<div class="topnav-title">京东生鲜商品分类</div>
+		<div class="topnav-main">
+			<ul>
+				<li>
+					<a href="">生鲜首页</a>
+				</li>
+				<li>
+					<i></i>
+					<a href="">东家菜</a>
+				</li>
+				<li>
+					<i></i>
+					<a href="">优选一百</a>
+				</li>
+			</ul>
+		</div>
+		<div class="topnav-tips">
+			<a href=""><i class="iconfon tips-icon">&#xe62a</i>果果公告&nbsp&nbsp&nbsp&nbsp&nbsp<i class="iconfon tips-icon">&#xe658</i></a>
+		</div>
+	</div>
+</div>
+
+<!-- menu栏布局 轮播图 -->
+<div class="menu-box">
+	<div class="menu">
+
+		<div class="image-left"></div>
+		<div class="image-bottom"></div>
+		<div class="image-right"></div>
+
+		<!-- 轮播图 -->
+		<div class="menu-swiper">
+			<a href="javascript:;" class="left">&lt</a>
+			<a href="javascript:;" class="right">&gt</a>
+			<ul>
+				<li>
+					<a href=""><img src="images/swiper-1.jpg"></a>
+				</li>
+				<li>
+					<a href=""><img src="images/swiper-2.jpg"></a>
+				</li>
+				<li>
+					<a href=""><img src="images/swiper-3.jpg"></a>
+				</li>
+				<li>
+					<a href=""><img src="images/swiper-4.jpg"></a>
+				</li>
+			</ul>
+			<ol class="circle"> </ol>
+		</div>
+
+
+		<!-- 菜单列表 -->
+		<div class="menu-menu">
+			<div class="item1">
+				<div class="sec-menu second-menu1">
+					<div class="white white1"></div>
+
+				</div>
+				<i class="item1-icon"></i>
+				<div class="first-menu">
+					<a href="" class="item-title">新鲜水果<i class="iconfon item-title-iconfon">&#xe658</i></a>
+					<div class="item-children">
+						<a href="" class="item-first-children">草莓</a>
+						<a href="">水蜜桃</a>
+						<a href="">车厘子</a>
+					</div>
+				</div>
+			</div>
+			<div class="item2">
+				<div class="sec-menu second-menu2">
+					<div class="white white2"></div>
+				</div>
+				<i class="item2-icon"></i>
+				<div class="first-menu">
+					<a href="" class="item-title">海鲜水产<i class="iconfon item-title-iconfon">&#xe658</i></a>
+					<div class="item-children">
+						<a href="" class="item-first-children">海鲜礼盒</a>
+						<a href="">鱼类</a>
+						<a href="">贝类</a>
+					</div>
+				</div>
+			</div>
+			<div class="item3">
+				<div class="sec-menu second-menu3">
+					<div class="white white3"></div>
+				</div>
+				<i class="item3-icon"></i>
+				<div class="first-menu">
+					<a href="" class="item-title">精选肉类<i class="iconfon item-title-iconfon">&#xe658</i></a>
+					<div class="item-children">
+						<a href="" class="item-first-children">鸡翅</a>
+						<a href="">猪肋排</a>
+						<a href="">牛排</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="item4">
+				<div class="sec-menu second-menu4">
+					<div class="white white4"></div>
+				</div>
+				<i class="item4-icon"></i>
+				<div class="first-menu">
+					<a href="" class="item-title">冷饮冻食<i class="iconfon item-title-iconfon">&#xe658</i></a>
+					<div class="item-children">
+						<a href="" class="item-first-children">酸奶</a>
+						<a href="">冰淇淋</a>
+						<a href="">牛奶</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="item5">
+				<div class="sec-menu second-menu5">
+					<div class="white white5"></div>
+				</div>
+				<i class="item5-icon"></i>
+				<div class="first-menu">
+					<a href="" class="item-title">蔬菜蛋品<i class="iconfon item-title-iconfon">&#xe658</i></a>
+					<div class="item-children">
+						<a href="" class="item-first-children">水培蔬菜</a>
+						<a href="">玉米</a>
+						<a href="">蛋品</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- 宣传语布局 -->
+
+<div class="slogan-box">
+	<div class="slogan">
+		<div>
+			<i class="iconfon">&#xe60c</i>
+			<span>食品安全</span>
+		</div>
+		<div>
+			<i class="iconfon">&#xe651</i>
+			<span>鲜活天然</span>
+		</div>
+		<div>
+			<i class="iconfon">&#xe68a</i>
+			<span>火速配送</span>
+		</div>
+		<div>
+			<i class="iconfon">&#xe626</i>
+			<span>健康有机</span>
+		</div>
+		<div>
+			<i class="iconfon">&#xe623</i>
+			<span>进口精选</span>
+		</div>
+	</div>
+</div>
+
+<!-- 热销排行布局 -->
+
+<div class="hotselling">
+	<div class="hotselling-title">
+		<div class="hot-bg-left"></div>
+		<em>/</em>
+		<span>热销排行</span>
+		<em>/</em>
+		<span>TOP SELLING</span>
+		<div class="hot-bg-right"></div>
+	</div>
+
+	<div class="hotselling-list">
+		{{each goods.records}}
+		<div>
+			<a href="/home/details?id={{@$value._id}}">
+				<img src="{{$value.gphoto}}" class="hotselling-list-img">
+				<p class="hotselling-list-info">{{$value.gname}}</p>
+			</a>
+			<p>￥{{$value.gprice}}</p>
+		</div>
+		{{/each}}
+	</div>
+</div>
+
+<!-- 果果生鲜布局 -->
+
+<div class="sort-box">
+
+	<div class="sort-header">
+		<p>
+			果 <i>/</i> 果 <i>/</i> 生 <i>/</i> 鲜
+		</p>
+		<span>GG FRESH</span>
+	</div>
+
+
+	<div class="sort fruits">
+		<img src="images/sort-fruits.png">
+		<div class="sort-lists">
+			{{each fruits.records}}
+			<div>
+				<a href="/home/details?id={{@$value._id}}">
+					<img src="{{$value.gphoto}}" class="sort-img">
+					<p class="sort-info">{{$value.gname}}</p>
+					<i class="iconfon">&#xe600</i>
+				</a>
+				<p>￥{{$value.gprice}}</p>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+
+	<div class="sort seafood">
+		<img src="images/sort-seafood.png">
+		<div class="sort-lists">
+			{{each seafood.records}}
+			<div>
+				<a href="/home/details?id={{@$value._id}}">
+					<img src="{{$value.gphoto}}" class="sort-img">
+					<p class="sort-info">{{$value.gname}}</p>
+					<i class="iconfon">&#xe600</i>
+				</a>
+				<p>￥{{$value.gprice}}</p>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+
+
+	<div class="sort meat">
+		<img src="images/sort-meat.png">
+		<div class="sort-lists">
+			{{each meat.records}}
+			<div>
+				<a href="/home/details?id={{@$value._id}}">
+					<img src="{{$value.gphoto}}" class="sort-img">
+					<p class="sort-info">{{$value.gname}}</p>
+					<i class="iconfon">&#xe600</i>
+				</a>
+				<p>￥{{$value.gprice}}</p>
+			</div>
+			{{/each}}
+
+		</div>
+	</div>
+</div>
+
+
+<!-- ``食鲜者说布局``	 -->
+<div class="comment-box">
+	<div class="comment-header">
+		<p>
+			食 <i>/</i> 鲜 <i>/</i> 者 <i>/</i> 说
+		</p>
+		<span>CUSTOMER SAYS</span>
+	</div>
+	<div class="comment-content">
+		{{each discuss.records}}
+		<div>
+			<div class="comments">
+				<img class="head" src="{{$value.d_uid.uheader}}">
+				<p>{{$value.d_uid.uname}}</p>
+				<img class="target" src="{{$value.d_gid.gphoto}}">
+				<p>{{$value.dinfo}}</p>
+				<p>{{dateFormat($value.dtime,"yyyy-mm-dd HH：MM")}}</p>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+</div>
+
+
+<!-- ·bottom布局` -->
+<div class="bottom-box">
+	<div class="bottom">
+		<div class="slogan-box slogan-bttom-box">
+			<div class="slogan-bottom">
+				<div>
+					<i class="iconfon">&#xe60c</i>
+					<span>食品安全</span>
+				</div>
+				<div>
+					<i class="iconfon">&#xe651</i>
+					<span>鲜活天然</span>
+				</div>
+				<div>
+					<i class="iconfon">&#xe68a</i>
+					<span>火速配送</span>
+				</div>
+				<div>
+					<i class="iconfon">&#xe626</i>
+					<span>健康有机</span>
+				</div>
+				<div>
+					<i class="iconfon">&#xe623</i>
+					<span>进口精选</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="copyright">Copyright © 2020-2020 GG 版权所有</div>
+
+
+{{/block}}
+{{block "script"}}
+<script src="/home/js/home.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

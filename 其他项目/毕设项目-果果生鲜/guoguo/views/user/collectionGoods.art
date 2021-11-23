@@ -1,0 +1,47 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" href="/user/css/myself.css">
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+{{include "./common/nav.art"}}
+<!-- `````````详细信息``````````````` -->
+<div class="container">
+	<div class="box">
+		<!-- ```````侧边栏``````````` -->
+		{{include "./common/sider.art"}}
+		<!-- ``````````主内容`````````````` -->
+		<div class="main-password">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>商品名称</th>
+						<th>商品详情</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{each cg}}
+					<tr>
+						<td>{{$value.cg_gid.gname}}</td>
+						<td>{{$value.cg_gid.ginfo}}</td>
+						<td class="operation-box">
+							<a href="/user/myorder-confirm?id={{@$value._id}}" class="delive">
+								<input type="button" value="查看详情" class="operation operation1">
+							</a>
+							<form action="/user/myorder-del" onsubmit="return isDel()">
+								<input type="hidden" name="id" value="{{@$value._id}}">
+								<input type="submit" value="删除" class="operation operation2">
+							</form>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{{/block}}
+{{block "script"}}
+<script src="/user/js/myaddress.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

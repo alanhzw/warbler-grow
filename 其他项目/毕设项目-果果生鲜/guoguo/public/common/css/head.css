@@ -1,0 +1,201 @@
+/* 网页样式初始化 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 字体不倾斜 */
+i,
+span {
+	display: inline-block;
+	font-style: normal;
+}
+
+/* a标签去掉下划线 */
+a {
+	text-decoration: none;
+}
+
+/* 引入字体图标 */
+@font-face {
+	font-family: 'iconfont';
+	/* project id 1679846 */
+	src: url('//at.alicdn.com/t/font_1679846_r4ho5e1fk.eot');
+	src: url('//at.alicdn.com/t/font_1679846_r4ho5e1fk.eot?#iefix') format('embedded-opentype'),
+		url('//at.alicdn.com/t/font_1679846_r4ho5e1fk.woff2') format('woff2'),
+		url('//at.alicdn.com/t/font_1679846_r4ho5e1fk.woff') format('woff'),
+		url('//at.alicdn.com/t/font_1679846_r4ho5e1fk.ttf') format('truetype'),
+		url('//at.alicdn.com/t/font_1679846_r4ho5e1fk.svg#iconfont') format('svg');
+}
+
+/* 给字体图标设置样式 */
+.iconfon {
+	font-family: "iconfont" !important;
+	color: #999;
+	font-size: 14px;
+}
+
+/* 去掉li小点 */
+ul>li {
+	list-style-type: none;
+	font-size: 12px;
+	display: inline-block;
+}
+
+.top>ul>li>a {
+	color: #999999;
+}
+
+/* 鼠标经过a标签颜色变红 */
+ul>li>a:hover {
+	color: red;
+}
+
+
+/* 顶部容器样式 */
+.top-box {
+	background-color: #e3e4e5;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+.top {
+	width: 1190px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+.fore-left {
+	float: left;
+}
+
+.fore-right {
+	float: right;
+}
+
+/* 顶部分割线样式 */
+.spacer {
+	width: 1px;
+	height: 12px;
+	margin-top: 9px;
+	background-color: #CCCCCC;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.register {
+	color: red;
+}
+
+.address {
+	color: #999;
+}
+
+.header-box {
+	width: 100%;
+	height: 122px;
+}
+
+.header {
+	position: relative;
+	width: 1190px;
+	height: 122px;
+	margin: 0 auto;
+}
+
+.header>div {
+	float: left;
+}
+
+/* 搜索框样式 */
+.search {
+	width: 360px;
+	font-size: 14px;
+	border: 2px solid #00C65E;
+	color: #999;
+	height: 24px;
+	line-height: 24px;
+	outline: none;
+	/* 盒子尺寸算法不包括padding和border的尺寸 */
+	box-sizing: content-box;
+	padding: 4px;
+	margin-bottom: 4px;
+}
+
+/* 搜索按钮样式 */
+.search-button {
+	width: 80px;
+	height: 36px;
+	background-color: #00c65d;
+	color: white;
+	border: none;
+	padding: -2px;
+}
+
+.header-logo {
+	position: absolute;
+	left: 0px;
+	bottom: 40px;
+}
+
+.search {
+	position: absolute;
+	right: 400px;
+	bottom: 40px;
+}
+
+/* 我的购物车按钮样式 */
+.header-trolley {
+	background: #F9F9F9;
+	text-align: center;
+	line-height: 34px;
+	width: 136px;
+	height: 34px;
+	font-size: 12px;
+	color: black;
+	border: 1px solid #DFDFDF;
+	position: absolute;
+	bottom: 44px;
+	right: 100px;
+}
+
+.header-trolley a {
+	color: #999999;
+}
+
+.search-button {
+	position: absolute;
+	bottom: 44px;
+	right: 320px;
+}
+
+.jiantou {
+	font-size: 13px;
+}
+
+/* ``````````````热卖``````````` */
+.header-hotsale {
+	height: 24px;
+	line-height: 24px;
+	position: absolute;
+	top: 85px;
+	left: 420px;
+}
+
+.hotsale li {
+	margin-right: 10px;
+	font-size: 14px;
+	color: #999999;
+}
+
+.hotsale a {
+	color: #999999;
+}
+
+.hotsale a:hover {
+	color: #00C65E;
+}
+
+/* `````````````````````````````````````` */

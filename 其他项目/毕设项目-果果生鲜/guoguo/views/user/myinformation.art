@@ -1,0 +1,33 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" href="/user/css/myself.css">
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+{{include "./common/nav.art"}}
+<!-- `````````详细信息``````````````` -->
+<div class="container">
+	<div class="box">
+		<!-- ```````侧边栏``````````` -->
+		{{include "./common/sider.art"}}
+		<!-- ``````````主内容`````````````` -->
+		<div class="main-information">
+			<form action="/user/myinfomation-modify" method="post" onsubmit="return isPreserve()">
+				<div>
+					<label>昵称:</label>
+					<input type="text" value="{{user.uname}}" name="uname">
+					<input type="submit" name="" id="" value="保存" />
+			</form>
+		</div>
+		<div>
+			<label class="information-head">头像:</label>
+			<img src="{{user.uheader}}">
+		</div>
+		<label for="">地址:{{address && address.aaddress}}</label>
+	</div>
+</div>
+</div>
+{{/block}}
+{{block "script"}}
+<script src="/user/js/myaddress.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

@@ -1,0 +1,56 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+<link rel="stylesheet" href="/user/css/myself.css">
+{{/block}}
+{{block "main"}}
+{{include "./common/header.art"}}
+{{include "./common/nav.art"}}
+<!-- `````````详细信息``````````````` -->
+<div class="container">
+	<div class="box">
+		<!-- ```````侧边栏``````````` -->
+		{{include "./common/sider.art"}}
+		<!-- ``````````主内容`````````````` -->
+		<div class="main-address">
+			<form action="{{link}}" method="post" onsubmit="return isPreserve()">
+				<div>
+					<label for="">&nbsp;&nbsp;&nbsp;&nbsp;收货人:</label>
+					<input type="text" name="aname" value="{{address && address.aname}}">
+				</div>
+				<div>
+					<label for="">所在地区:</label>
+					<input type="text" name="aarea" value="{{address && address.aarea}}">
+				</div>
+				<div>
+					<label for="">详细地址:</label>
+					<input type="text" name="aaddress" value="{{address && address.aaddress}}">
+				</div>
+				<div>
+					<label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机:</label>
+					<input type="text" name="amoblie" value="{{address && address.amoblie}}">
+				</div>
+				<div>
+					<label for="">固定电话:</label>
+					<input type="text" name="atelephone" value="{{address && address.atelephone}}">
+				</div>
+				<div>
+					<label for="">电子邮箱:</label>
+					<input type="text" name="aemail" value="{{address && address.aemail}}">
+				</div>
+				<div>
+					<label for="">地址别名:</label>
+					<input type="text" name="aalias" value="{{address && address.aalias}}">
+				</div>
+				<input type="hidden" name="auser" value="{{userInfo.id}}">
+				<div class="address-submit">
+					<input type="submit"  value="{{button}}" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- ``````````底部布局``````````` -->
+{{/block}}
+{{block "script"}}
+<script src="/user/js/myaddress.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}

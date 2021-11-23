@@ -1,0 +1,100 @@
+/* ````````logo``````````` */
+
+.logo {
+    width: 990px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.logo-car {
+    font-size: 24px;
+    position: relative;
+    left: -20px;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background: #FFF;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table td,
+table th {
+    text-align: center;
+    padding: 8px;
+}
+
+thead {
+    background-color: #f3f3f3;
+}
+
+table th {
+    border-bottom: 2px solid #ddd;
+}
+
+.img-show {
+    width: 100px;
+    height: 100px;
+}
+
+.delive {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.operation-box {
+    width: 120px;
+}
+
+.operation {
+    position: relative;
+    margin-left: 5px;
+    float: left;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.operation1 {
+    width: 120px;
+    left: 0px;
+    top: -3px;
+}
+
+.operation2 {
+    left: 7px;
+    top: 0px;
+}
+
+.operation3 {
+    left: 0px;
+    top: 0px;
+}
+
+.message {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 24px;
+    color: red;
+    margin-bottom: 10px;
+}

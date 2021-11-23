@@ -1,0 +1,207 @@
+@charset "UTF-8";
+body {
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  //background-color: red;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  //background-color: green;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  background-color: #D8DCE5;
+  border-radius: 3px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+//基于父元素居中对齐
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.no-outer {
+  outline: none;
+}
+
+.tool-box {
+  margin-bottom: 15px;
+}
+
+.border {
+  border: solid 1px #DCDFE6;
+}
+
+.search-panel {
+  overflow: hidden;
+  position: relative;
+  padding: 15px 15px 0 15px;
+  background-color: #F2F6FC;
+}
+
+.importCustomer {
+  overflow: hidden;
+  position: relative;
+  padding: 15px 15px 0 15px;
+  background-color: #F2F6FC;
+}
+
+@media screen and (max-width: 1000px) {
+  .hidden-1000 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .hidden-1275 {
+    display: none;
+  }
+}
+
+.close {
+  color: #606266;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 12px;
+  margin: -6px -10px;
+  text-decoration: none;
+  transition: color .5s, opacity .3s;
+  &:hover, &:focus {
+    color: #F56C6C;
+    opacity: 1;
+  }
+}
+
+.panel {
+  padding: 0 !important;
+}
+
+.panel .panel-body {
+  padding: 10px;
+}
+
+.panel-header {
+  background-color: #f5f7fa;
+  border-bottom: 1px solid #e4e7ed;
+  padding: 10px;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.ol-number {
+}
+
+.input-full {
+  width: 100%;
+}
+
+.input-larger {
+  width: 90%;
+}
+
+.input-large {
+  width: 80%;
+}
+
+.input-medium {
+  width: 60%;
+}
+
+.input-normal {
+  width: 50%;
+}
+
+.input-small {
+  width: 30%;
+}
+
+.input-mini {
+  width: 20%;
+}
+
+.link {
+  color: #38adff;
+  cursor: pointer;
+  &:hover {
+    color: #60bdff;
+  }
+}
+
+.font-color {
+  color: gray;
+}
+
+.font-color-black {
+  color: black;
+}
+
+.font-weight-tag {
+  font-weight: bolder;
+  font-size: large;
+}
+
+.padding {
+  padding: 10px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  padding: 0;
+  margin: 8px 0;
+  border: none;
+  background: none;
+  &:before {
+    height: 1px;
+    display: block;
+    content: '';
+    background-color: #EBEEF5;
+  }
+}
+
+.amap-maps .start-point {
+  font-size: 10px;
+  white-space: nowrap;
+  background-color: black;
+  border-radius: 3px;
+  padding: 1px 3px;
+  color: white;
+}
+
+.amap-maps .end-point {
+  font-size: 10px;
+  white-space: nowrap;
+  background-color: red;
+  border-radius: 3px;
+  padding: 1px 3px;
+  color: white;
+}
+// .el-button{
+//   padding:7px;
+// }
+
+//TODO: 通用样式写到这里

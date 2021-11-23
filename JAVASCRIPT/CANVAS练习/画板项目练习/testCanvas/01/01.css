@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.canvas-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.menu-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.menu-item {
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#canvas {
+  border: 1px solid black;
+}

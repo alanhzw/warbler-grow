@@ -1,0 +1,38 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+	<link rel="stylesheet" type="text/css" href="/admin/css/goods-admin.css" />
+{{/block}}
+{{block "main"}}
+	{{include "./common/header.art"}}
+	<!-- 主体内容 -->
+	<div class="content">
+		{{include "./common/sider.art"}}
+		<div class="main">
+			<!-- 标题 -->
+			<div class="title">
+				<h3>店铺管理</h3>
+			</div>
+			<!-- /标题 -->
+			<!-- 内容列表 -->
+			<div class="shopAdmin">
+				<form action="/admin/shop-modify" method = "post" >
+					<div class="form-group">
+						<label>名称</label>
+						<input type="text"  class="form-control" name="bname" id="" placeholder="{{business.bname}}"/>
+					</div>
+					<div class="form-group">
+						<label>地址</label>
+						<input type="text" class="form-control" name="baddress" id=""   placeholder="{{business.baddress}}" />
+					</div>
+					<input type="submit" value="提交">
+				</form>
+			</div>
+			<!-- /内容列表 -->
+
+		</div>
+	</div>
+	<!-- /主体内容 -->
+{{/block}}
+{{block "script"}}
+	<script src="/admin/js/goods-admin.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}	

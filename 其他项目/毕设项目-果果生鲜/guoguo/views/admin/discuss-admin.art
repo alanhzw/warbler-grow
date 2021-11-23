@@ -1,0 +1,77 @@
+{{extend "./common/layout.art"}}
+{{block "link"}}
+	<link rel="stylesheet" type="text/css" href="/admin/css/goods-admin.css" />
+	<link rel="stylesheet" type="text/css" href="/admin/css/discuss-admin.css" />
+{{/block}}
+{{block "main"}}
+	{{include "./common/header.art"}}
+	<!-- 主体内容 -->
+	<div class="content">
+		{{include "./common/sider.art"}}
+		<div class="main">
+			<!-- 标题 -->
+			<div class="title">
+				<h3>商品管理</h3>
+			</div>
+			<!-- /标题 -->
+			<!-- 内容列表 -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th>名称</th>
+						<th>图示</th>
+						<th>评论内容</th>
+						<th>评论时间</th>
+						<th>商家回复</th>
+						<th>回复时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{each discuss.records}}
+					<tr>
+						<td>{{$value.d_gid.gname}}</td>
+						<td><img class = "img-show" src="{{$value.d_gid.gphoto}}"></td>
+						<td>{{$value.dinfo}}</td>
+						<td>{{dateFormat($value.dtime,"yyyy-mm-dd HH:MM")}}</td>
+						<td>{{$value.drinfo}}</td>
+						<td>{{dateFormat($value.drtime,"yyyy-mm-dd HH:MM")}}</td>
+						<td class = "operation-box">
+							<a href="/admin/reply-add?id={{@$value._id}}">
+							<input type="button" value = "回复" class = "operation operation1">
+							</a>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+			<!-- /内容列表 -->
+			<!-- 分页 -->
+			<ul class="pagination">
+				{{if discuss.page > 1}}
+					<li>
+						<a href="/admin/discuss/discuss-admin?page={{discuss.page - 1}}">
+						<span>&laquo;</span>
+					  </a>
+					</li>
+				{{/if}}
+				
+				{{each discuss.display}}
+				<li><a href="/admin/discuss/discuss-admin?page={{$value}}">{{$value}}</a></li>
+				{{/each}}
+				{{if discuss.page < discuss.pages}}	
+					<li>
+						<a href="/admin/discuss/discuss-admin?page={{discuss.page - 0 + 1}}">
+						<span>&raquo;</span>
+					  </a>
+					</li>
+				{{/if}}	
+			</ul>
+			<!-- /分页 -->
+		</div>
+	</div>
+	<!-- /主体内容 -->
+{{/block}}
+{{block "script"}}
+	<script src="/admin/js/goods-admin.js" type="text/javascript" charset="utf-8"></script>
+{{/block}}	

@@ -1,0 +1,16 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "2.3.2",
+    "vite": "^2.5.1"
+  }
+}

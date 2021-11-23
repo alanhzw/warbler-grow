@@ -1,0 +1,792 @@
+@charset "utf-8";
+
+.bottom_page {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+.bottom_page .el-pagination {
+    padding: 0;
+    float: left;
+}
+
+.el-button + .el-button {
+    margin-left: 0;
+}
+
+.el-button--info {
+    background-color: #428bca;
+    border-color: #428bca;
+}
+
+.el-button--primary {
+    background-color: #1ab395;
+    border-color: #1ab395;
+}
+
+.el-button--warning {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.el-button--success {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+.el-button--danger {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.el-button--question {
+    background-color: #EC7FFF;
+    border-color: #EC7FFF;
+    color: #ffffff;
+}
+
+.el-button--text {
+    color: #1ab395;
+}
+
+.el-pager li.active {
+    background-color: #1ab395;
+    border-color: #1ab395;
+}
+
+/*.el-button--primary:focus, .el-button--primary:hover{*/
+/*background: #62BFA2;*/
+/*border-color: #62BFA2;*/
+/*}*/
+.el-button--primary:hover {
+    background: #11b95c;
+    border-color: #11b95c;
+}
+
+.el-button--success:hover {
+    background: #48ace6;
+    border-color: #48ace6;
+}
+
+.el-button--info:hover {
+    background: #1d90e6;
+    border-color: #1d90e6;
+}
+
+.el-button--question:hover {
+    background: #F89AFF;
+    border-color: #F89AFF;
+    color: #ffffff;
+}
+
+.el-select .el-input__inner:focus, .el-input__inner:focus {
+    border-color: #1ab395;
+}
+
+.el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item.is-active, .el-menu-item.is-active {
+    color: #1ab395;
+}
+
+.el-submenu.is-active .el-submenu__title {
+    border-bottom-color: #1ab395;
+}
+
+.el-pager li:hover {
+    color: #1ab395;
+}
+
+.el-pagination button:hover {
+    color: #1ab395;
+}
+
+.el-pagination button.disabled {
+    color: #e4e4e4;
+}
+
+/*开发中*/
+.onProcessTips {
+    width: 100%;
+    text-align: center;
+}
+
+.inputBox .el-input .input_long input, .inputBox .el-textarea .input_long textarea {
+    width: 400px;
+}
+
+/*分页*/
+
+.el-pagination {
+
+    position: relative;
+    padding: 10px 0 80px;
+}
+
+.el-pagination p {
+    line-height: 30px;
+    font-size: 14px;
+    color: #6d6d6d;
+    display: block;
+    float: left;
+}
+
+.el-pagination .el-pagination {
+    display: inline-block;
+    padding: 0;
+    float: right;
+}
+
+.el-pagination .el-pagination button, .el-pagination span {
+    margin: 0;
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.el-pagination .el-icon-arrow-left:before {
+    content: '上一页';
+    font-size: 14px;
+}
+
+.el-pagination .el-icon-arrow-right:before {
+    content: '下一页';
+    font-size: 14px;
+}
+
+.el-pagination button {
+    width: 80px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #858585;
+    font-size: 14px;
+}
+
+.el-pagination .el-pager li {
+    width: 40px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #858585;
+    font-size: 14px;
+    margin: 0 4px;
+    /*background-color: #ffffff;*/
+}
+
+.el-pagination .el-pager li.active {
+    border-color: #1ab395;
+    background-color: #1ab395;
+    color: #fff;
+    cursor: default;
+}
+
+.el-pagination .el-pager li.active + li {
+    border-left: 1px solid #d5d5d5;
+}
+
+.el-pagination .btn-prev {
+    border-right: 1px solid #d1dbe5;
+}
+
+.el-pagination .btn-next {
+    border-left: 1px solid #d1dbe5;
+}
+
+.bottom_page .total_pages {
+    line-height: 35px;
+    font-size: 14px;
+    color: #6d6d6d;
+    display: block;
+    float: left;
+}
+
+.guide_title {
+    color: #38adff;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+}
+
+.guide_title:hover {
+    color: #20a0ff !important;
+}
+
+/*对话框尺寸调整*/
+.dialog_size .el-dialog {
+    width: 65%;
+    /* overflow-y: auto; */
+    height: 500px;
+}
+
+.dialog_size .el-dialog span {
+    line-height: 24px;
+}
+
+.question_del_button {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.red_star {
+    color: red;
+}
+
+.el-form-item__content .tips {
+    font-size: 12px;
+    color: #777777;
+}
+
+.error_tip {
+    color: #ff4949;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 100px;
+}
+
+.el-form-item.is-error .avatar-uploader .el-upload {
+    border-color: red;
+}
+
+.index_welcome {
+    padding-bottom: 15px;
+    color: #333333;
+}
+
+.el-tree {
+    border: none;
+}
+
+/*订单页面*/
+.plan_list {
+    table-layout: fixed;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.plan_list tr {
+    height: 40px;
+    border: 1px solid #eeeeee;
+    border-top: none;
+}
+
+.plan_list tr th {
+    font-weight: normal;
+    background-color: #f0f0f0;
+    vertical-align: middle;
+    padding: 0 30px;
+    border: 1px solid #f0f0f0;
+    font-size: 13px;
+    color: #666666;
+    text-align: left;
+}
+
+.plan_list tr td {
+    text-align: left;
+    padding: 15px 30px;
+    color: #777777;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.table-expand .el-form-item {
+    margin-bottom: 0;
+}
+
+.guide_content {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    height: 21px;
+}
+
+.guide_content:hover {
+    color: #20a0ff;
+}
+
+.top_right_search .el-input {
+    width: 150px !important;
+}
+
+.top_right_search .el-textarea {
+    width: 150px !important;
+}
+
+.el-form .el-form-item .el-input {
+    width: auto;
+}
+
+.el-form .el-form-item .el-select {
+    width: auto;
+}
+
+#mailList .el-dialog {
+    width: 1200px;
+    height: 673px;
+}
+
+#mailList .el-dialog .el-dialog__body {
+    padding: 10px 20px 10px 10px;
+}
+
+.mailList_content_right {
+    height: 580px;
+    width: calc(100% - 250px);
+    margin-left: 10px;
+    float: right;
+}
+
+#mailList .el-tree {
+    width: 240px;
+    margin-top: 46px;
+    height: 472px;
+    float: left;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.inputBoxWrapper .fromBox {
+    padding: 100px 0;
+}
+
+.inputBoxWrapper .fromBox .wangEditor-container {
+    width: 38%;
+    height: 400px;
+}
+
+.inputBoxWrapper .fromBox .el-button {
+    margin-top: 22px;
+}
+
+.inputBoxWrapper .fromBox .el-form-item__error {
+    position: absolute;
+    left: 90px;
+}
+
+.v-split-line {
+    height: 100%;
+    display: block;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    background-color: #f4f4f4;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.p-tree {
+    border: solid 1px #E4E8F1;
+    border-bottom: none;
+    margin: 10px 0;
+}
+
+.p-tree .item {
+    position: relative;
+    border-bottom: solid 1px #E4E8F1;
+    font-size: 14px;
+    color: #5e6d82;
+    padding: 6px;
+}
+
+.p-tree .item:hover {
+    background-color: #E4E8F1;;
+}
+
+.p-tree .item > .el-checkbox {
+    display: inline-block;
+    width: 180px;
+}
+
+.p-tree .item:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.p-tree .item .actions {
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    float: right;
+    padding-right: 10px;
+}
+
+.p-tree .item .actions .el-tag {
+    position: relative;
+    margin-right: 5px;
+    cursor: default;
+}
+
+.p-tree .item .actions .el-tag a {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 16px;
+    color: white;
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: 0;
+    z-index: 100;
+}
+
+.p-tree .item .actions .el-tag:hover a {
+    background-color: red;
+    opacity: 1;
+}
+
+.p-tree .item-1 {
+    padding-left: 10px;
+}
+
+.p-tree .item-2 {
+    padding-left: 40px;
+}
+
+.p-tree .item-3 {
+    padding-left: 70px;
+}
+.save-btn{
+	width:88px;
+	text-align: center;
+}
+
+/*弹窗*/
+.appoint .el-dialog {
+    width: 820px;
+}
+
+.appoint .appoint_body {
+    height: 450px;
+}
+.el-dialog__body {
+    height:370px;
+    overflow: auto;
+    padding: 30px 20px;
+    color: #606266;
+    font-size: 14px;
+}
+.appoint .el-dialog__body {
+    padding: 20px 30px !important;
+}
+
+.appoint .el-dialog__footer {
+    padding: 0 30px 20px !important;
+}
+
+.appoint_body .appoint_body_left {
+    height: 100%;
+    width: 370px;
+    float: left;
+    padding: 5px 10px 10px;
+    border: 1px solid #abdbff;
+    overflow-y: auto;
+    position: relative;
+
+}
+
+.appoint_body_left .appoint_head {
+    width: 100%;
+    min-height: 36px;
+}
+
+.appoint_body_left .appoint_head span {
+    color: #0188fd;
+    display: inline;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.appoint_body_left .appoint_head em {
+    display: inline;
+    font-style: normal;
+    line-height: 28px;
+    color: #666;
+    white-space: pre-wrap;
+}
+
+.appoint_body_left .appoint_head em i {
+    font-size: 10px;
+    font-weight: 800;
+    color: #666;
+    margin: 0 2px;
+}
+
+.appoint_body_left .appoint_head em strong {
+    font-size: 16px;
+    font-weight: normal;
+    color: #666;
+}
+
+.appoint_body .appoint_body_right {
+    height: 100%;
+    width: 370px;
+    float: right;
+    border: 1px solid #abdbff;
+    padding: 10px 10px 10px;
+    overflow-y: scroll;
+}
+
+.appoint_body_left .el-input__inner {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+
+}
+
+.appoint_body_left .appoint_body_rightBtm {
+    width: 100%;
+    height: 414px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.appoint_body_left .searchDelete {
+    position: absolute;
+    color: #999;
+    right: 15px;
+    top: 52px;
+    /*top:20px;*/
+}
+.assign_ul li {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    height: 30px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.assign_ul li:not(:last-child){
+    margin: 0 10px 10px 0;
+}
+.SectorBox{
+    max-height: 200px;
+    width:279px;
+    overflow: scroll;
+    background:#f7f7f7;
+    margin-top:11px;
+    padding:0 5px 5px 0;
+}
+.SectorBox::-webkit-scrollbar{
+    width: 5px;
+    height:5px;
+    background:#f7f7f7;
+} /* 这是针对缺省样式 (必须的) */
+.SectorBox::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius:5px;
+} /* 滑块颜色 */
+.SectorBox::-webkit-scrollbar-corner{
+    width:5px;
+    height:5px;
+    background:#f7f7f7;
+}
+.assign_ul_box{
+    margin:10px 12px;
+}
+.assign_ul_box>li{
+    position:relative;
+    cursor:pointer;
+    /*****防止li标签频繁点击变蓝*****/
+    -moz-user-select: none; /*mozilar*/
+    -webkit-user-select: none; /*webkit*/
+    -ms-user-select: none; /*IE*/
+    user-select: none;
+}
+.assign_ul_box>li>b{
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    background: #999;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    line-height: 12px;
+    color:#fff;
+    display: none;
+}
+.assign_ul_box>li:hover b{
+    display:block;
+}
+.assign_ul_box>li b:hover{
+    background:#1ab395;
+}
+.assign_ul li span {
+    display: inline-block;
+    color: #222;
+    font-size: 14px;
+    line-height: 28px;
+    padding: 0 5px;
+}
+
+
+/***********跟进记录************/
+.contentBox{
+
+}
+.contentBox .submitBox{
+    width: 640px;
+    height: 330px;
+    background: #D2E9FF;
+    overflow-y: auto;
+    padding: 20px 20px 0 0;
+    display:none;
+    position:absolute;
+    z-index:111;
+}
+.contentBox .el-form-item{
+    width:300px;
+    float:left;
+}
+.submitBox .el-textarea__inner{
+    width:100%;
+    min-height:110px!important;
+}
+.contentBox .el-form-item .el-input{
+    width:200px;
+}
+.record{
+    width:100%;
+    height:auto;
+}
+.record ul{
+    width:60%;
+}
+.record ul .lists{
+    margin:10px 0;
+    font-size:16px;
+    border-bottom: 1px solid #f7f7f7;
+}
+.record ul .lists .linkman{
+    width:100%;
+    margin:5px 0;
+}
+.record ul .lists .linkman li{
+    color:#999;
+    float:left;
+    margin-right:30px;
+}
+.record ul .lists .linkman_content{
+    width:100%;
+    color:#666;
+    padding:10px;
+    text-indent:32px;
+    min-height:100px;
+    max-height:200px;
+    overflow-y:auto;
+    background:#f7f7f7;
+
+}
+/*.menuList{*/
+    /*width:100%;*/
+    /*position:relative;*/
+    /*!*height:22px;*!*/
+
+/*}*/
+/*.menuList .menuFirst{*/
+    /*height:22px;*/
+/*}*/
+ /*.menuList .menuFirst .show{*/
+     /*float:left;*/
+ /*}*/
+/*.menuList .menuFirst .btn_next{*/
+    /*width:15px;*/
+    /*height:20px;*/
+    /*background:#1ab395;*/
+    /*float:left;*/
+/*}*/
+/*.menuList .menuOnther{*/
+    /*width:70px;*/
+    /*background:#fff;*/
+    /*position:absolute;*/
+    /*display:none;*/
+    /*z-index:1;*/
+    /*box-shadow: 0 3px 3px rgba(0,0,0,0.2);*/
+    /*padding:0 0 5px 5px;*/
+/*}*/
+.enterprise_sign{
+    width:55px;
+    text-align: center;
+}
+.choose_time{
+   padding:0 30px;
+}
+.delayVisible .el-dialog--small {
+    width: 38%;
+}
+.payVisible .pay_box{
+    display:flex;
+
+}
+.payVisible .pay_box .pay_box_from{
+    width:50%;
+    border-right:1px solid #e4e4e4;
+}
+.payVisible .pay_box .el-textarea{
+    width:70%;
+}
+.payVisible .pay_box .dialog-footer{
+    float: right;
+    margin-right:10px;
+}
+.payVisible .pay_box .pay_box_show{
+    width:50%;
+    height:380px;
+    overflow: auto;
+}
+.payVisible .pay_box .pay_box_show h5{
+    font-size:18px;
+    background:#f7f7f7;
+    padding:5px 0 5px 15px ;
+}
+.choose_time ul li{
+    width:88px;
+    height:36px;
+    font-size:14px;
+    text-align: center;
+    line-height:36px;
+    float:left;
+    border:1px solid #e4e4e4;
+    margin-right:30px;
+}
+.choose_time .delayT{
+    background:#0188fd;
+    color:#fff;
+    border:1px solid #0188fd;
+}
+.choose_time span{
+    color:#9C9C9C;
+    background:#f7f7f7;
+}
+.choose_time .show_time{
+    padding:25px 0 10px 0;
+    color:#999;
+}

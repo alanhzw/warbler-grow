@@ -1,0 +1,120 @@
+.newgoods {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 1px solid #ddd;
+	background: #FFF;
+	width: 100%;
+	margin: 40px 20px 20px 20px;
+}
+
+
+/* 设置奇数行颜色 */
+tbody tr:nth-child(odd) {
+	background: whitesmoke;
+}
+
+/* 设置偶数行颜色 */
+tbody tr:nth-child(even) {
+	background: white;
+}
+
+
+table td,
+table th {
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+table th {
+	border-bottom: 2px solid #ddd;
+}
+
+.pagination {
+	margin-left: 25px;
+}
+
+.pagination a {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -7px;
+	line-height: 1.42857143;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.newgoods a {
+	color: white;
+}
+
+.del {
+	cursor: pointer;
+}
+
+.bg {
+	background-color: skyblue !important;
+}
+
+.img-show {
+	width: 100px;
+	height: 100px;
+}
+
+.operation {
+	position: absolute;
+	margin-left: 5px;
+	float: left;
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.operation1 {
+	left: 5px;
+	top: 45px;
+}
+
+.operation2 {
+	left: 65px;
+	top: 45px;
+}
+.operation-box{
+	width: 135px;
+	position: relative;
+}
+.shopAdmin{
+	position: relative;
+	top: 50px;
+	left: 100px;
+}

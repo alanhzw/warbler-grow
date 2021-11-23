@@ -1,0 +1,130 @@
+/* 初始化 */
+body {
+	background-color: #f5f5f5;
+}
+
+
+/* `````````nav`````````` */
+.nav-box {
+	width: 100%;
+	height: 80px;
+	background-color: #e2231a;
+}
+
+.nav {
+	width: 990px;
+	height: 80px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	top: 20px;
+	left: 0;
+}
+
+.nav-link {
+	position: absolute;
+	top: 25px;
+	left: 300px;
+}
+
+.nav-link a {
+	font-size: 14px;
+	color: white;
+}
+
+.nav-link a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+.nav-link li {
+	margin-right: 40px;
+}
+
+/* `````````详细信息```````````` */
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.box {
+	width: 990px;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.sider dl dt {
+	font-size: 14px;
+	height: 28px;
+	line-height: 28px;
+	color: #333;
+	font-weight: 700;
+}
+
+.sider dl dd a {
+	font-size: 14px;
+	color: #777;
+}
+
+.sider dd {
+	margin-top: 10px;
+}
+
+.sider dl dd a:hover {
+	text-decoration: underline;
+	color: #e2231a;
+}
+
+
+/* ````````````main-information``````````````` */
+
+/* ``````````myaddress``````````` */
+.main-address,.main-password,.main-header,.main-information{
+	padding-top: 50px;
+	padding-left: 150px;
+	width: 720px;
+	height: 450px;
+	background-color: white;
+	position: relative;
+	top: -205px;
+	left: 110px;
+}
+.main-address div{
+	margin: 10px 20px 20px 10px;
+}
+.main-address input{
+	width: 300px;
+}
+.address-submit{
+	position: relative;
+	right: -75px;
+}
+/* ``````````mypassword`````````` */
+
+/* ``````````myinfomation`````````` */
+.main-information img,.main-header img{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100px;
+	height: 100px;
+}
+.information-head{
+	position: relative;
+	top: -88px;
+}
+
+/* ````````````收藏`````````` */
+.table{
+	width: 600px;
+}
+.table td{
+	text-align: center;
+}
+.cgimg-show{
+	width: 100px;
+	height: 100px;
+}

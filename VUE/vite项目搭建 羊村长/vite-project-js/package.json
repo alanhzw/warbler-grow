@@ -1,0 +1,40 @@
+{
+  "name": "vite-project-js",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vite",
+    "serve": "vite preview",
+    "build:dev": "vite build --mode development",
+    "build:pro": "vite build --mode production"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "element-plus": "^1.0.2-beta.35",
+    "mockjs": "^1.1.0",
+    "vant": "^3.0.10",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.5",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.3",
+    "compression-webpack-plugin": "^7.1.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.8.0",
+    "postcss-pxtorem": "^6.0.0",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8",
+    "vite": "^2.1.0",
+    "vite-plugin-compression": "^0.2.3",
+    "vite-plugin-imp": "^2.0.4",
+    "vite-plugin-mock": "^2.3.0",
+    "vite-plugin-style-import": "^0.8.1"
+  }
+}

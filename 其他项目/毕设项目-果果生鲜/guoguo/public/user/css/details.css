@@ -1,0 +1,157 @@
+.divider {
+    width: 100%;
+    height: 42px;
+    background-color: #f2f2f2;
+}
+
+.search {
+    width: 400px;
+    right: 360px;
+}
+
+.search-button2 {
+    width: 80px;
+    height: 36px;
+    background-color: #474e5c;
+    color: white;
+    padding: -2px;
+    position: absolute;
+    bottom: 44px;
+    right: 348px;
+    border: none;
+}
+
+.search-button {
+    right: 315px;
+    background-color: #00c65d;
+}
+
+.header-search a {
+    color: white;
+}
+
+.icon {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sort-title {
+    width: 990px;
+    margin: 0 auto;
+    line-height: 40px;
+    color: #666666;
+    font-size: 14px;
+}
+
+.business-title {
+    display: inline;
+    float: right;
+}
+
+.business-title a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.details-main {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.details-main img {
+    width: 350px;
+    height: 350px;
+    margin-top: 20px;
+}
+
+.gname {
+    font: 700 16px Arial, "microsoft yahei";
+    color: #666;
+    padding-top: 10px;
+    line-height: 28px;
+    margin-bottom: 5px;
+}
+
+.ginfo {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #e4393c;
+    font-size: 12px;
+    max-height: 3em;
+}
+
+.gprice {
+    font-size: 18px;
+}
+
+.gprice span {
+    color: red;
+    font-size: 28px;
+}
+
+.add-car,
+.add-collection {
+    width: 90px;
+    height: 46px;
+    line-height: 46px;
+    padding: 10px 26px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #df3033;
+    color: #fff;
+    cursor: pointer;
+}
+
+.comment-title {
+    width: 800px;
+    margin: auto;
+}
+
+.comment-title span {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.comment-text {
+    width: 800px;
+    height: 60px;
+    resize: none;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.comment-submit {
+    width: 100px;
+    height: 40px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.comment-each {
+    width: 800px;
+    margin: auto;
+    border-bottom: 1px solid #474e5c;
+    margin-bottom: 20px;
+}
+
+.comment-each img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.comment-each span {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.comment-each p {
+    margin-bottom: 20px;
+}

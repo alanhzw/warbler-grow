@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import "./variables";
+
+.box-card.tag {
+  margin-bottom: 10px;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  .tag-label {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+}
+
+.tag-1 {
+  .tag-label {
+    background-color: $--color-primary;
+  }
+}
+
+.tag-2 {
+  .tag-label {
+    background-color: $--color-success;
+  }
+}
+
+.tag-3 {
+  .tag-label {
+    background-color: $--color-warning;
+  }
+}
+
+.tag-4 {
+  .tag-label {
+    background-color: $--color-danger;
+  }
+}
+
+.tag-5 {
+  .tag-label {
+    background-color: $--color-info;
+  }
+}
+
+.tag-6 {
+  .tag-label {
+    background-color: $--color-black;
+  }
+}
+
+.tag-group {
+  .tag {
+    color: white;
+    i {
+      color: inherit !important;
+      background-color: inherit;
+      opacity: 1;
+    }
+    &:hover {
+      i {
+        background-color: inherit;
+        opacity: 0.9;
+      }
+    }
+  }
+  .tag-1 {
+    background-color: $--color-primary;
+  }
+  .tag-2 {
+    background-color: $--color-success;
+  }
+  .tag-3 {
+    background-color: $--color-warning;
+  }
+  .tag-4 {
+    background-color: $--color-danger;
+  }
+  .tag-5 {
+    background-color: $--color-info;
+  }
+  .tag-6 {
+    background-color: $--color-black;
+  }
+}
