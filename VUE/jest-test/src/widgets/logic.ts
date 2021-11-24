@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-23 16:38:36
- * @LastEditTime: 2021-11-23 17:34:06
+ * @LastEditTime: 2021-11-24 16:23:31
  * @FilePath: \jest-test\src\widgets\logic.ts
  */
 
@@ -17,3 +17,7 @@ export const calcDiameter = (width: number, height: number): number => {
 };
 
 export const calcPrizeFontSize = (diameter: number) => diameter / 355;
+
+export const rotatePlateToPrize = (prizeIndex: number, total: number): number => {
+  return 1 - prizeIndex / total;
+};

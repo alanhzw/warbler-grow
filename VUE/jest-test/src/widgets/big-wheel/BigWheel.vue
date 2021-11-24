@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-16 17:02:46
- * @LastEditTime: 2021-11-23 17:09:22
+ * @LastEditTime: 2021-11-24 16:15:48
  * @FilePath: \jest-test\src\widgets\big-wheel\BigWheel.vue
 -->
 <template>
@@ -10,7 +10,7 @@
     <div class="big-wheel"
          :style="{ width: `${ diameter}px`, height: `${diameter}px` }">
       <div class="plate back-option"
-           :style="{backgroundImage: `url(${plate})` }">
+           :style="{backgroundImage: `url(${plate})`,transform:`rotate${plateAngle}turn` }">
         <div class="prize"
              v-for='(item,index) in prizes'
              :key='index'
@@ -21,6 +21,7 @@
         </div>
       </div>
       <div class="pointer back-option"
+           @click='start'
            :style="{ backgroundImage: `url(${pointer})` }">
       </div>
     </div>
@@ -29,7 +30,7 @@
 
 <script lang="ts" setup>
 import { defineProps, ref, PropType, onMounted, computed } from "vue";
-import { calcDiameter, calcPrizeFontSize } from "../logic";
+import { calcDiameter, calcPrizeFontSize, rotatePlateToPrize } from "../logic";
 // @ts-ignore
 import defaultPlate from "./assets/plate.png";
 // @ts-ignore
@@ -37,11 +38,7 @@ import defaultPointer from "./assets/pointer.png";
 
 import Prize from "./prize.vue";
 
-const diameter = ref(355);
-
-const prizeFontSize = computed(() => calcPrizeFontSize(diameter.value));
-
-defineProps({
+const props = defineProps({
   plate: {
     type: String,
     default: defaultPlate,
@@ -55,6 +52,16 @@ defineProps({
     default: () => [],
   },
 });
+
+const diameter = ref(355);
+
+const plateAngle = ref(0);
+
+const start = () => {
+  rotatePlateToPrize(5, props.prizes.length);
+};
+
+const prizeFontSize = computed(() => calcPrizeFontSize(diameter.value));
 
 const bwWrapper = ref<HTMLElement | null>(null);
 

@@ -2,9 +2,10 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-15 17:59:57
- * @LastEditTime: 2021-11-18 17:53:08
+ * @LastEditTime: 2021-11-24 16:09:45
  * @FilePath: \jest-test\src\App.vue
 -->
+
 <template>
   <div id="nav">
     <router-link to="/big-wheel">大转盘活动</router-link>
