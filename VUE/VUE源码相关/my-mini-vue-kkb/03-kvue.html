@@ -1,0 +1,29 @@
+<!--
+ * @Author: 一尾流莺
+ * @Description:
+ * @Date: 2021-11-24 14:29:09
+ * @LastEditTime: 2021-11-24 15:41:00
+ * @FilePath: \my-mini-vue-kkb\03-kvue.html
+-->
+
+<div id='app'>
+  <p>{{counter}}</p>
+  <p>{{counter}}</p>
+  <p>{{counter}}</p>
+</div>
+
+<script src="./MyVue.js"></script>
+
+<script>
+  const app = new MyVue({
+    el: "#app",
+    data: {
+      counter: 1,
+    }
+  })
+  setInterval(() => {
+    app.$data.counter++
+  }, 1000)
+
+
+</script>

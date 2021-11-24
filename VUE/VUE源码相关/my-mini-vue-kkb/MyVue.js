@@ -1,13 +1,13 @@
 /*
  * @Author: 一尾流莺
- * @Description:数据响应式
- * @Date: 2021-11-23 15:54:09
- * @LastEditTime: 2021-11-24 11:49:48
- * @FilePath: \my-mini-vue-kkb\01-reactive.js
+ * @Description:
+ * @Date: 2021-11-24 14:40:04
+ * @LastEditTime: 2021-11-24 15:56:28
+ * @FilePath: \my-mini-vue-kkb\MyVue.js
  */
 
+
 /**
- *
  * @param {*} obj  目标对象
  * @param {*} key  目标对象的一个属性
  * @param {*} val  目标对象的一个属性的初始值
@@ -37,28 +37,16 @@ function defineReactive(obj, key, val) {
   })
 }
 
+
 // 遍历obj 对其每个属性进行响应式处理
 function observe(obj) {
   // 先判断类型, 响应式处理的目标一定要是个对象类型
   if (typeof obj !== 'object' || obj === null) {
     return
   }
-  // 遍历 obj, 对 obj 的每个属性进行响应式处理
-  Object.keys(obj).forEach(key => {
-    defineReactive(obj, key, obj[key])
-  })
+
+  new Observer(this.$data)
 }
-
-const obj = {
-  foo: 'foo',
-  bar: 'bar',
-  friend: {
-    name: 'aa'
-  }
-}
-
-observe(obj)
-
 
 /**
  * @param {*} obj  目标对象
@@ -69,6 +57,39 @@ function $set(obj, key, val) {
   defineReactive(obj, key, val)
 }
 
-$set(obj, 'age', 18)
 
-obj.age = 20
+// 根据传入value的类型做响应的响应式处理
+class Observer {
+  constructor(value) {
+    this.value = value
+    if (Array.isArray(value)) {
+      // todo  数组的响应式处理方式
+    } else {
+      // 对象的响应式处理方式
+      this.walk(value)
+    }
+  }
+
+  // 对象的响应式处理
+  walk(obj) {
+    // 遍历 obj, 对 obj 的每个属性进行响应式处理
+    Object.keys(obj).forEach(key => {
+      defineReactive(obj, key, obj[key])
+    })
+  }
+}
+
+
+/**
+ * 1.对data选项做响应式处理
+ * 2.编译模板
+ */
+class MyVue {
+  constructor(options) {
+    this.$options = options
+    this.$data = options.data
+
+    // data响应式处理
+    observe(this.$data)
+  }
+}

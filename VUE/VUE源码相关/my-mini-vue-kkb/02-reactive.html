@@ -1,0 +1,60 @@
+<!--
+ * @Author: 一尾流莺
+ * @Description:
+ * @Date: 2021-11-24 09:28:52
+ * @LastEditTime: 2021-11-24 15:44:59
+ * @FilePath: \my-mini-vue-kkb\02-reactive.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id='app'>123</div>
+  </body>
+
+
+  <script>
+    function defineReactive(obj, key, val) {
+      // 通过该方法拦截数据
+      Object.defineProperty(obj, key, {
+        // 读取数据的时候会走这里
+        get() {
+          console.log('🚀🚀~ get:', key);
+          return val
+        },
+        // 更新数据的时候会走这里
+        set(newVal) {
+          // 只有当新值和旧值不同的时候 才会触发重新赋值操作
+          if (newVal !== val) {
+            console.log('🚀🚀~ set:', key);
+            val = newVal
+          }
+        }
+      })
+    }
+    const obj = {
+      foo: 'foo',
+      bar: 'bar'
+    }
+
+    defineReactive(obj, 'foo', '')
+
+
+
+    obj.foo = new Date().toLocaleTimeString()
+
+
+
+
+  </script>
+
+</html>
