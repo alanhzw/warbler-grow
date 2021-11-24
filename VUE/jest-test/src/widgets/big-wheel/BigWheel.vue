@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-16 17:02:46
- * @LastEditTime: 2021-11-24 16:15:48
+ * @LastEditTime: 2021-11-24 17:15:41
  * @FilePath: \jest-test\src\widgets\big-wheel\BigWheel.vue
 -->
 <template>
@@ -10,7 +10,8 @@
     <div class="big-wheel"
          :style="{ width: `${ diameter}px`, height: `${diameter}px` }">
       <div class="plate back-option"
-           :style="{backgroundImage: `url(${plate})`,transform:`rotate${plateAngle}turn` }">
+           ref='plateRef'
+           :style="{backgroundImage: `url(${plate})`,transform:`rotate(${plateAngle}turn)` }">
         <div class="prize"
              v-for='(item,index) in prizes'
              :key='index'
@@ -29,8 +30,8 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, ref, PropType, onMounted, computed } from "vue";
-import { calcDiameter, calcPrizeFontSize, rotatePlateToPrize } from "../logic";
+import { defineProps, ref, PropType, onMounted, computed, defineEmits, defineExpose } from "vue";
+import { addStopListener, calcDiameter, calcPrizeFontSize, rotatePlateToPrize } from "../logic";
 // @ts-ignore
 import defaultPlate from "./assets/plate.png";
 // @ts-ignore
@@ -52,21 +53,37 @@ const props = defineProps({
     default: () => [],
   },
 });
+const emit = defineEmits(["start", "over"]);
 
 const diameter = ref(355);
 
 const plateAngle = ref(0);
+const plateRef = ref<HTMLElement | null>(null);
+
+const targetPrize = ref();
 
 const start = () => {
-  rotatePlateToPrize(5, props.prizes.length);
+  emit("start");
+};
+
+const rotateTo = (prizeIndex: number) => {
+  plateAngle.value = rotatePlateToPrize(prizeIndex, props.prizes.length) + 5;
+  targetPrize.value = props.prizes[prizeIndex];
 };
 
 const prizeFontSize = computed(() => calcPrizeFontSize(diameter.value));
 
 const bwWrapper = ref<HTMLElement | null>(null);
 
+defineExpose({
+  rotateTo,
+});
+
 onMounted(() => {
   diameter.value = calcDiameter(bwWrapper.value!.offsetWidth, bwWrapper.value!.offsetHeight);
+  addStopListener(plateRef.value!, () => {
+    emit("over", targetPrize.value.prizeName);
+  });
 });
 </script>
 
@@ -88,6 +105,7 @@ onMounted(() => {
   }
   .plate {
     z-index: 2;
+    transition: all 5s ease-in-out;
   }
   .pointer {
     z-index: 3;
