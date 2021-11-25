@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-24 14:40:04
- * @LastEditTime: 2021-11-25 10:25:13
+ * @LastEditTime: 2021-11-25 11:24:14
  * @FilePath: \my-mini-vue-kkb\MyVue.js
  */
 
@@ -15,11 +15,20 @@
 function defineReactive(obj, key, val) {
   // 递归
   observe(val)
+
+  // 创建 Dep 实例 , 与 key 一一对应
+
+  const dep = new Dep()
+
   // 通过该方法拦截数据
   Object.defineProperty(obj, key, {
     // 读取数据的时候会走这里
     get() {
       console.log('🚀🚀~ get:', key);
+
+      // 依赖收集 Dep.target 就是 一个Watcher
+      Dep.target && dep.addDep(Dep.target)
+
       return val
     },
     // 更新数据的时候会走这里
@@ -32,6 +41,9 @@ function defineReactive(obj, key, val) {
           observe(newVal)
         }
         val = newVal
+
+        // 通知更新
+        dep.notify()
       }
     }
   })
@@ -177,26 +189,53 @@ class Compile {
     })
   }
 
-  // 编译文本
+  /**
+   * 根据指令的类型操作 dom 节点
+   * @param {*} node dom节点
+   * @param {*} exp 表达式 this.$vm[key]
+   * @param {*} dir 指令
+   */
+  update(node, exp, dir) {
+    // 1.初始化
+    const fn = this[dir + 'Updater']
+    fn && fn(node, this.$vm[exp])
+    // 2.更新
+    new Watcher(this.$vm, exp, function(val) {
+      fn && fn(node, val)
+    })
+
+  }
+
+  // 编译文本 {{xxx}}
   compileText(node) {
     // 可以通过 RegExp.$1 来获取到 插值表达式中间的内容 {{key}}
     // this.$vm[RegExp.$1] 等价于 this.$vm[key]
     // 然后把这个 this.$vm[key] 的值 赋值给文本 就完成了 文本的初始化
-    node.textContent = this.$vm[RegExp.$1]
+    this.update(node, RegExp.$1, 'text')
   }
 
-  // my-text 指令对应的方法
+  // my-text 指令
   text(node, exp) {
+    this.update(node, exp, 'text')
+  }
+
+  // my-text 指令对应的实操
+  textUpdater(node, value) {
     // 这个指令用来修改节点的文本,这个指令长这样子 my-text = 'key'
     // 把 this.$vm[key] 赋值给文本 即可
-    node.textContent = this.$vm[exp]
+    node.textContent = value
   }
 
-  // my-html 指令对应的方法
+  // my-html 指令
   html(node, exp) {
+    this.update(node, exp, 'html')
+  }
+
+  // my-html 指令对应的实操
+  htmlUpdater(node, value) {
     // 这个指令用来修改节点的文本,这个指令长这样子 my-html = 'key'
     // 把 this.$vm[key] 赋值给innerHTML 即可
-    node.innerHTML = this.$vm[exp]
+    node.innerHTML = value
   }
 
   // 是否是插值表达式{{}}
@@ -206,3 +245,45 @@ class Compile {
 
 }
 
+// 监听器:负责依赖的更新
+class Watcher {
+  /**
+   * @param {*} vm vue 实例
+   * @param {*} key Watcher实例对应的 data.key
+   * @param {*} cb 更新函数
+   */
+  constructor(vm, key, updateFn) {
+    this.vm = vm
+    this.key = key
+    this.updateFn = updateFn
+
+    // 触发依赖收集 把当前 Watcher 赋值给 Dep 的静态属性 target
+    Dep.target = this
+    // 故意读一下 data.key 的值 为了触发 defineReactive 中的 get
+    this.vm[this.key]
+    // 收集依赖以后 再置为null
+    Dep.target = null
+  }
+
+  // 更新方法 未来被 Dep 调用
+  update() {
+    // 执行实际的更新操作
+    this.updateFn.call(this.vm, this.vm[this.key])
+  }
+}
+
+
+class Dep {
+  constructor() {
+    this.deps = [] // 存放 Watchers
+  }
+  // 收集 Watchers
+  addDep(dep) {
+    this.deps.push(dep)
+  }
+
+  // 通知所有的 Watchers 进行更新 这里的 dep 指的就是收集起来的 Watcher
+  notify() {
+    this.deps.forEach(dep => dep.update())
+  }
+}
