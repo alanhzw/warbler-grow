@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-24 14:40:04
- * @LastEditTime: 2021-11-25 11:24:14
+ * @LastEditTime: 2021-11-25 15:35:05
  * @FilePath: \my-mini-vue-kkb\MyVue.js
  */
 
@@ -157,7 +157,6 @@ class Compile {
     childNodes.forEach(node => {
       // 判断节点的类型 本文以元素和文本为主要内容 不考虑其他类型
       if (node.nodeType === 1) { // 这个分支代表节点的类型是元素
-
         // 获取到元素上的属性
         const attrs = node.attributes
         // 把 attrs 转换成真实数组
@@ -173,12 +172,17 @@ class Compile {
             const dir = attrName.substring(3)
             // 如果this[xxx]指令存在  执行这个指令
             this[dir] && this[dir](node, exp)
-
           }
+          // 判断节点属性是不是一个事件
+          if (this.isEvent(attrName)) {
+            // @click="onClick"
+            const dir = attrName.substring(1) // click
+            // 事件监听
+            this.eventHandler(node, exp, dir)
+          }
+
         })
-
       } else if (this.isInter(node)) { // 这个分支代表节点的类型是文本 并且是个插值语法{{}}
-
         // 文本的初始化
         this.compileText(node)
       }
@@ -188,6 +192,18 @@ class Compile {
       }
     })
   }
+
+  isEvent(dir) {
+    return dir.indexOf("@") === 0
+  }
+
+  eventHandler(node, exp, dir) {
+    // 根据函数名字在配置项中获取函数体
+    const fn = this.$vm.$options.methods && this.$vm.$options.methods[exp]
+    // 添加事件监听
+    node.addEventListener(dir, fn.bind(this.$vm))
+  }
+
 
   /**
    * 根据指令的类型操作 dom 节点
@@ -237,6 +253,24 @@ class Compile {
     // 把 this.$vm[key] 赋值给innerHTML 即可
     node.innerHTML = value
   }
+
+
+  // my-model指令 my-model='xxx'
+  model(node, exp) {
+    // update 方法只完成赋值和更新
+    this.update(node, exp, 'model')
+    // 事件监听
+    node.addEventListener('input', e => {
+      // 将新的值赋值给 data.key 即可
+      this.$vm[exp] = e.target.value
+    })
+  }
+
+  modelUpdater(node, value) {
+    // 给表单元素赋值
+    node.value = value
+  }
+
 
   // 是否是插值表达式{{}}
   isInter(node) {

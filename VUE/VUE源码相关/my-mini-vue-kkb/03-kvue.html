@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-24 14:29:09
- * @LastEditTime: 2021-11-25 10:09:06
+ * @LastEditTime: 2021-11-25 15:37:19
  * @FilePath: \my-mini-vue-kkb\03-kvue.html
 -->
 
@@ -12,7 +12,10 @@
   <p>{{counter}}</p>
   <p my-text='counter'></p>
   <p my-html='desc'></p>
-
+  <button @click='add'>点击增加</button>
+  <p>{{name}}</p>
+  <input type="text"
+         my-model='name'>
 </div>
 
 <script src="./MyVue.js"></script>
@@ -22,14 +25,13 @@
     el: "#app",
     data: {
       counter: 1,
-      desc: `<span style='color:red' >一尾流莺</span>`
+      desc: `<span style='color:red' >一尾流莺</span>`,
+      name: "",
+    },
+    methods: {
+      add() {
+        this.counter++
+      }
     }
   })
-  setInterval(() => {
-    app.counter++
-  }, 1000)
-
-
-
-
 </script>

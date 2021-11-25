@@ -2,9 +2,38 @@
  * @Author: 一尾流莺
  * @Description:数据响应式
  * @Date: 2021-11-23 15:54:09
- * @LastEditTime: 2021-11-24 11:49:48
+ * @LastEditTime: 2021-11-25 15:13:36
  * @FilePath: \my-mini-vue-kkb\01-reactive.js
  */
+
+
+
+// 数组响应式
+
+// 1.替换数组原型中的7个方法
+
+const originalProto = Array.prototype;
+
+// 备份一份,修改备份
+
+const arrayProto = Object.create(originalProto);
+
+['push', 'pop', 'shift', 'unshift', 'reverse', 'sort', 'splice'].forEach(method => {
+  arrayProto[method] = function() {
+    // 原始操作
+    originalProto[method].apply(this, arguments)
+    // 覆盖操作:通知更新
+    console.log(`数组执行${method}操作`);
+  }
+})
+
+
+
+
+
+
+
+
 
 /**
  *
@@ -43,10 +72,26 @@ function observe(obj) {
   if (typeof obj !== 'object' || obj === null) {
     return
   }
-  // 遍历 obj, 对 obj 的每个属性进行响应式处理
-  Object.keys(obj).forEach(key => {
-    defineReactive(obj, key, obj[key])
-  })
+  //判断传入的obj类型
+
+  if (Array.isArray(obj)) {
+    // 覆盖原型 替换7个变更操作
+    obj.__proto__ = arrayProto
+    // 对数组内部的元素执行相应化处理
+    const keys = Object.keys(obj)
+
+    for (let i = 0; i < obj.length; i++) {
+      observe(obj[i])
+    }
+
+  } else {
+    // 遍历 obj, 对 obj 的每个属性进行响应式处理
+    Object.keys(obj).forEach(key => {
+      defineReactive(obj, key, obj[key])
+    })
+  }
+
+
 }
 
 const obj = {
@@ -54,7 +99,8 @@ const obj = {
   bar: 'bar',
   friend: {
     name: 'aa'
-  }
+  },
+  arr: [1, 2, 3, 4]
 }
 
 observe(obj)
@@ -72,3 +118,8 @@ function $set(obj, key, val) {
 $set(obj, 'age', 18)
 
 obj.age = 20
+
+
+
+
+obj.arr.push(6)
