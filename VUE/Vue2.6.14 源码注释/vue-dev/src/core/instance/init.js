@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description: initMixin 合并配置
  * @Date: 2021-07-07 17:46:27
- * @LastEditTime: 2021-07-22 08:36:23
+ * @LastEditTime: 2021-11-26 14:37:24
  * @FilePath: \vue-dev\src\core\instance\init.js
  */
 
@@ -27,53 +27,53 @@ let uid = 0
 
 
 /**
- * @description: 定义 Vue.prototype._init 方法 
+ * @description: 定义 Vue.prototype._init 方法
  * @param {*} Vue  Vue 构造函数
  */
-export function initMixin (Vue: Class<Component>) {
+export function initMixin(Vue: Class<Component>) {
 
   /**
    * 给Vue的原型上挂载一个_init方法
    * 负责 Vue 的初始化过程
    */
-  Vue.prototype._init = function (options?: Object) {
+  Vue.prototype._init = function(options?: Object) {
 
-// ```````````````````````````````````````````````````第一部分`````````````````````````````````````````````````
+    // ```````````````````````````````````````````````````第一部分`````````````````````````````````````````````````
     // 获取 vue 实例
     const vm: Component = this
     // 每个 vue 实例都有一个 _uid，并且是依次递增的，确保唯一性
-    vm._uid = uid++ 
+    vm._uid = uid++
 
 
-    
-   //````````````````````````性能测量开始  不重要`````````````````````∧
+
+    //````````````````````````性能测量开始  不重要`````````````````````∧
     let startTag, endTag
     if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
       startTag = `vue-perf-start:${vm._uid}`
       endTag = `vue-perf-end:${vm._uid}`
       mark(startTag)
     }
-   //````````````````````````性能测量开始  不重要`````````````````````∨
+    //````````````````````````性能测量开始  不重要`````````````````````∨
 
 
-    
+
     // vue实例不应该是一个响应式的，做个标记
     vm._isVue = true
 
 
 
-// ```````````````````````````````````````````````````第二部分`````````````````````````````````````````````````
+    // ```````````````````````````````````````````````````第二部分`````````````````````````````````````````````````
 
     /**
-     * 处理组件配置项 
+     * 处理组件配置项
      * 对options进行合并，vue会将相关的属性和方法都统一放到vm.$options中，为后续的调用做准备工作。
      * vm.$option的属性来自两个方面，一个是Vue的构造函数(vm.constructor)预先定义的，一个是new Vue时传入的入参对象
      */
     if (options && options._isComponent) {
-    /**
-     * 如果是子组件初始化时走这里,这里只做了一些性能优化
-     * 将组件配置对象上的一些深层次属性放到 vm.$options 选项中，以提高代码的执行效率
-     */
+      /**
+       * 如果是子组件初始化时走这里,这里只做了一些性能优化
+       * 将组件配置对象上的一些深层次属性放到 vm.$options 选项中，以提高代码的执行效率
+       */
       initInternalComponent(vm, options)
     } else {
       /**
@@ -92,7 +92,7 @@ export function initMixin (Vue: Class<Component>) {
     }
 
 
-// ```````````````````````````````````````````````````第三部分`````````````````````````````````````````````````
+    // ```````````````````````````````````````````````````第三部分`````````````````````````````````````````````````
 
 
     //在非生产环境下执行了initProxy函数,参数是实例;在生产环境下设置了实例的_renderProxy属性为实例自身
@@ -101,7 +101,7 @@ export function initMixin (Vue: Class<Component>) {
     } else {
       vm._renderProxy = vm
     }
-    
+
     //设置了实例的_self属性为实例自身
     vm._self = vm
     // 初始化组件实例关系属性, 比如 $parent、$children、$root、$refs 等  不是组件生命周期mounted,created...
@@ -111,7 +111,7 @@ export function initMixin (Vue: Class<Component>) {
      * 而是子组件本身，也就是说事件的派发和监听者都是子组件本身，和父组件无关
      */
     initEvents(vm)
-    // render初始化 初始化插槽, 获取 this.slots , 定义this._c以及$createElement ,也就是createElement方法,平时使用的 h 函数
+    // render初始化 初始化插槽, 获取 this.slots , 定义 this._c 以及 $createElement ,也就是 createElement 方法,平时使用的 h 函数
     initRender(vm)
     // 调用创建之前的钩子函数  执行 beforeCreate 生命周期函数
     //可以根据beforeCreate调用的时期,来推测在beforeCreate中都可以获取哪些东西.
@@ -125,23 +125,23 @@ export function initMixin (Vue: Class<Component>) {
     initProvide(vm) // resolve provide after data/props
     // 调用创建完成的钩子函数  执行 created 生命周期函数
     // created中就可以访问数据了
-    callHook(vm, 'created') 
+    callHook(vm, 'created')
 
 
 
     //通过_init() 可以知道 beforeCreate 生命周期不可以访问数据  因为还没有初始化 但是可以拿到关系属性,插槽,自定义事件
 
-   //`````````````````````性能测量结束  不重要`````````````````````∧
+    //`````````````````````性能测量结束  不重要`````````````````````∧
 
     if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
       vm._name = formatComponentName(vm, false)
       mark(endTag)
       measure(`vue ${vm._name} init`, startTag, endTag)
     }
-   //`````````````````````性能测量结束  不重要`````````````````````∨
+    //`````````````````````性能测量结束  不重要`````````````````````∨
 
 
-// ```````````````````````````````````````````````````第四部分`````````````````````````````````````````````````
+    // ```````````````````````````````````````````````````第四部分`````````````````````````````````````````````````
 
 
     /**
@@ -149,7 +149,7 @@ export function initMixin (Vue: Class<Component>) {
      * 存在el则默认挂载到el上 不存在的时候不挂载  需要手动挂载
      */
     if (vm.$options.el) {
-       // 调用 $mount 方法，进入挂载阶段
+      // 调用 $mount 方法，进入挂载阶段
       vm.$mount(vm.$options.el)
     }
   }
@@ -162,8 +162,8 @@ export function initMixin (Vue: Class<Component>) {
  * @param {*} options 传递进来的配置
  */
 
-export function initInternalComponent (vm: Component, options: InternalComponentOptions) {
-  
+export function initInternalComponent(vm: Component, options: InternalComponentOptions) {
+
   //基于组件构造函数上的配置对象 创建vm.$options
   const opts = vm.$options = Object.create(vm.constructor.options)
 
@@ -195,7 +195,7 @@ export function initInternalComponent (vm: Component, options: InternalComponent
  * @return {*} options 配置选项
  */
 
-export function resolveConstructorOptions (Ctor: Class<Component>) {
+export function resolveConstructorOptions(Ctor: Class<Component>) {
   //从实例构造函数上获取配置 options
   let options = Ctor.options
   if (Ctor.super) {
@@ -205,7 +205,7 @@ export function resolveConstructorOptions (Ctor: Class<Component>) {
      *  然后再用递归的方式获取基类上的配置选项,也就是获取所有上级的options合集
      */
     const superOptions = resolveConstructorOptions(Ctor.super)
-    
+
     // Ctor.superOptions:父级组件的options  Vue构造函数上的options,如directives,filters,....
     const cachedSuperOptions = Ctor.superOptions
 
@@ -225,7 +225,7 @@ export function resolveConstructorOptions (Ctor: Class<Component>) {
 
       // 选项合并，将合并结果赋值为 Ctor.options
       options = Ctor.options = mergeOptions(superOptions, Ctor.extendOptions)
-      
+
       if (options.name) {
         options.components[options.name] = Ctor
       }
@@ -242,7 +242,7 @@ export function resolveConstructorOptions (Ctor: Class<Component>) {
  * @return {*} modified
  */
 
-function resolveModifiedOptions (Ctor: Class<Component>): ?Object {
+function resolveModifiedOptions(Ctor: Class<Component>): ?Object {
   // 声明修改项
   let modified
   // 获取构造函数选项

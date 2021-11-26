@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-25 16:36:19
- * @LastEditTime: 2021-11-25 16:37:25
+ * @LastEditTime: 2021-11-26 15:04:34
  * @FilePath: \vue-dev\examples\test\01-test.html
 -->
 <!DOCTYPE html>
@@ -15,16 +15,28 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--  umd 携带编译器 -->
     <script src="../../dist/vue.js"></script>
 
   </head>
 
   <body>
-    <div id='app'></div>
+    <div id='app'>初始化流程</div>
   </body>
   <script>
     new Vue({
-      el: '#app'
+      el: '#app',
+      data: {
+        foo: "foo"
+      },
+      method: {
+        aa() {
+
+        },
+        bb() {
+
+        }
+      }
     })
   </script>
 

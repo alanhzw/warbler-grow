@@ -16,7 +16,7 @@ import VNode, { createEmptyVNode } from '../vdom/vnode'
 
 import { isUpdatingChildComponent } from './lifecycle'
 
-export function initRender (vm: Component) {
+export function initRender(vm: Component) {
   vm._vnode = null // the root of the child tree
   vm._staticTrees = null // v-once cached trees
   const options = vm.$options
@@ -54,20 +54,26 @@ export function initRender (vm: Component) {
 export let currentRenderingInstance: Component | null = null
 
 // for testing only
-export function setCurrentRenderingInstance (vm: Component) {
+export function setCurrentRenderingInstance(vm: Component) {
   currentRenderingInstance = vm
 }
 
-export function renderMixin (Vue: Class<Component>) {
+export function renderMixin(Vue: Class<Component>) {
   // install runtime convenience helpers
   installRenderHelpers(Vue.prototype)
 
-  Vue.prototype.$nextTick = function (fn: Function) {
+  Vue.prototype.$nextTick = function(fn: Function) {
     return nextTick(fn, this)
   }
 
-  Vue.prototype._render = function (): VNode {
+
+  /**
+   * render 函数
+   */
+  Vue.prototype._render = function(): VNode {
+    // 保存 Vue 实例
     const vm: Component = this
+    // 取到 vm.$options 上面的 render 和 _parentVnode 属性
     const { render, _parentVnode } = vm.$options
 
     if (_parentVnode) {

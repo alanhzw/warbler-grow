@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-07-07 17:46:27
- * @LastEditTime: 2021-11-23 10:57:56
+ * @LastEditTime: 2021-11-26 11:52:34
  * @FilePath: \vue-dev\src\platforms\web\runtime\index.js
  */
 /* @flow */
@@ -38,7 +38,8 @@ extend(Vue.options.directives, platformDirectives)
 extend(Vue.options.components, platformComponents)
 
 
-// 声明一个补丁函数__patch__  用于diff
+// 声明一个补丁函数__patch__  把虚拟dom 转化为真实 dom  vdom => dom
+// diff 算法
 Vue.prototype.__patch__ = inBrowser ? patch : noop
 
 
@@ -54,6 +55,7 @@ Vue.prototype.$mount = function(
   el?: string | Element,
   hydrating?: boolean
 ): Component {
+
   //
   el = el && inBrowser ? query(el) : undefined
 

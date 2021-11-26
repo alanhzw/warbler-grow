@@ -1,24 +1,24 @@
 /*
  * @Author: 一尾流莺
- * @Description: 
+ * @Description:
  * @Date: 2021-07-07 17:46:27
- * @LastEditTime: 2021-07-12 15:43:28
+ * @LastEditTime: 2021-11-26 11:54:55
  * @FilePath: \vue-dev\src\core\index.js
  */
 
-//Vue的核心方法
+// Vue的核心方法
 import Vue from './instance/index'
 
-//定义了全局API的相关方法
+// 定义了全局API的相关方法
 import { initGlobalAPI } from './global-api/index'
 
-//初始化_isServer,判断是否ssr
+// 初始化_isServer,判断是否ssr
 import { isServerRendering } from 'core/util/env'
 
 import { FunctionalRenderContext } from 'core/vdom/create-functional-component'
 
 
-//初始化全局API，如Vue.util,Vue.set,Vue.use等
+// 初始化全局API，如Vue.util/Vue.set/Vue.use/vue.delete/vue.component等
 initGlobalAPI(Vue)
 
 
@@ -35,7 +35,7 @@ Object.defineProperty(Vue.prototype, '$isServer', {
 
 //原型属性定义'$ssrContext',并拦截监听
 Object.defineProperty(Vue.prototype, '$ssrContext', {
-  get () {
+  get() {
     /* istanbul ignore next */
     return this.$vnode && this.$vnode.ssrContext
   }

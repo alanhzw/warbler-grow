@@ -55,36 +55,47 @@ export function initLifecycle(vm: Component) {
   vm._isBeingDestroyed = false
 }
 
+
+/**
+ *
+ * @param {*} Vue
+ */
 export function lifecycleMixin(Vue: Class<Component>) {
+
+  /**
+   *
+   * @param {*} vnode
+   * @param {*} hydrating
+   */
   Vue.prototype._update = function(vnode: VNode, hydrating?: boolean) {
+    //
     const vm: Component = this
+    //
     const prevEl = vm.$el
+    // 获取上一次的虚拟dom  初始化的时候为 null
     const prevVnode = vm._vnode
+    //
     const restoreActiveInstance = setActiveInstance(vm)
     vm._vnode = vnode
-    // Vue.prototype.__patch__ is injected in entry points
-    // based on the rendering backend used.
-    if (!prevVnode) {
-      // initial render
+
+    // 看看有没有上一次的虚拟dom
+    if (!prevVnode) { // 没有 prevVnode 的话就执行初次渲染的逻辑
       vm.$el = vm.__patch__(vm.$el, vnode, hydrating, false /* removeOnly */)
-    } else {
-      // updates
+    } else { // 有 prevVnode 的话 就执行更新逻辑
       vm.$el = vm.__patch__(prevVnode, vnode)
     }
+    // 这一步执行完 页面上的数据就会被渲染出来 初始化过程结束
     restoreActiveInstance()
-    // update __vue__ reference
     if (prevEl) {
       prevEl.__vue__ = null
     }
     if (vm.$el) {
       vm.$el.__vue__ = vm
     }
-    // if parent is an HOC, update its $el as well
     if (vm.$vnode && vm.$parent && vm.$vnode === vm.$parent._vnode) {
       vm.$parent.$el = vm.$el
     }
-    // updated hook is called by the scheduler to ensure that children are
-    // updated in a parent's updated hook.
+
   }
 
   Vue.prototype.$forceUpdate = function() {
@@ -138,6 +149,13 @@ export function lifecycleMixin(Vue: Class<Component>) {
   }
 }
 
+
+/**
+ * 挂载组件
+ * @param {*} vm
+ * @param {*} el
+ * @param {*} hydrating
+ */
 export function mountComponent(
   vm: Component,
   el: ?Element,
@@ -164,10 +182,12 @@ export function mountComponent(
       }
     }
   }
+
+  // 执行 beforeMount 声明周期
   callHook(vm, 'beforeMount')
 
+  // 组件更新函数
   let updateComponent
-  /* istanbul ignore if */
   if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
     updateComponent = () => {
       const name = vm._name
@@ -186,17 +206,21 @@ export function mountComponent(
       measure(`vue ${name} patch`, startTag, endTag)
     }
   } else {
+    // 组件更新函数 告诉我们组件是如何更新的 这里只是声明 并没有调用
     updateComponent = () => {
+      // 先执行渲染函数 vm._render()  得到虚拟dom
+      // 再交给 vm._update 变成真实 dom
       vm._update(vm._render(), hydrating)
     }
   }
 
-  // we set this to vm._watcher inside the watcher's constructor
-  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
-  // component's mounted hook), which relies on vm._watcher being already defined
-  //
+
 
   // 创建一个 Watcher 实例
+  // Vue2 中一个组件对应一个 Watcher 实例
+  // 这一类的 Watcher 被称为 renderWatcher 组件级的 Watcher
+  // 当它创建的时候回立刻执行 updateComponent 函数
+  // 进行依赖收集的工作  都哪些 data.key 是跟 updateComponent 有关系的,当 data.key 发生变化 会通知 updateComponent 进行更新
   new Watcher(vm, updateComponent, noop, {
     before() {
       if (vm._isMounted && !vm._isDestroyed) {
@@ -218,6 +242,16 @@ export function mountComponent(
   return vm
 }
 
+
+
+/**
+ * 更新组件
+ * @param {*} vm
+ * @param {*} propsData
+ * @param {*} listeners
+ * @param {*} parentVnode
+ * @param {*} renderChildren
+ */
 export function updateChildComponent(
   vm: Component,
   propsData: ?Object,
@@ -225,16 +259,12 @@ export function updateChildComponent(
   parentVnode: MountedComponentVNode,
   renderChildren: ?Array<VNode>
 ) {
+  //
   if (process.env.NODE_ENV !== 'production') {
     isUpdatingChildComponent = true
   }
 
-  // determine whether component has slot children
-  // we need to do this before overwriting $options._renderChildren.
-
-  // check if there are dynamic scopedSlots (hand-written or compiled but with
-  // dynamic slot names). Static scoped slots compiled from template has the
-  // "$stable" marker.
+  //
   const newScopedSlots = parentVnode.data.scopedSlots
   const oldScopedSlots = vm.$scopedSlots
   const hasDynamicScopedSlot = !!(
@@ -244,9 +274,7 @@ export function updateChildComponent(
     (!newScopedSlots && vm.$scopedSlots.$key)
   )
 
-  // Any static slot children from the parent may have changed during parent's
-  // update. Dynamic scoped slots may also have changed. In such cases, a forced
-  // update is necessary to ensure correctness.
+  //
   const needsForceUpdate = !!(
     renderChildren ||               // has new static slots
     vm.$options._renderChildren ||  // has old static slots
