@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-16 17:02:46
- * @LastEditTime: 2021-11-24 17:15:41
+ * @LastEditTime: 2021-11-26 17:25:36
  * @FilePath: \jest-test\src\widgets\big-wheel\BigWheel.vue
 -->
 <template>
@@ -23,6 +23,7 @@
       </div>
       <div class="pointer back-option"
            @click='start'
+           ref='pointerRef'
            :style="{ backgroundImage: `url(${pointer})` }">
       </div>
     </div>
@@ -33,9 +34,9 @@
 import { defineProps, ref, PropType, onMounted, computed, defineEmits, defineExpose } from "vue";
 import { addStopListener, calcDiameter, calcPrizeFontSize, rotatePlateToPrize } from "../logic";
 // @ts-ignore
-import defaultPlate from "./assets/plate.png";
+import defaultPlate from "./assets/WechatIMG65.png";
 // @ts-ignore
-import defaultPointer from "./assets/pointer.png";
+import defaultPointer from "./assets/WechatIMG73.png";
 
 import Prize from "./prize.vue";
 
@@ -58,7 +59,11 @@ const emit = defineEmits(["start", "over"]);
 const diameter = ref(355);
 
 const plateAngle = ref(0);
+
+const pointerAngle = ref(0);
+
 const plateRef = ref<HTMLElement | null>(null);
+const pointerRef = ref<HTMLElement | null>(null);
 
 const targetPrize = ref();
 

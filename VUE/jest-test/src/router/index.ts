@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-15 17:59:57
- * @LastEditTime: 2021-11-16 16:59:40
+ * @LastEditTime: 2021-11-26 17:08:50
  * @FilePath: \jest-test\src\router\index.ts
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
@@ -17,20 +17,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/about",
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/big-wheel1",
+    name: "BigWheelView1",
+    component: () => import(/* webpackChunkName: "about" */ "../views/BigWheel1.vue"),
   },
   {
     path: "/big-wheel",
     name: "BigWheelView",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/BigWheel.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "../views/BigWheel.vue"),
   },
 ];
 
