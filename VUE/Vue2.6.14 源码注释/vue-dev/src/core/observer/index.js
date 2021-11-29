@@ -84,8 +84,13 @@ export class Observer {
 }
 
 
-
+/**
+ *
+ * @param {*} target 数组实例
+ * @param {*} src
+ */
 function protoAugment(target, src: Object) {
+  // 用 src 参数 替换了 数组实例的原型
   target.__proto__ = src
 }
 
@@ -113,11 +118,12 @@ export function observe(value: any, asRootData: ?boolean): Observer | void {
   }
 
   // 声明变量 ob
+  // 除了响应式处理之外,如果 有动态属性加入活删除,数组有新元素加入或删除 做变更通知
   let ob: Observer | void
 
   // hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，是否有指定的键）。
   // 判断 value.__ob__ 存不存在 , __ob__ 用来标识 data 已经被转化为响应式的
-  // 如果 value.__ob__ 存在 并且 value.__ob__ 是一个 Observer 实例
+  // 如果 value.__ob__ 存在 并且 value.__ob__ 是一个 Observer 实例 就不再重复做响应式处理
   if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
     // 就让 ob 等于 value.__ob__
     ob = value.__ob__
@@ -183,7 +189,8 @@ export function defineReactive(
     val = obj[key]
   }
 
-  //
+  // 递归处理
+
   let childOb = !shallow && observe(val)
 
   //
@@ -196,10 +203,14 @@ export function defineReactive(
     get: function reactiveGetter() {
       // 获取原始属性值 调用原生的get
       const value = getter ? getter.call(obj) : val
-      // 收集依赖
+      // 首次触发render函数的时候,会进行收集依赖
+      // vue2 中 一个组件对应一个 watcher  一个 data.key 对应一个 dep
+      // 但是还会有 用户自定义 的 Watcher(user watcher)
+      // 所以 Watcher 和 dep 是多对多的关系
       if (Dep.target) {
         //
         dep.depend()
+        // 子 ob 也要和当前的 watcher 建立关系
         if (childOb) {
           childOb.dep.depend()
           if (Array.isArray(value)) {
