@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-11-30 18:21:14
+ * @LastEditTime: 2021-11-30 23:25:19
  * @FilePath: \webpack-01\webpack.config.js
  */
 
@@ -27,6 +27,12 @@ module.exports = {
   },
   // 打包模式
   mode: "development",
+  // 解析loader 告知webpack如何匹配loader
+  resolveLoader: {
+    // 默认是 node_modules
+    modules: ["node_modules", "./myLoaders"]
+  },
+
   // 插件
   plugins: [
     // 自动生成html 文件 ,引入bundle文件,压缩html
@@ -42,6 +48,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin()
   ],
+
   // 模块
   module: {
     // 匹配的规则
@@ -50,36 +57,61 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            // loader: path.resolve(__dirname, './myLoaders/my-loader.js'),
+            loader: "my-loader",
+            options: {
+              name: "一尾流莺"
+            }
+          },
+          {
+            loader: "aaa-loader",
+            options: {
+              name: "warbler"
+            }
+          },
+        ]
+      },
       // 处理 less
       // {
       //   test: /\.less$/,
       //   use: ["style-loader", "css-loader", 'less-loader']
       // },
       // 对象形式 可以给loader写配置
+      // {
+      //   test: /\.less$/,
+      //   use: [
+      //     minicss.loader,
+      //     {
+      //       loader: "css-loader",
+      //       options: {
+      //         // css 模块化
+      //         modules: true
+      //       }
+      //     },
+      //     {
+      //       loader: 'postcss-loader',
+      //     },
+      //     {
+      //       loader: 'less-loader',
+      //     }
+      //   ]
+      // }
       {
         test: /\.less$/,
         use: [
-          minicss.loader,
-          {
-            loader: "css-loader",
-            options: {
-              // css 模块化
-              modules: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-          },
-          {
-            loader: 'less-loader',
-          }
+          'my-style-loader',
+          'my-css-loader',
+          'my-less-loader'
         ]
       }
     ]
   }
 
 }
-
 
 
 
