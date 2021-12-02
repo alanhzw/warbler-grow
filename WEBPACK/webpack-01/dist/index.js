@@ -86,18 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/images/main.jpg":
-/*!*****************************!*\
-  !*** ./src/images/main.jpg ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../images/main.jpg\");\n\n//# sourceURL=webpack:///./src/images/main.jpg?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -106,7 +94,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _images_main_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/main.jpg */ \"./src/images/main.jpg\");\n/*\n * @Author: 一尾流莺\n * @Description:\n * @Date: 2021-11-25 23:45:43\n * @LastEditTime: 2021-12-02 14:45:37\n * @FilePath: \\webpack-01\\src\\index.js\n */\n// import less from './style/index.less'\n\n\n\n// 静态资源\n// 图片 第三方字体文件\n// 资源压缩 优化\n// image-webpack-loader\n\n// 图片资源的使用场景\n// html img标签\nconst img = new Image()\nimg.src = _images_main_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\nconst tag = document.getElementById(\"app\")\ntag.appendChild(img)\n// css 背景图\n//   div {\n//   height: 100px;\n//   background: blue;\n//   display: flex;\n//   background: url(../images/main.jpg) 0 0 no - repeat;\n// }\n// 这样路径是有问题的\n\n// js dom操作\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style/index.less */ \"./src/style/index.less\");\n/*\n * @Author: 一尾流莺\n * @Description:\n * @Date: 2021-11-25 23:45:43\n * @LastEditTime: 2021-12-02 16:33:03\n * @FilePath: \\webpack-01\\src\\index.js\n */\n\n// import pic from './images/main.jpg'\n\n\n// 静态资源\n// 图片 第三方字体文件\n// 资源压缩 优化\n// image-webpack-loader\n\n// 图片资源的使用场景\n// html img标签\n// const img = new Image()\n// img.src = pic\n// const tag = document.getElementById(\"app\")\n// tag.appendChild(img)\n// css 背景图\n//   div {\n//   height: 100px;\n//   background: blue;\n//   display: flex;\n//   background: url(../images/main.jpg) 0 0 no - repeat;\n// }\n// 这样路径是有问题的\n\n// js dom操作\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/style/index.less":
+/*!******************************!*\
+  !*** ./src/style/index.less ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/style/index.less?");
 
 /***/ })
 

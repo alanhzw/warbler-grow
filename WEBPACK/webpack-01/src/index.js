@@ -2,11 +2,11 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-25 23:45:43
- * @LastEditTime: 2021-12-02 14:45:37
+ * @LastEditTime: 2021-12-02 16:33:03
  * @FilePath: \webpack-01\src\index.js
  */
-// import less from './style/index.less'
-import pic from './images/main.jpg'
+import less from './style/index.less'
+// import pic from './images/main.jpg'
 
 
 // 静态资源
@@ -16,10 +16,10 @@ import pic from './images/main.jpg'
 
 // 图片资源的使用场景
 // html img标签
-const img = new Image()
-img.src = pic
-const tag = document.getElementById("app")
-tag.appendChild(img)
+// const img = new Image()
+// img.src = pic
+// const tag = document.getElementById("app")
+// tag.appendChild(img)
 // css 背景图
 //   div {
 //   height: 100px;

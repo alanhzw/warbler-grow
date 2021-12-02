@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-02 15:08:52
+ * @LastEditTime: 2021-12-02 16:44:30
  * @FilePath: \webpack-01\webpack.config.js
  */
 
@@ -54,6 +54,24 @@ module.exports = {
     // 匹配的规则
     rules: [
       {
+        test: /\.less$/,
+        use: [
+          minicss.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+          },
+          {
+            loader: 'less-loader',
+          }
+        ]
+      },
+      {
         test: /\.(jpe?g|png|gif|webp)$/,
         use: [
           {
@@ -71,6 +89,21 @@ module.exports = {
             options: {
             }
           }
+        ]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',//导出一个资源 并返回路径
+            // loader: "url-loader",// url-loader 依赖 file-loader 把图片转成base64编码 减少图片请求
+            options: {
+              name: "[name].[ext]",//图片名称  ext 后缀占位符
+              outputPath: "font",//输出目录 默认相对于dist 资源的存储位置
+              publicPath: "../font",//资源的使用位置 publicPath + name = css中图片的使用路径
+              // limit: 4 * 102, // 单位字节 超过单位的不会被转化成base64
+            }
+          },
         ]
       }
     ]
