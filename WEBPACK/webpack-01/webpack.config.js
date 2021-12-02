@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-01 22:50:52
+ * @LastEditTime: 2021-12-02 15:08:52
  * @FilePath: \webpack-01\webpack.config.js
  */
 
@@ -15,8 +15,8 @@ module.exports = {
   // 执行打包任务的入口
   entry: {
     index: "./src/index.js",
-    login: "./src/login.js",
-    home: "./src/home.js"
+    // login: "./src/login.js",
+    // home: "./src/home.js"
   },
   // 输出资源文件的信息
   output: {
@@ -40,7 +40,7 @@ module.exports = {
       // 模板匹配
       template: "./src/index.html",
       filename: "index.html",
-      chunks: ["index", 'login'],
+      chunks: ["index"],
     }),
     // 把css抽离成独立文件 , 不用style的方式
     new minicss({
@@ -53,57 +53,6 @@ module.exports = {
   module: {
     // 匹配的规则
     rules: [
-      // {
-      //   test: /\.css$/,
-      //   use: ["style-loader", "css-loader"]
-      // },
-      // {
-      //   test: /\.js$/,
-      //   use: [
-      //     {
-      //       loader: "b-loader",
-      //       options: {
-      //         name: "一尾流莺"
-      //       }
-      //     },
-      //     {
-      //       loader: "a-loader",
-      //     },
-      //   ]
-      // },
-      // 处理 less
-      // {
-      //   test: /\.less$/,
-      //   use: ["style-loader", "css-loader", 'less-loader']
-      // },
-      // 对象形式 可以给loader写配置
-      {
-        test: /\.less$/,
-        use: [
-          minicss.loader,
-          {
-            loader: "css-loader",
-            options: {
-              // css 模块化
-              modules: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-          },
-          {
-            loader: 'less-loader',
-          }
-        ]
-      },
-      // {
-      //   test: /\.less$/,
-      //   use: [
-      //     'my-style-loader',
-      //     'my-css-loader',
-      //     'my-less-loader'
-      //   ]
-      // },
       {
         test: /\.(jpe?g|png|gif|webp)$/,
         use: [
@@ -120,7 +69,6 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             options: {
-
             }
           }
         ]

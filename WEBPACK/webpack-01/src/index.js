@@ -2,12 +2,11 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-25 23:45:43
- * @LastEditTime: 2021-12-01 22:49:36
+ * @LastEditTime: 2021-12-02 14:45:37
  * @FilePath: \webpack-01\src\index.js
  */
-import less from './style/index.less'
+// import less from './style/index.less'
 import pic from './images/main.jpg'
-npomconsole.log('hello, world');
 
 
 // 静态资源
