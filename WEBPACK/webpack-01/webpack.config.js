@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-02 16:44:30
+ * @LastEditTime: 2021-12-02 16:58:16
  * @FilePath: \webpack-01\webpack.config.js
  */
 
@@ -15,8 +15,8 @@ module.exports = {
   // 执行打包任务的入口
   entry: {
     index: "./src/index.js",
-    // login: "./src/login.js",
-    // home: "./src/home.js"
+    login: "./src/login.js",
+    home: "./src/home.js"
   },
   // 输出资源文件的信息
   output: {
