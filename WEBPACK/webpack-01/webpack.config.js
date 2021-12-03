@@ -2,13 +2,14 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-03 14:39:36
+ * @LastEditTime: 2021-12-03 17:06:45
  * @FilePath: \webpack-01\webpack.config.js
  */
 
 const path = require('path')
 const htmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MyPlugin = require("./myPlugins/my-plugin")
 // 配置文件
 module.exports = {
   // 执行打包任务的入口
@@ -33,7 +34,10 @@ module.exports = {
       filename: "index.html",
       chunks: ["index"],
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MyPlugin({
+      name: '一尾流莺'
+    })
   ],
   // 模块
   module: {
