@@ -2,10 +2,10 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-25 23:45:43
- * @LastEditTime: 2021-12-02 17:08:29
+ * @LastEditTime: 2021-12-02 22:51:32
  * @FilePath: \webpack-01\src\index.js
  */
-import less from './style/index.less'
+// import less from './style/index.less'
 
 
 
@@ -33,6 +33,29 @@ import less from './style/index.less'
 // 这样路径是有问题的
 
 // js dom操作
+
+
+
+
+
+// import "@babel/polyfill"
+
+
+// js 模块处理
+
+// es版本
+
+const arr = [new Promise(() => { })]
+
+// 集成框架
+
+// 压缩  按需加载 懒加载
+
+// tree shaking
+
+
+//代码分割  提取公共模块  利用浏览器缓存
+
 
 
 

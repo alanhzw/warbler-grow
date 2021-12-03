@@ -2,21 +2,18 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-02 16:58:16
+ * @LastEditTime: 2021-12-02 22:55:21
  * @FilePath: \webpack-01\webpack.config.js
  */
 
 const path = require('path')
 const htmlWebpackPlugin = require("html-webpack-plugin")
-const minicss = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // 配置文件
 module.exports = {
   // 执行打包任务的入口
   entry: {
     index: "./src/index.js",
-    login: "./src/login.js",
-    home: "./src/home.js"
   },
   // 输出资源文件的信息
   output: {
@@ -27,85 +24,40 @@ module.exports = {
   },
   // 打包模式
   mode: "development",
-  // 解析loader 告知webpack如何匹配loader
-  resolveLoader: {
-    // 默认是 node_modules
-    modules: ["node_modules", "./myLoaders"]
-  },
-
   // 插件
   plugins: [
-    // 自动生成html 文件 ,引入bundle文件,压缩html
-    new htmlWebpackPlugin({
-      // 模板匹配
-      template: "./src/index.html",
-      filename: "index.html",
-      chunks: ["index"],
-    }),
-    // 把css抽离成独立文件 , 不用style的方式
-    new minicss({
-      filename: 'style/index.css'
-    }),
     new CleanWebpackPlugin()
   ],
-
   // 模块
   module: {
     // 匹配的规则
     rules: [
       {
-        test: /\.less$/,
-        use: [
-          minicss.loader,
-          {
-            loader: "css-loader",
-            options: {
-              modules: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-          },
-          {
-            loader: 'less-loader',
-          }
-        ]
-      },
-      {
-        test: /\.(jpe?g|png|gif|webp)$/,
+        test: /\.js$/,
         use: [
           {
-            // loader: 'file-loader',//导出一个资源 并返回路径
-            loader: "url-loader",// url-loader 依赖 file-loader 把图片转成base64编码 减少图片请求
+            loader: 'babel-loader',
             options: {
-              name: "[name].[ext]",//图片名称  ext 后缀占位符
-              outputPath: "images",//输出目录 默认相对于dist 资源的存储位置
-              publicPath: "../images",//资源的使用位置 publicPath + name = css中图片的使用路径
-              limit: 4 * 102, // 单位字节 超过单位的不会被转化成base64
-            }
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
+              presets: [
+                ["@babel/preset-env", {
+                  // 单独指定浏览器集合
+                  targets: {
+
+                  },
+                  // 指定core-js的版本
+                  corejs: 3,
+                  /**
+                   * false 当我们引入polyfill,不会进行按需引入,bundle体积会很大
+                   * entry 需要在入口文件里导入 import "@babel/polyfill" babel会帮我们按需引入
+                   * usage 全自动检测 不需要导入polyfill 即可达到按需引入的目的
+                   */
+                  useBuiltIns: "usage"
+                }]
+              ]
             }
           }
         ]
       },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader',//导出一个资源 并返回路径
-            // loader: "url-loader",// url-loader 依赖 file-loader 把图片转成base64编码 减少图片请求
-            options: {
-              name: "[name].[ext]",//图片名称  ext 后缀占位符
-              outputPath: "font",//输出目录 默认相对于dist 资源的存储位置
-              publicPath: "../font",//资源的使用位置 publicPath + name = css中图片的使用路径
-              // limit: 4 * 102, // 单位字节 超过单位的不会被转化成base64
-            }
-          },
-        ]
-      }
     ]
   }
 
