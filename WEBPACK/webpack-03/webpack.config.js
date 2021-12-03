@@ -2,27 +2,28 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-02 18:18:54
+ * @LastEditTime: 2021-12-03 09:47:28
  * @FilePath: \webpack-03\webpack.config.js
  */
 
 const path = require('path')
 const htmlWebpackPlugin = require("html-webpack-plugin")
-const minicss = require("mini-css-extract-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // 模糊匹配路径
 const glob = require('glob')
 
+// 自动生成 entry 和 htmlWebpackPlugins
 const setMap = () => {
   const entry = {};
   const htmlWebpackPlugins = []
-
+  // 模糊匹配 src 目录下 任意目录下的 index.js 返回的是文件的绝对路径
   const entryFiles = glob.sync(path.join(__dirname, "./src/*/index.js"))
-  console.log('🚀🚀~ entryFiles:', entryFiles);
-
+  // 遍历匹配到的结果
   entryFiles.forEach((entryFile) => {
+    // 获取到文件名
     const pageName = entryFile.match(/src\/(.*)\/index\.js$/)[1]
+    // 生成 entry
     entry[pageName] = entryFile
+    // 生成 htmlWebpackPlugins
     htmlWebpackPlugins.push(
       new htmlWebpackPlugin({
         template: `./src/${pageName}/index.html`,
@@ -54,11 +55,6 @@ module.exports = {
   // 插件
   plugins: [
     ...htmlWebpackPlugins,
-    // 把css抽离成独立文件 , 不用style的方式
-    new minicss({
-      filename: 'style/index.css'
-    }),
-    new CleanWebpackPlugin()
   ],
 }
 

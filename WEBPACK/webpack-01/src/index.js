@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:
  * @Date: 2021-11-25 23:45:43
- * @LastEditTime: 2021-12-02 22:51:32
+ * @LastEditTime: 2021-12-03 15:06:13
  * @FilePath: \webpack-01\src\index.js
  */
 // import less from './style/index.less'
@@ -45,7 +45,7 @@
 
 // es版本
 
-const arr = [new Promise(() => { })]
+// const arr12 = [new Promise(() => { })]
 
 // 集成框架
 
@@ -57,6 +57,16 @@ const arr = [new Promise(() => { })]
 //代码分割  提取公共模块  利用浏览器缓存
 
 
+console.log('🚀🚀~ 123:', 123);
 
+// import React, { Component } from 'react'
+// import ReactDom from "react-dom"
 
+// class App extends Component {
+//   render() {
+//     return <div>hello,babel</div>
+//   }
+// }
+
+// ReactDom.render(<App />, document.getElementById("app"))
 

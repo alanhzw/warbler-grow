@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:webpack 配置文件
  * @Date: 2021-11-26 00:21:48
- * @LastEditTime: 2021-12-02 22:55:21
+ * @LastEditTime: 2021-12-03 14:39:36
  * @FilePath: \webpack-01\webpack.config.js
  */
 
@@ -26,6 +26,13 @@ module.exports = {
   mode: "development",
   // 插件
   plugins: [
+    // 自动生成html 文件 ,引入bundle文件,压缩html
+    new htmlWebpackPlugin({
+      // 模板匹配
+      template: "./src/index.html",
+      filename: "index.html",
+      chunks: ["index"],
+    }),
     new CleanWebpackPlugin()
   ],
   // 模块
@@ -37,24 +44,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: [
-                ["@babel/preset-env", {
-                  // 单独指定浏览器集合
-                  targets: {
-
-                  },
-                  // 指定core-js的版本
-                  corejs: 3,
-                  /**
-                   * false 当我们引入polyfill,不会进行按需引入,bundle体积会很大
-                   * entry 需要在入口文件里导入 import "@babel/polyfill" babel会帮我们按需引入
-                   * usage 全自动检测 不需要导入polyfill 即可达到按需引入的目的
-                   */
-                  useBuiltIns: "usage"
-                }]
-              ]
-            }
           }
         ]
       },
