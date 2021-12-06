@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:实现自定义plugin
  * @Date: 2021-12-03 16:53:49
- * @LastEditTime: 2021-12-03 18:25:34
+ * @LastEditTime: 2021-12-06 10:41:35
  * @FilePath: \webpack-01\myPlugins\my-plugin.js
  */
 
@@ -17,6 +17,18 @@ class MyPlugin {
     // 注册事件  同步钩子用tap  异步钩子用tapAsync注册
     // 事件名称可以为任意值,建议和插件名称保持语义一致
     compiler.hooks.emit.tapAsync('xxx', (compilation, cb) => {
+      // compilation 半成品
+      console.log('🚀🚀~ compilation:', compilation.assets);
+      const content = 'hello,plugin  xxxxx'
+      // 添加静态资源
+      compilation.assets['warbler.txt'] = {
+        source: function() {
+          return content
+        },
+        size: function() {
+          return content.length
+        }
+      }
       cb()
     })
   }
