@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.11.12"
+  },
+  "dependencies": {
+    "koa": "^2.13.4"
   }
 }
