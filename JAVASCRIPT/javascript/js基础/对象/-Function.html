@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+<script type="text/javascript">
+	//返回创建该对象的构造函数。
+	function Test(){}
+	console.log(Test.constructor);
+	function Test1(x,y,z){
+		return x+y+z; 
+	}
+	//返回参数的个数
+	console.log(Test1.length);
+	
+	//返回调用当前函数的函数
+	function A(){
+		return A.caller;
+	}
+	function B(){
+		return A();
+	}
+	console.log(B());//B
+	console.log(A());//null
+	//返回包含函数 参数的数组
+	function Test2(){
+		return arguments;
+	}
+	console.log(Test2(1,2,3,34,'a',5,6,6,7));
+	//callee属性，这个属性引用的是当前被调用的函数对象
+	function f(){
+		return arguments.callee;
+	}
+	console.log(f());
+//	(
+//		function(count){
+//			if(count<=3){
+//				alert(count);
+//				arguments.callee(++count);
+//			}
+//		}
+//	)(0);
+	
+	function f1(a,b,c){
+		return a+b+c;
+	}
+	console.log(f1.toString());
+	console.log(f1.valueOf());
+	
+	var obj={
+		name:'king',
+		say: function(somebody){
+			return 'Hello '+somebody+' this is '+this.name;
+		}
+	};
+	console.log(obj.say('queen'));
+	var obj1={
+		name:'maizi'
+	};
+	console.log(obj.say.call(obj1,'js'));
+	
+	var obj2={
+		calc: function(x,y,z){
+			return x+y+z;
+		}
+	};
+	console.log(obj2.calc.call(null,1,2,3));
+	//调用当前Function对象，可同时改变函数内的this指针引用，函数参数一个个分别传入。
+	console.log(obj2.calc.apply({},[3,4,5]));
+	//调用当前Function对象，可同时改变函数内的this指针引用，函数参数以数组或arguments对象的形式传入。
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+	</body>
+</html>

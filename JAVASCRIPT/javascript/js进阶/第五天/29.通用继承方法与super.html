@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+						//创建父对象
+			function Person(){
+				this.name =name;
+				this.age=age;
+			}
+			
+			
+			Person.prototype.headCount =1;
+				Person.prototype.eat=function(){
+					console.log("eatimg");
+				}
+			//创建子对象
+			function Programer(){
+				Person.apply(this,arguments);
+			}
+			
+			//继承
+			function createEx(Child,Parent){
+				function F(){};
+				F.prototype = Parent.prototype;
+				Child.prototype = new F();
+				Child.prototype.constructor=Child;
+				Child.super = Child.base =Parent.prototype;
+			}
+			
+			createEx(Programer,Person);
+			
+			
+			//给子类添加成员
+			Programer.prototype.language="javascript";
+			Programer.prototype.work=function(){
+				console.log("i am working in"+this.language);
+			}
+			
+			
+			//测试
+			var java = new Programer();
+			
+			
+		</script>
+	</body>
+</html>

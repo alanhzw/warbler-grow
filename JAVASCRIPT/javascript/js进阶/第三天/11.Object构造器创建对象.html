@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var o = new Object();
+			o.name="xxx";
+			o["abc"]="abc"; 
+			Object.defineProperty(o,"number",{
+				value:50,
+				writable:false,
+			});
+			console.log(o.number);
+		</script>
+	</body>
+</html>

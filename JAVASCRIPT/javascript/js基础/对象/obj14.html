@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//内建对象之object对象
+			/*
+			 Object.keys():
+			 方法会返回一个由给定对象的所有可枚举自身属性的属性名组成的数组，
+			 数组中属性名的排列顺序和使用for-in循环遍历该对象时返回的顺序一致
+			 (两者的主要区别是for-in还会遍历除一个对象从其原型链上继承到得可枚举的属性)
+			 */
+			var obj = {
+				0:'a',
+				1:'b',
+				2:'c'
+			};
+			console.log(Object.keys(obj));
+		//Object.getOwnPropertyNames():返回一个由指定对象的所有自身属性的属性名
+		//（包括不可枚举属性）组成的数组
+		
+		//constructor
+		/*Object.prototype.constructor:返回一个指向创建了该对象原型的函数引用,
+		 该属性的值是那个函数本身，而不是一个包含函数名称的字符串。对于原始值（如1，true 或 "test"），该属性为只读。
+		 所有对象都会从它的原型上继承一个 constructor 属性*/
+		</script>
+	</body>
+</html>

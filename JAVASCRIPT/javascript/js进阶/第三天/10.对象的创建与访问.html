@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//五个基本的数据类型
+			/*
+			undefined
+			null
+			number
+			string
+			boolean
+			*/
+			
+			
+			/*
+			对象的种类
+			1.js内置对象(如number)
+			2.宿主环境(如window)
+			3.自己创建的
+			*/
+			
+			//创建对象
+			
+			//1.对象字面量形式
+			var p ={
+				name:"hzw",
+				work: function(){
+					console.log("worikimng");
+				},
+				_age:18,//下划线的外部不要直接用,约定不是规定,很多js库都有这样的约定
+				get age(){
+					return this.age;
+				},
+				set age(val){
+					if(val<0||val>150){
+						throw new Error ("错误");						
+					}else{
+						this._age=val;
+					}
+					
+				},
+				
+				address:{
+					home:"beijing",
+					office:"南京"
+				}
+			}
+			//访问对象 两种
+			
+			console.log(p.name);
+			console.log(p["name"]);
+			
+			
+			//访问没有的属性不会报错,而是undefined;
+			
+			
+			//级联访问
+			console.log(p.address.home);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

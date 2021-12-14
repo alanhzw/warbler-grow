@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="1">1</div>
+		<div id="2">2</div>
+		<div id="3">3</div>
+		<script type="text/javascript">
+			
+			//对捕获的变量只是个引用,而不是拷贝
+			/*
+			function f(){
+				var num =1;
+				function g(){
+					alert(num);
+				}
+				num++;
+				g();
+			}
+			f();
+			
+			f预处理的时候创建词法环境le{
+				num:1
+				g:指向函数的引用
+			}
+			f执行的时候le{
+				num:2				
+			}
+			同时.g.scope=f.le,所以alert(num)的值为2
+			
+			
+			*/
+			
+			
+			//父函数每次调用的时候,会产生不同的闭包
+			
+			/*
+			function f(){
+				var num=1;
+				return function(){
+					num++;
+					alert(num);
+				}
+			}
+			
+			
+			
+			 var result1 = f();
+			// f.le{
+			   num:1
+			 }
+			 result1();
+			// f.le{
+			 	num:2
+			 }
+			 result1();
+			 //f.le{
+			 	num:3
+			 }
+			 var result2 =f();
+			 //新的f.le{
+			 	num:1
+			 }
+			 result2();
+			  //f.le{
+			 	num:2
+			 }
+			 result2();
+			  //f.le{
+			 	num:3
+			 }
+			*/ 
+			 
+			 
+			 //例子
+			 
+			 /*
+			 for (var i =1;i<=3;i++) {
+			 	var ele =document.getElementById(i);
+			 	ele.onclick=function(){
+			 		alert(i);
+			 	}
+			 }
+			 */
+			 //无论点什么都是4 因为js没有块作用域,所以等价于全局变量var i =1 ;函数执行的时候i=4;
+			 
+			 
+			 //解决办法之一 闭包
+			 
+			 for (var i =1;i<=3;i++) {
+			 	var ele =document.getElementById(i);
+			 	ele.onclick=(function(id){
+			 		return function(){
+			 			alert(id);
+			 		}
+			 	})(i);
+			 }
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		</script>
+	</body>
+</html>

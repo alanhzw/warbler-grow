@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript">
+		//全局函数的例子
+		document.write('默认情况的结果<br/>');
+		document.write(parseInt('32')+'<br/>');
+		document.write(parseInt('032')+'<br/>');
+		document.write(parseInt('0x32')+'<br/>');
+		document.write(parseInt('true')+'<br/>');
+		document.write(parseInt('3king')+'<br/>');
+		document.write(parseInt(' 5abc ')+'<br/>');
+		document.write(parseInt(' 88 99 00')+'<br/>');
+		document.write('<hr color="red"/>');
+		document.write('转换成二进制的结果<br/>');
+		document.write(parseInt('32',2)+'<br/>');
+		document.write(parseInt('032',2)+'<br/>');
+		document.write(parseInt('0x32',2)+'<br/>');
+		document.write('<hr/>');
+		document.write('转换成八进制的结果<br/>');
+		document.write(parseInt('32',8)+'<br/>');
+		document.write(parseInt('032',8)+'<br/>');
+		document.write(parseInt('0x32',8)+'<br/>');
+		document.write('<hr/>');
+		document.write('转换成八进制的结果<br/>');
+		document.write(parseInt('32',16)+'<br/>');
+		document.write(parseInt('032',16)+'<br/>');
+		document.write(parseInt('0x32',16)+'<br/>');
+		//二进制转换成其他进制
+		document.write('<hr/>');
+		document.write('二进制转换成其他进制的结果<br/>');
+		document.write(parseInt('11001010',2)+'<br/>');
+		document.write(parseInt('11001010',8)+'<br/>');
+		document.write(parseInt('11001010',10)+'<br/>');
+		document.write(parseInt('11001010',16)+'<br/>');
+		document.write(parseInt('202',2)+'<br/>');
+		
+		//转换成浮点型
+		document.write('<hr/>');
+		document.write(parseFloat('2.6')+'<br/>');
+		document.write(parseFloat('323')+'<br/>');
+		document.write(parseFloat('2e2')+'<br/>');
+		document.write(parseFloat('123abc')+'<br/>');
+		document.write(parseFloat(' 2.6 ')+'<br/>');
+		document.write(parseFloat('a2.6')+'<br/>');
+		
+		//通过isFinite()检测是否是无穷值
+		var x=123;
+		x=Infinity;
+		x=-Infinity;
+		x=0/0;
+		x=0;
+		x=false;
+//		alert(isFinite(x));
+		x=NaN;
+		x=123;
+		x=false;
+		x=parseInt('king3');
+		alert(isNaN(x));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+	
+	</body>
+</html>

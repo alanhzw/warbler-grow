@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+<!-- 
+		案例分析
+		1.点击眼睛按钮,把密码框类型改为文本框
+		2.一个按钮两个状态,点击一次,切换为文本框,继续点击一次切换为密码框
+		3.算法:利用一个flag变量,来判断flag的值,如果是1就切换为文本框,flag设置为0,如果是0就切换为密码框,flag设置为1 
+-->
+
+		<style>
+			.box{
+				position: relative;
+				width: 400px;
+				border-bottom:1px solid #ccc;
+				margin: 100px auto;
+			}
+			.box input{
+				width: 370px;
+				height: 30px;
+				border: none;
+				outline: none;
+			}
+			.box img{
+				position: absolute;
+				top: 2px;
+				right: 2px;
+				width: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<label><img src="close.png" id="eye" ></label>
+			<input type="password" id="pwd" />
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		//1.获取元素
+		let eye = document.getElementById("eye");
+		let pwd = document.getElementById("pwd");
+		//2.绑定事件 处理程序
+		let flag = 0 ;//利用一个flag变量,来判断flag的值,如果是1就切换为文本框,flag设置为0,如果是0就切换为密码框,flag设置为1 
+		eye.onclick= function(){
+			//点击一次以后 flag一定要变化
+			if (flag == 0) {
+				eye.src = "open.png"
+				pwd.type = "text";
+				flag = 1 ;
+			}else{
+				eye.src = "close.png"
+				pwd.type = "password";
+				flag = 0 ;
+			}									 
+		}
+	</script>
+</html>

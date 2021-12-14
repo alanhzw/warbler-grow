@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript">
+	var patt=new RegExp("javascript");
+	var res=patt.test('this is javascript course');
+	console.log(res);
+	patt=/javascript/;
+	patt=/JavaScript/i;
+	res=patt.test("this is javascript show time");
+	console.log(res);
+	//[]
+	res=/[abc]/.test('lue');
+	res=/[^abc]/.test('lue');
+	res=/[0-9]/.test('this is a test');
+	res=/[a-z]/.test('234235453245');
+	res=/php|javascript|ios/i.test('PHP');
+	console.log(res);
+	
+	//元字符
+	res=/./.test('\n');
+	res=/./.test('this is a test');
+	res=/\w/.test('hello maizi')//[a-zA-Z0-9]
+	res=/\w/.test('!#@');
+	res=/\W/.test('!#%');//[^a-zA-Z0-9]
+	res=/\s/.test('hello world');
+	res=/\S/.test('  ');
+	res=/\bg/.test('good');
+	res=/o\b/.test('good');
+	res=/d\b/.test('good');
+	res=/o\B/.test('good');
+	console.log(res);
+	
+	//量词
+	res=/o+/.test('google');	
+	res=/o*/.test('google');
+	res=/o?/.test('google');
+	res=/o{2}/.test('goooogle');
+	res=/o{1,3}/.test('goooogle');
+	res=/^k/.test('king');
+	res=/i$/.test('mai');
+	res=/o(?=w)/.test('helloworld');
+	res=/o(?!w)/.test('helloworld');
+	res=/\d/.test('aajkldsfj');//[0-9]
+	res=/\D/.test('sdfkjllsdfj');//[^0-9]
+	console.log(res);
+	
+	res=/is/i.exec('this is a test');
+	console.log(res);
+	console.log(res[0]);
+	var str='this is a test hello maizi hello world';
+	var patt=/i/ig;
+	var myArr;
+	while((myArr=patt.exec(str))!==null){
+		var msg='找到了'+myArr[0]+'!';
+		msg+='下一个匹配从'+patt.lastIndex;
+		console.log(msg);
+	}
+	
+	var str='this is a test';
+	res=str.match(/IS/i);
+	console.log(res);
+	res=str.match(/IS/ig);
+	console.log(res);
+	res=str.search(/is/i);
+	console.log(res);
+	var str1=str.replace(/is/ig,'!');
+	console.log(str1);
+	
+	var str='2015-09-27';
+	res=str.replace(/(\d{4})-(\d{2})-(\d{2})/,'$2/$3/$1');
+	console.log(res);
+	str='Hello Maizi    Edu';
+	res=str.replace(/[A-Z]/g,func);
+	function func(match){
+		return 'king_'+match.toLowerCase();
+	}
+	console.log(res);
+	
+	res=str.split(/\s+/);
+	console.log(res);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+	</body>
+</html>

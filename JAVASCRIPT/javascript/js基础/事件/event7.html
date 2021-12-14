@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="test1"  id="btn1" />
+		<script type="text/javascript">
+			var btn1= document.getElementById("btn1");
+			btn1.addEventListener("click",function(event){
+//				alert(event.type);
+//this 触发该事件的元素
+				alert(this.tagName);
+			},false);
+//			btn1.onclick=function(e){
+//				alert(e.type);
+//			}
+//target 返回触发此事件的元素,事件的目标节点(哪个元素触发了这个事件)
+		</script>
+	</body>
+</html>

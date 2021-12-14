@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var letter = ["a","c","b","d","e"];
+			//sort() 方法按字母顺序对数组进行排序。
+			//会改变原数组的元素顺序
+			document.write(letter.sort() + "<br />");
+			//reverse()方法反转数组中的元素	
+			document.write(letter.reverse());
+			
+			//可以使用 Math.max.apply 来查找数组中的最高值：
+			//您可以使用 Math.min.apply 来查找数组中的最低值：
+			var	points = ["1","5","20","100","45"];
+			function myArrayMax(arr){
+				return Math.max.apply(null,arr);
+			}
+			document.write("<br />"+myArrayMax(points) +"<br />");
+			
+			
+			var  cars = [
+				
+					{type:"Volvo",year:2016},
+					{type:"Saab",year:2001},
+					{type:"Bwm",year:2010}
+			
+			];
+			//即使对象拥有不同数据类型的属性，sort() 方法仍可用于对数组进行排序。
+			//解决方法是通过比较函数来对比属性值
+			cars.sort(function(a,b){return a.year - b.year});
+			document.write(
+				cars[0].type+""+cars[0].year+"<br />"+
+				cars[1].type+""+cars[1].year+"<br />"+
+				cars[2].type+""+cars[2].year+"<br />"
+				);
+			
+			cars.sort(function(a,b){
+				var x = a.type.toLowerCase();//先变成小写
+				var y = b.type.toLowerCase();
+				if(x<y){return -1;}
+				if(x>y){return 1;}
+				return 0 ;
+			});
+			document.write(
+				cars[0].type+""+cars[0].year+"<br />"+
+				cars[1].type+""+cars[1].year+"<br />"+
+				cars[2].type+""+cars[2].year+"<br />"
+			);
+		</script>
+	</body>
+</html>

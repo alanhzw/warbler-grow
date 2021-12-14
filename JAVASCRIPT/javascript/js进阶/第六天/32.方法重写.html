@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/*
+			function demo(a){
+				a.run();
+			}
+			
+			var o ={
+				run:function(){
+					console.log("ooo");
+				}
+			}
+			demo(o);
+			
+			var p = {
+				run:function(){
+					console.log("ppp");
+				}
+			}
+			demo(p);
+			
+			*/
+			
+			
+			/*
+			function F(){};
+			var f=new F();
+			F.prototype.run=function(){
+				console.log("ooo");
+			}
+			f.run();
+			f.run=function(){
+				console.log("ppp");
+			}
+			f.run();
+			f.run=function(){
+				console.log("fff");
+				F.prototype.run();
+			}
+			f.run();
+			*/
+			
+			
+			
+			/*
+			function Parent(){
+				this.run=function(){
+					console.log("aaa");
+				}
+			}
+			function Child(){
+				Parent.call(this);
+				var Parentrun = this.run;
+				this.run = function(){
+					console.log("bbb");
+					Parentrun();
+				}
+			}
+			var c = new Child();
+			c.run();
+			*/
+			
+			function Parent(){
+				
+			}
+			
+			Parent.prototype.run=function(){
+				console.log("aa");
+			};
+			
+			function Child(){
+				
+			}
+			
+			Child.prototype=Object.create(Parent.prototype);
+			Child.prototype.constructor=Child;
+			Child.super=Parent.prototype;
+			
+			Child.prototype.run=function(){
+				console.log("bb");
+				Child.super.run();
+			}
+			
+			var c = new Child();
+			c.run();
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="EventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<input type="button" value="test1" id = "btn1" />
+		<input type="button" value="test2" id="btn2" />
+		
+		<script type="text/javascript">
+			var btn1 =document.getElementById("btn1");
+			function test1(){
+				alert("avf");		
+			}
+			EventUtil.addHandler(btn1,"click",test1);
+			var btn2=document.getElementById("btn2");
+			function test2(){
+				EventUtil.removeHandler(btn1,"click",test1);
+				alert("事件已经移除");
+			}
+			EventUtil.addHandler(btn2,"click",test2);
+		</script>
+	</body>
+</html>

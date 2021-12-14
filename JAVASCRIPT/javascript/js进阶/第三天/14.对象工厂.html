@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			var o = {
+				name:"cj",
+				age:123
+			}
+			*/
+			//构建工厂  缺点:构建的对象完全独立 浪费空间
+			function PersonFactory(pname,page){
+				return{
+					name:pname,
+					age:page
+				};
+			}
+			var p1 = PersonFactory("cj",12);
+			var p2 =PersonFactory("hzw",18);
+			
+			console.log(p1.name);
+			console.log(p2.name);
+		
+		</script>
+	</body>
+</html>

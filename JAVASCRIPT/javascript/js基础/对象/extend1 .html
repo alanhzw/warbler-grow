@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//扩展内建对象
+			String.prototype.reverse=function(){
+				return Array.prototype.reverse.apply(this.split("")).join("");			
+			}
+			console.log("hanzhiwei".reverse());
+			
+			//检测方法是否存在,不存在则扩展
+			if(!Array.prototype.inArray){
+				Array.prototype.inArray=function(a){
+					for(var i=0,len=this.length;i<len;i++){
+						if(this[i]==a){
+							return true;
+						}
+					}
+				return false;
+				}
+			}
+			
+			var arr=["a","b","c","d"];
+			console.log(arr.inArray("c"));
+			
+			//prototype库  YUI库
+			 
+			function  Person(){
+				this.mouth=true;
+			}
+			var p1=new Person();
+			var p2 = new  Person();
+			Person.prototype.say=function(){
+				return "hello";
+			}
+			console.log(p1.say());
+			console.log(p2.say());
+			
+			
+			Person.prototype={
+				hair:true,
+				face:true
+			}
+			//原有对象不能访问原型对象新增属性
+			
+			console.log(typeof p1.hair);//undefined
+			
+			//新建对象可以访问原型对象新增属性
+			var p3 = new Person;
+			console.log(typeof p3.hair);//boolean
+			
+			
+			//重置构造器
+			Person.prototype.constructor=Person;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

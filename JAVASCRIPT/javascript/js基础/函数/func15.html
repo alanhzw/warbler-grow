@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//闭包:能够读取其他函数内部变量的一个函数
+			//将函数内部和外部连接起来的一部桥梁
+			 //让变量的值始终保存在内存中
+			 function f1(){
+			 	var n=1;
+			 	test = function(){
+			 		n+=1;
+			 		
+			 	};
+			 	function f2(){
+			 		alert(n);
+			 		
+			 	}
+			 	return f2;
+			 }
+			 var res = f1();
+			 alert(res());
+			 test();
+			 alert(res());
+		</script>
+	</body>
+</html>

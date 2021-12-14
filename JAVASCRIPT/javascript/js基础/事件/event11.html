@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//会报错,还没有加载btn
+//			var btn = document.getElementById("btn");
+//			btn.onclick=function(){
+//				alert("我被点了");
+//			}
+//			不会报错,onload全部加载完再执行
+		window.onload=function(){
+			var btn = document.getElementById("btn");
+			btn.onclick=function(){
+			alert("我被点了");
+			}
+		};
+		</script>
+	</head>
+	<body>
+		<input type="button" value="test" id="btn" />
+		<p><img src="1.gif" onload="alert('asd');"/></p>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button">按钮</button>
+		<input type="text"  value="请输入"/>
+	</body>
+	<script type="text/javascript">
+		//1.获取元素
+		let btn = document.querySelector("button");
+		let input = document.querySelector("input");
+		//2.注册事件 处理程序
+		btn.onclick = function(){
+			input.value = "点击了";
+			//禁用某个表单(例:button)  disabled
+			this.disabled = true;//this指向的是事件函数的调用者 btn
+		}
+		
+	</script>
+</html>

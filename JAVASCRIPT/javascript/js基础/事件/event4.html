@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box1" style="background:#ABCDEF;width: 300px; height: 300px;">
+			<input type="button" value="test1" id="btn1" />
+		</div>
+		<script type="text/javascript">
+			var btn1 = document.getElementById("btn1");
+			var box1 = document.getElementById("box1");
+			box1.addEventListener("click",function(){
+				alert("box clicked");
+			},false);
+			btn1.addEventListener("click",function(e){
+				alert("button clicked");
+			//	e.stopPropagation();  取消冒泡
+			},false) ;
+
+			
+			//并且它们都接受3个参数；事件名、函数、冒泡或捕获的布尔值(true表示捕获，false表示冒泡)。
+		</script>
+	</body>
+</html>

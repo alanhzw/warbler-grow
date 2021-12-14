@@ -1,0 +1,69 @@
+<!DOCTYPEalert html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//第一个好处 减少全局变量
+			/*
+			var a = 0;
+			function add(){
+				a++;
+				alert(a);
+			}
+			add();
+			add();
+			*/
+			//等价于
+			/*
+			function f(){
+				var a = 0;
+				return function(){
+					a++;
+					alert(a);
+				}
+			}
+			var result = f();
+			result();
+			result();
+			*/
+			
+			//第二个好处 减少传递给函数的参数数量
+			/*
+			function calFactory(base){
+				return function(max){
+					var total =0;
+					for (var i =0;i<=max;i++) {
+						total+=i;
+					}
+					return total+base;
+				}
+			}
+			var adder = calFactory(2);
+			alert(adder(3));
+			alert(adder(4));
+			var adder2 = calFactory(1);
+			alert(adder2(3));
+			*/
+			//第三个好处 封装
+			
+			(function(){
+				var m =0;
+				function getM(){
+					return m;
+				}
+				function setM(val){
+					m= val;
+				}
+			window.g=getM;
+			window.f=setM;
+			})();
+
+			f(12);
+			alert(g());
+			
+		</script>
+	</body>
+</html>

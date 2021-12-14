@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//检测一个对象是否是另一个对象的原型(或者处于原型链中)
+//			var obj = {
+//				x:1
+//			};
+//			var obj1 = Object.create(obj);
+//			console.log(obj.isPrototypeOf(obj1));
+//			console.log(Object.prototype.isPrototypeOf(obj1));
+//			//__proto__ 查看对象原型
+//			
+			
+//			var obj = {};
+//			console.log(obj.toString());
+//			var arr = [];
+//			//console.log(arr.toString());
+//			console.log(Object.prototype.toString.call(arr));
+//			
+	var obj={};
+	//检测对象是否可扩展
+	console.log(Object.isExtensible(obj));
+	var d=new Date();
+	console.log(Object.isExtensible(d));
+	obj.x=1;
+	console.log(obj.x);
+	//	可以通过Object.preventExtensions()将对象设置为不可扩展的，
+//	而且不能再转换成可扩展的了，
+//	可以通过Object.isExtensible()检测对象是否是可扩展的
+//preventExtensions()只影响到对象本身的可扩展性，
+//如果给一个不可扩展的对象的原型添加属性，
+//这个不可扩展的对象同样会继承这些新属性
+	//通过preventExtensions()将对象变为不可扩展的
+	obj1=Object.preventExtensions(obj);
+	console.log(obj===obj1);
+	console.log(Object.isExtensible(obj1));
+	obj1.y=2;
+	console.log(obj1.y);
+	Object.defineProperty(obj1,'z',{value:1});
+		</script>
+	</body>
+</html>
+ 

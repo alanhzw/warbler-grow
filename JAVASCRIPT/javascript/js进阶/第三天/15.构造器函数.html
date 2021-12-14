@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			 function Person(){
+			 	this.age=22;
+			 	this.name="hzw";
+			 }
+			 Person.prototype.headCount=1;
+			 var p = new Person;
+			 var p1= new Person;
+			 console.log(p.name);
+			 console.log(p1.age);
+			 console.log(p.headCount);
+			 Person.prototype.headCount=3;
+			 console.log(p.headCount);
+			 console.log(p1.headCount);
+			 p.headCount=4;
+			 console.log(p.headCount);
+			 console.log(p1.headCount);
+		</script>
+	</body>
+</html>

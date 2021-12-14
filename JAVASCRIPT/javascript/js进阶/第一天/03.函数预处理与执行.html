@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/*
+			function  aaa(a,b){
+				
+			}
+			aaa(1);
+			如果只穿了一个参数,
+			那么预处理的时候
+			lexical env
+			{
+				a:1
+				b:undefined
+			}
+			*/
+			function f(a,b){
+				alert(a);//function a (){}
+				alert(b);//2
+				
+				var b = 100;
+				function a (){
+					
+				}
+			}
+			
+			f(1,2);
+			
+			/*
+			
+			lexical env
+			{	
+				//预处理阶段
+				//传参
+				a:1
+				b:2	
+				arguments:
+				//执行阶段 
+				//扫描函数内部
+				//b =100;变量会忽略
+				此时 a变成了指向函数的引用
+				a:1
+				b:2	
+				arguments:
+				
+			}
+			
+			注意://执行阶段 如果没有用var声明的变量,会成为最外部词法环境的成员
+				function f1(){
+					function f2(){
+						b=100;
+					}
+				}
+				window.b=100;		
+			*/
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//继承
+			function Shape(){
+				this.name="shape";
+				this.toString=function(){
+					return this.name;
+				}
+			}
+			function TwoDshape(){
+				this.name="TwoDshape";
+			}
+			function Triangle(side,height){
+				this.name="Triangle";
+				this.side=side;
+				this.height=height;
+				this.getArea=function(){
+					return this.side*this.height/2;
+				}
+			}
+			//通过实例完成继承
+			TwoDshape.prototype=new Shape();
+			Triangle.prototype=new TwoDshape();
+			//重置constructor属性
+			TwoDshape.prototype.constructor=TwoDshape;
+			Triangle.prototype.constructor=Triangle;
+			
+			
+			var myTriangle=new Triangle(5,10);
+			console.log(myTriangle.getArea());
+			console.log(myTriangle.toString());
+			console.log(myTriangle.constructor);//构造器Triangle
+			//是否实例化 //全是true
+			console.log(myTriangle instanceof Triangle);
+			console.log(myTriangle instanceof TwoDshape);
+			console.log(myTriangle instanceof Shape);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			//数组直接量形式创建数组
+			var arr =[];//空数组
+			var arr1=[1,23,21,123,];
+			var arr2= [1,2,3,true,false,null,undefined,[],{}];
+			var x=1;
+			var arr3= [x,x*3,x+2,x+3];
+			var arr4= [1,,3];//1,undefined,3
+			console.log(arr4.length);
+			console.log(arr4);
+			//通过构造函数Array()创建数组
+			var a = new Array();//[]
+			var a = new Array(5);//数组的长度是5
+			console.log(a.length);
+			var a = new Array(1,2,"adwe",false,2.2,null);//数组的元素
+			console.log(a);
+			
+			var arr = [1,2,3,4];
+			console.log(arr[0]);//1
+			console.log(arr[3]);//4
+			arr[0]="asde";
+			console.log(arr);
+			arr[4]="hells";
+			console.log(arr);
+			var x = 2;
+			console.log(arr[x]);
+			arr[arr[x]]=333;
+			console.log(arr);
+			
+			var obj = {};
+			obj["c"]="a";
+			obj[2]="b";
+			console.log(obj);
+//			console.log(obj.length);//undefined
+			var arr=[];
+			arr[0]="a";
+			arr[1]="b";
+			console.log(arr.length);  
+			
+			var  arr = new Array(10);
+			console.log(arr.length);  
+			arr= [];
+			console.log(arr.length);  
+			
+			
+			var arr=[1,2,3,4,5,6,7];
+			arr.length=3;
+			console.log(arr);
+			arr.length=0;
+			console.log(arr);
+			arr.length=5;
+			console.log(arr);
+			
+			var arr=[1,2,3];
+			
+			Object.defineProperty(arr,"length",{
+				writable:false
+				
+			});
+			
+			console.log(arr.length);
+			arr.length=50;
+			console.log(arr.length);
+			
+			
+			var arr=[];
+			arr[0]=1;
+			arr[1]=2;
+			console.log(arr);
+			//push()在数组末尾添加元素
+			arr.push("c");
+			console.log(arr);
+			arr.push("d","e",34,55);
+		 	console.log(arr);
+		 	//pop在数组末尾删除元素;
+		 	var res=arr.pop();
+		 	console.log(res);
+		 	console.log(arr);
+		 	//在数组首部添加删除
+		 	arr.unshift("aa");
+		 	console.log(arr);
+		 	arr.shift();
+		 	console.log(arr);
+		 	
+		 	 var arr=["a","b","c","d"];
+		 	 delete arr[0];
+		 	 console.log(arr);
+		 	 console.log(arr.length);
+		 	 
+		 	 var arr = ["a","b",'c',"d","e"];
+		 	 //for循环遍历下标连续的数组
+		 	 for(var i=0,len=arr.length;i<len;i++){
+		 	 	console.log(arr[i]);
+		 	 }
+		 	 //for-in遍历数组
+		 	 var arr1=[];
+		 	 arr1[5]=23;
+		 	 arr1[22]=55;
+		 	 arr1[50]=123;
+		 	 //i是下标
+		 	 for (var i in arr1){
+		 	 	console.log(arr1[i]);
+		 	 }
+			
+			//Array.forEach(function(value[,index[,array]]){函数体})
+			//通过forEach()遍历数组
+			var arr2=[1,2,3,4,5,6];
+			arr2.forEach(function(x){
+				console.log(x);
+			});
+			function Test(value,index,array){
+				console.log("要处理的数组为"+array);
+				console.log("索引:"+index+'--值为'+value);
+			}
+			arr2.forEach(Test);
+		</script>
+	</body>
+</html>

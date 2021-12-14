@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			/*
+			 //命名空间
+			 var ns1 ={};
+			 ns1.ns11={};
+			 ns1.module1={name:"hzw",m:function(){}}
+			 ns1.module1.name;
+			 //静态成员
+			 function Person(name,age){
+			 	this.name=name;
+			 }
+			 Person.useTools = true;
+			 document.write(Person.useTools);//true
+			
+			
+			 var p1 = new Person("a");
+			 document.write(p1.useTools);//undefined
+			 
+			 //公有方法
+			 
+			 function Person(name){
+			 
+			 		var age = 100;
+			 		function pm(){
+			 			console.log(this.name);
+			 		}
+			 		this.name = name;
+			 		this.test=function(){
+			 			console.log("public method");
+			 		pm();
+			 		};
+			 		
+			 
+			 }
+			 
+			 */
+			
+			function Person(Pname){
+				function pm(){
+					console.log(self.name);
+				}
+				
+				var self = {
+					name:Pname,
+					test:function(){
+						pm();
+						
+					}
+				};
+				return self;
+			}
+			
+			var p2=Person("hzw");
+			console.log(p2.test());
+			
+			 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内部私有函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			 function a(p){
+//			 	function b(p1){
+//			 		return p+10;
+//			 	};
+//			 	return "在a函数体内调用b函数的结果为:"+b(p);
+//			 }
+//			 document.write(a(5)); 
+			//document.write(b(5));会报错.不能调用b函数
+
+//函数标记法重写上述函数
+//外部不可以调用内部私有函数
+//			function a(p){
+//				var b = function(p1){
+//					return p1+10;
+//				};
+//				return "在a函数体内调用b函数的结果为:" +b(p);
+//			}
+//			document.write(a(5));
+//			
+			
+//返回函数的函数
+//function a(){
+//	alert("aaa");
+//	return function(){
+//		alert("bbb");
+//	};
+//}
+//	var func = a();
+//	func();
+	//自调用函数
+//	a()();
+
+
+
+
+//重写自己的函数
+
+
+    function a(){
+    	alert("aaa");
+    	a=function(){
+    		alert("bbb");
+    	};
+    }
+    a();
+    a();
+		</script>
+	</body>
+</html>

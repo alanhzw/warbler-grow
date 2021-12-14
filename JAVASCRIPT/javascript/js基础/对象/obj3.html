@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var person = {
+			username:"king",
+			sex:"男",
+			//get 没有冒号:
+			get age(){
+				return 12;
+			
+			},
+			set age(val){
+				console.log("不能设置"+val);
+			}
+		};
+		console.log(person.username);
+		console.log(person.age);
+		person.age=13;
+		
+		var obj={
+			x:1,
+			y:2,
+			z:3,
+			get zhouchang(){
+				return this.x+this.y+this.z;
+				
+			},
+			set fbzc(a1){
+				this.x*=a1;
+				this.y*=a1;
+				this.z*=a1;
+			}
+		};
+		console.log(obj.zhouchang);
+		obj.fbzc=2;
+		console.log(obj.zhouchang);
+		
+		var obj1={};
+		
+		Object.defineProperty(obj1,"x",{
+			//get有冒号:
+			get:function(){
+				return 123 ;
+			}
+		});
+		console.log(obj1.x);
+		</script>
+	</body>
+</html>

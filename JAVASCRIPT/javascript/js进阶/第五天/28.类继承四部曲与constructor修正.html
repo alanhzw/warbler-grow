@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建父对象
+			function Person(){
+				
+			}
+			
+			
+			Person.prototype.headCount =1;
+				Person.prototype.eat=function(){
+					console.log("eatimg");
+				}
+			//创建子对象
+			function Programer(){
+				
+			}
+			
+			//继承
+			Programer.prototype=Object.create(Person.prototype);
+			//constructor修正
+			Programer.prototype.constructor=Programer;
+			
+			
+			//给子类添加成员
+			Programer.prototype.language="javascript";
+			Programer.prototype.work=function(){
+				console.log("i am working in"+this.language);
+			}
+			
+			
+			//测试
+			var java = new Programer();
+			document.write(toString(java.eat()) );
+			document.write(java.language);
+			document.write(java.work());
+			//用函数来解决上述四部曲已经修正
+			function createEx(Child,Parent){
+				function F(){};
+				F.prototype = Parent.prototype;
+				Child.prototype = new F();
+				Child.prototype.constructor=Child;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<!-- 
+		可以通过js修改元素的大小,颜色,位置等样式.
+		1.element.style; 行内样式操作   修改以后会变成行内样式  权重高
+		2.element.className; 类名样式操作
+	-->
+	<style type="text/css">
+		#div1{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+	</body>
+	<script type="text/javascript">
+		let div = document.getElementById("div1");
+		div.onclick = function(){
+			//div.style 里面的属性 采用驼峰命名法
+			this.style.backgroundColor = "purple";
+			this.style.width = "250px";
+		}
+	</script>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+<script type="text/javascript">
+			var str='king';
+			console.log(typeof str);
+			var strObj=new String('king');
+			console.log(typeof strObj);
+			console.log(strObj[0]);
+			console.log(strObj.length);
+			console.log(strObj.valueOf());
+			console.log(strObj.toString());
+			console.log("maizi"[0]);
+			console.log("helloworld".length);
+			var str=String('1234');
+			str=String(true);
+			str=String({x:1});
+			str=String(null);
+			console.log(str);
+			var str='king';
+			//charAt()根据下标返回指定的字符
+			console.log(str.charAt(0));
+			console.log(str.charAt(1));
+			console.log(str.charAt(2));
+			console.log(str.charAt(3));
+			console.log(str.charAt(10));
+			var str='abcdef';
+			//charCodeAt():返回指定字符的ASCII码值
+			console.log(str.charCodeAt(0));
+			console.log(str.charCodeAt(100));
+			console.log(str.charCodeAt(-123));
+			//fromCharCode():根据指定的ASCII放回对应的字符
+			console.log(String.fromCharCode(97));
+			console.log(String.fromCharCode(65,66,67));
+			//concat()：连接字符串
+			var str='hello ';
+			console.log(str.concat('world'));
+			console.log(str.concat('world ','!'));
+			//字符串搜索相关
+			var str='this is a test';
+			console.log(str.indexOf('t'));
+			console.log(str.indexOf('is'));
+			console.log(str.indexOf('Is'));
+			console.log(str.indexOf('i'));//2
+			console.log(str.indexOf('i',3));//5
+			//通过indexOf()可以统计一个字符在指定字符串中出现的次数
+			var str='sssssdlkfjlwk34jlksdfjlksjdlf234';
+			var count=0;
+			var pos=str.indexOf('s');
+			while(pos!=-1){
+				count++;
+				pos=str.indexOf('s',pos+1);
+			}
+			console.log(count);
+			//lastIndexOf():最后一次出现的位置
+			var str='this is a test';
+			console.log(str.indexOf('is'));
+			console.log(str.lastIndexOf('is'));
+			//比较两个字符串
+			console.log('a'.localeCompare('z'));//-1
+			console.log('z'.localeCompare('a'));//1
+			console.log('a'.localeCompare('a'));//0
+			console.log('b'.localeCompare('B'));//1
+			//match():找到一个或多个正则表达式的结果
+			var str='this is a test of king show time';
+			var re=/IS/i;
+			console.log(str.match(re));
+			var str='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuioasdfghjkzxcvbnm';
+			console.log(str.match(/[a-f]/ig));
+			//search():根据正则表达式进行搜索
+			var str='this is a test';
+			console.log(str.search(/is/));
+			console.log(str.search(/IS/));
+			console.log(str.search(/IS/i));
+			var str='this is a test';
+			var newStr=str.replace(/IS/ig,'!');
+			console.log(newStr);
+			var str="2015-09-26";
+			var newStr=str.replace(/(\d{4})-(\d{2})-(\d{2})/,"$2/$3/$1");
+			console.log(newStr);
+			var str="2015-09-25";
+			var newStr=str.replace(/(\d{4})-(\d{2})-(\d{2})/,func);
+			function func(match,d1,d2,d3){
+				return [d2,d3,d1].join('/');
+			}
+			console.log(newStr);
+			//截取字符串
+			var str='abcdef';
+			console.log(str.slice(2));
+			console.log(str.slice(0,2));
+			console.log(str.slice(-3));
+			console.log(str.slice(-4,-2));
+			console.log(str.slice(0,-1));
+			console.log(str.substr(3));
+			console.log(str.substr(0,4));
+			
+			//split()将字符串拆分成数组
+			var str='2015-08-12';
+			var arr=str.split('-');
+			console.log(arr);
+			var str='a b c d e f';
+			var arr=str.split(' ');
+			console.log(arr);
+			arr=str.split(' ',2);
+			console.log(arr);
+			
+			//字符串大小写相关
+			console.log("KING".toLowerCase());
+			console.log("KING".toLocaleLowerCase());
+			console.log('maizi'.toUpperCase());
+			console.log('maizi'.toLocaleUpperCase());
+			
+			//trim()
+			var str=' abc ';
+			alert("!"+str+"!");
+			alert("!"+str.trim()+"!");
+			//产生锚点
+			//用anchor方法差un关键一个<<a>HTML锚元素
+			var str="this is a test";
+			document.body.innerHTML=str.anchor('contents_anchor');
+			
+			//产生链接
+//			link() 方法创建一个 <a> HTML 元素，用该字符串作为超链接的显示文本，参数作为指向另一个 URL 的超链接。
+			var title='this is of king show time';
+			var url='http://phpfamily.org';
+			document.write('Click Me to Visit My Blog'+title.link(url));
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			 /*
+			 1.this指向的是什么东西?永远是对象
+			 2.this可以写在哪个地方
+			 		1.全局代码 永远指向window对象
+			 		2.函数里面
+			 			①function f(){
+			 				this.name = "hzw";
+			 			}
+			 			②var o ={
+			 				name:"hzw",
+			 				print:function(){
+			 					console.log(this.name);
+			 				}
+			 			};
+			 			③var ele = document.getElementById("id");
+			 			ele.addEventListener("click",function(){
+			 				console.log(this);
+			 			})
+			 3.决定this的指向的值的基本原则是什么
+			 			①this指向运行时决定
+			 			②函数是谁调用的,this指向谁
+			 */
+			
+			
+			function f(){
+			 				this.name = "hzw";
+			 			}
+ 			var o ={
+ 				name:"hzw",
+ 				print:function(){
+ 					console.log(this.name);
+ 				}
+ 			};
+ 			
+ 			console.log(o.print());//hzw
+ 			var ff = o.print;
+ 			console.log(ff());//undefined
+ 			//ff=window.ff
+ 			//第一个this指向o,o.name结果为hzw
+ 			//第二个this指向window,window里面没有name属性,所以undefined
+ 			
+ 			
+ 			this.name="asd";//全局this
+ 			console.log(ff());//asd
+ 			//此时window对象里有name属性,所以返回asd
+ 			
+ 			//改变this指向的方式
+ 			
+ 			/* call
+ 			function log(a){
+ 				console.log(this[a]);
+ 			}
+ 			//用控制台输入以下代码
+ 			
+ 			
+ 			log("name");//返回asd
+ 			log.call(o,"name");//返回hzw  等价于o.print("name");
+ 			
+ 			
+ 			*/
+ 		
+ 		
+ 		
+ 			//改变this指向的方式 apply
+ 			
+ 			
+ 			
+ 			//用控制台输入以下代码
+ 			function log1(a,b){
+ 				console.log(this[a]);
+ 				console.log(this[b]);
+ 			}
+ 			this.name="AAA";
+ 			this.age=18;
+ 			
+ 			log("name","age");//AAA,18
+ 			log.call(o,"name","age");//hzw undefined
+ 			log.apply(o,["name","age"]);//hzw undefined  数组方式
+ 			
+ 			
+		</script>
+	</body>
+</html>

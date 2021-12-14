@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="test1" onclick="alert('hello maizi');" />
+		<input type="button" value="test2" onclick="test()" />
+		<input type="button" value="test3" id="btn1" />
+		<input type="button" value="test4" id="bun2" />
+		<input type="button" value="test5" id="btn5" />
+		<script type="text/javascript">
+			
+			var btn1= document.getElementById("btn1");
+			btn1.onclick=function(){
+				alert("test3");
+			}
+			
+			function test4(){
+				alert("test4");
+			}
+			var btn2 = document.getElementById("bun2");
+				btn2.onclick=test4;//函数没有()
+			
+			function test(){
+			 	alert("this a test");
+			 }
+			
+			var btn5 = document.getElementById("btn5");
+			var count = 0 ;
+			btn5.onclick=function(){
+				alert(count++);
+				if(count==3){
+					btn5.onclick=null;
+				}
+			}
+			 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*在一行行执行代码之前会有一个预处理阶段
+			 * 全局预处理的时候会创建一个
+			 * LexicalEnvironment (词法环境)
+			 * 扫描全局代码里的两个部分
+			 * 用声明的方式创建的函数
+			 * 用var 定义的变量
+			 * 扫描出来以后就会把变量和函数的名字加入到词法环境里
+			 * 
+			*/
+			
+			
+			
+			
+			/*
+			LexicalEnvironment(===window)
+			{
+				
+				a:undefined
+				xxx:对函数的一个引用
+				
+			}
+			
+			
+			
+			
+			
+			var a = 5 ;
+			var b;
+			c = 5;//不会报错,但是在预处理阶段也不会被扫描加入词法环境里
+			function xxx(){
+				//注意:只能用声明函数的方式
+				//比如var g =function(){}函数表达式是不会被扫描的
+			}
+			*/
+		
+		
+			//例子
+			/*
+			f();//f已经存在于词法环境中
+			g();//g不存在
+			
+			function f(){
+				console.log("ff");//ff
+			}
+			
+			var  g = function(){
+				console.log("gg");//g is not a function
+			}
+			
+			console.log(a);
+			console.log(b);
+			var a =5;
+			b=6;
+			*/
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 500px;
+				height: 500px;
+				z-index: 999;
+			}
+			.weibo{
+				width: 100px;
+				height: 25px;
+				background-color: #DEDEDE;
+			}
+			li:hover{
+				width: 100px;
+				background-color: #007AFF;
+				color: #0000FF;
+			}
+			.open{
+				display: none;
+			}
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			.open li{
+				width: 100px;
+				list-style-type: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="weibo">微博</div>
+			<div class="open">
+				<ul>
+					<li>私信</li>
+					<li>评论</li>
+					<li>@我</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let weibo = document.querySelector(".weibo");
+		let open = document.querySelector(".open");
+		weibo.onmouseover = function(){
+			open.style.display = "block";			
+		}
+		open.onmouseover = function(){
+			open.style.display = "block";	
+		}
+		open.onmouseout = function(){
+			open.style.display = "none";
+		}
+	</script>
+</html>

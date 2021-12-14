@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="test1" id="test1" />
+		
+		<script type="text/javascript">
+			var btn1 = document.getElementById("test1");
+			//事件对象
+			btn1.onclick=function(e){
+				var e =e||window.event;//跨浏览器兼容
+				alert(e);
+				alert(e.type);
+			}
+		</script>
+	</body>
+</html>

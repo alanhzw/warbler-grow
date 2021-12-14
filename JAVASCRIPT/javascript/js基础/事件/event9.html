@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="test1"  id="btn1"/>
+		<script type="text/javascript">
+			var btn1=document.getElementById("btn1");
+			//eventPhase事件传播的当前阶段
+			//目标阶段为2,捕获为1,冒泡为3
+			btn1.onclick=function(e){
+				alert(e.eventPhase);
+			}
+			//
+		</script>
+	</body>
+</html>

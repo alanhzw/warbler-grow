@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	<!--	
+		简化的对象写法
+			*省略同名的属性值
+			*省略方法的function
+			*例如
+				let x =1 ;
+				let y =2;
+				let point = {
+					x,
+					y,
+					setX(x){
+						this.x=x;
+					}
+				};				
+	-->
+	
+	
+	
+		<script type="text/javascript">
+			
+			let username = "hzw";
+			let age = 21;
+			/*
+			 古老的写法
+			let obj ={
+				username:username,
+				age:age,
+				getName:function(){
+					return this.username;
+				}
+			}
+			console.log(obj);
+			*/
+			//es6简写
+			let obj ={
+				username,//同名的属性可以省略不写
+				age,
+				getName(){//可以省略函数的function以及冒号
+					return this.username;
+				}
+			}
+			
+			console.log(obj);
+			console.log(obj.getName());
+		</script>
+	
+	
+	
+	
+	
+	</body>
+</html>

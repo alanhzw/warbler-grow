@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--用途-->
+		
+		
+		
+		<script type="text/javascript">
+			
+			/*
+			function foo(a,b){
+				console.log(arguments);//arguments 用来收集实参的伪数组  没有数组方法
+				// arguments.callee();  指向函数本身
+			}
+			*/
+			
+			
+			/*
+			 三点运算符  value 真数组  可以使用数组方法 可以遍历
+			function foo(...value){
+				console.log(value);
+		
+				value.forEach(function(item,index){
+					console.log(item,index);
+				});
+			}
+			foo(2,3);
+			*/
+			
+			
+			/*
+			function foo(a,...value){//三点运算符 只能放在最后  前面可以有占位符 只收集占位符后面的元素
+				console.log(value);
+		
+				value.forEach(function(item,index){
+					console.log(item,index);
+				});
+			}
+			foo(2,3,4,5);
+			*/
+			
+			//三点运算符  自动遍历数组 取出元素  已经不是数组了
+			
+			let arr = [1,6];
+			let arr1 = [2,3,4,5];
+			arr = [1,...arr1,6];
+			console.log(arr);//数组
+			console.log(...arr);//值
+			
+			let arr3  = [1,3,5];
+			let arr4  = [2,...arr3,6]
+			console.log(arr4);
+			arr4.push(...arr3);
+			console.log(arr4);
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//闭包
+			function f(a){
+				var n = function(){
+					return a;
+				}
+				a++;
+				return n;
+			}
+			var test = f(123);
+			alert(test());
+			
+		</script>
+	</body>
+</html>

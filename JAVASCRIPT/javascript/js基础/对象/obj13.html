@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//默认对象是可扩展的，也就是非冻结的
+	console.log(Object.isFrozen({}));
+//一个不可扩展的对象同时也是一个冻结的对象
+	var obj=Object.preventExtensions({});
+	console.log(Object.isFrozen(obj));
+//一个非空对象默认也是非冻结
+var obj1={x:1};
+console.log(Object.isFrozen(obj1));
+Object.preventExtensions(obj1);
+console.log(Object.isFrozen(obj1));
+delete obj1.x;
+console.log(obj.x);
+//一个不可扩展的对象，但是拥有一个可写但不可配置的属性，仍然是非冻结的
+var obj2={x:1};
+Object.preventExtensions(obj2);
+Object.defineProperty(obj2,'x',{writable:false});
+console.log(Object.isFrozen(obj2));
+//将x变为不可配置
+Object.defineProperty(obj2,'x',{configurable:false});
+console.log(Object.isFrozen(obj2));
+//如果一个不可扩展的对象，拥有一个不可配置但可写的属性，是非冻结的
+var obj3={x:1};
+Object.preventExtensions(obj3);
+Object.defineProperty(obj3,'x',{configurable:false});
+console.log(Object.isFrozen(obj3));
+//将x变为不可写
+Object.defineProperty(obj3,'x',{writable:false});
+console.log(Object.isFrozen(obj3));
+console.log(" ");
+//如果一个不可扩展的对象拥有一个访问器属性，它也是非冻结的
+var obj4={
+	get test(){
+		return 1;
+	}
+};
+Object.preventExtensions(obj4);
+console.log(Object.isFrozen(obj4));
+Object.defineProperty(obj4,'test',{configurable:false});
+console.log(Object.isFrozen(obj4));
+
+var obj5={x:1};
+Object.freeze(obj5);
+console.log(Object.isFrozen(obj5));
+console.log(Object.isSealed(obj5));
+console.log(Object.isExtensible(obj5));
+
+
+
+
+
+		</script>
+	</body>
+</html>

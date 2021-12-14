@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//		test();
+		function test(){
+			alert('this is a test');
+		}
+//		test();
+		//函数名称严格区分大小写
+		function TEST(){
+			alert("hello king");
+		}
+//		TEST();
+		//函数名称重复会产生覆盖
+//		test();
+		function test(){
+			alert('hello maizi');
+		}
+//		test();
+		function test1(){
+			alert('this is test1 function');
+		}
+//		alert(test1());
+		function test2(){
+			return null;
+			return undefined;
+			return;
+			return true;
+			return 'this is king';
+			return 1.2;
+			alert('this is a test');
+			return 1;
+		}
+//		alert(test2());
+		function calc(num1,num2){
+			return num1+num2;
+		}
+//		alert(calc(1,2));
+//		alert(window.calc(3,5));
+//		alert(calc(1,2,3,4,5,6));
+//		function calc1(num1=1,num=2){
+//			return num1+num2;
+//		}
+		function calc1(num1,num2){
+			num1=num1||1;
+			num2=num2||2;
+			return num1+num2;
+		}
+		alert(calc1(3,6));
+
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+	</body>
+</html>

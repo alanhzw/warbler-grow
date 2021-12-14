@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 500px;
+				height: 300px;
+				position: relative;
+			}
+			.ad{
+				width: 500px;
+				height: 300px;
+				background: url(../../../demo/原生js实现%20瀑布流布局/img/eg_13.jpg);
+			}
+			.close{
+				position: absolute;
+				top: 0;
+				right: -50px;
+				width: 50px;
+				height: 50px;
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="ad"></div>
+			<div class="close"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let box = document.querySelector(".box");
+		let ad = document.querySelector(".ad");
+		let close = document.querySelector(".close");
+		close.onclick = function(){
+			box.style.display = "none";
+		}
+	</script>
+</html>

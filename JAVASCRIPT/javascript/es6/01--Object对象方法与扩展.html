@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Object.defineProperties(Object,descriptors)
+			/*作用:为指定对象定义扩展多个属性
+			get:用来获取当前属性值的回调函数
+			set:修改当前属性值的触发的回调函数,并且实参即为修改后的值
+			存取器属性:setter,getter一个用来存值,一个用来取值*/
+			
+			var obj = {
+				firstname:"han",
+				lastname:"zhiwei"
+			};
+			Object.defineProperties(obj,{
+				fullname:{
+					get:function(){//获取扩展属性的值,获取扩展属性的时候,get方法自动调用  惰性求值
+						return this.firstname+" "+this.lastname;
+					},
+					set:function(data){//监听扩展属性,当扩展属性发生变化的时候会自动调用,
+										//自动调用后会将变化的值作为实参注入到set函数
+						var names = data.split(" ");
+						this.firstname=names[0];
+						this.lastname=names[1];
+					}
+				}
+			})
+			console.log(obj.fullname);
+			obj.fullname="da shuaibi";
+			console.log(obj.fullname);
+			
+			
+
+			/*
+				对象本身的两个方法
+				
+			 	get propertyName(){}  用来得到当前属性值的回调函数
+			 	set propertyName(){}  用来监听当前属性值变化的回调函数
+			 	
+			*/
+			
+			
+			var obj1={
+				firstname:"han",
+				lastname:"zhiwei",			
+			get fullname(){
+				return this.firstname+" "+this.lastname;
+			},
+			set fullname(data){
+				var names = data.split(" ");
+				this.firstname=names[0];
+				this.lastname=names[1];
+			}
+			}
+			console.log(obj1.fullname);
+			obj1.fullname="da shuaibi";
+			console.log(obj1.fullname);
+		</script>
+	</body>
+</html>

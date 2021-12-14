@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			
+			function p(){
+				this.name="111";
+				
+			}
+			var o = {};
+			p.call(o);//等价于 o.p();
+			
+			//控制台输入o.name 返回"111" 
+			//说明call给o添加了 name:"111";
+			
+			
+			*/
+			
+							
+				  function Person(name,age){
+				  	this.name =  name;
+				  	this.age = age;
+				  }
+				  var p1  = new Person   ("cj",22);
+				
+				  function New(f){ //f 是个函数。f 构造器函数
+				  	var o = {"__proto__":f.prototype};
+				  	return function(){
+				  		
+				  		f.apply(o,arguments);
+				  		
+				  		return o;
+				  	}
+				  }
+				  
+		</script>
+	</body>
+</html>

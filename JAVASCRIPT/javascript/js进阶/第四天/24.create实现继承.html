@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			  var p = {
+			  	name:"cj"
+			  }
+			  function myCreate(p){
+			  	var ins ;
+			  	function F(){};
+			  	F.prototype = p ;
+			  	ins = new F();
+			  	return ins;
+			  }
+			  
+			 var c = myCreate(p);
+			 console.log(c.name);
+		</script>
+	</body>
+</html>

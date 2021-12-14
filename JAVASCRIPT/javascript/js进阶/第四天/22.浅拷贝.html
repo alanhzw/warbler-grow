@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var person={
+				name:"hzw",
+				age:22
+			};
+			var programer = {
+				language:"javascript",
+			};
+			
+			function extend(p,c){
+				var c = c||{};
+				for (var a in p) {
+					c[a] = p[a];
+				}
+			}
+			
+			extend(person,programer);
+			console.log(programer.name);
+			console.log(programer.age);
+			console.log(programer.language);
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//	function foo(){};
+//	foo.prototype.z=3;
+//	var obj=new foo();
+//	obj.x=1;
+//	obj.y=2;
+//	console.log(obj.x);
+//	console.log(obj.y);
+//	console.log(obj.z);
+//	console.log(obj.toString());
+//	obj.z=12;
+//	console.log(obj.z);
+//	delete obj.z;
+//	console.log(obj.z);
+//	delete foo.prototype.z;
+//	console.log(obj.z);
+
+function foo(){};
+foo.prototype.z=3;
+var obj=new foo();
+obj.x=1;
+obj.y=2;
+//通过in检测对象上是否有某个属性
+//console.log('y' in obj);
+//console.log('z' in obj);
+//console.log('toString' in obj);
+//console.log('notExists' in obj);
+////hasOwnProperty
+//console.log(obj.hasOwnProperty('x'));//true
+//console.log(obj.hasOwnProperty('z'));//false
+//console.log(obj.hasOwnProperty('toString'));//false
+//delete foo.prototype.z;
+//console.log('z' in obj);
+//console.log(obj.hasOwnProperty('z'));
+
+var obj=Object.create({x:1});
+obj.y=2;
+console.log('x' in obj);//true
+console.log(obj.hasOwnProperty('x'));//false
+console.log('y' in obj);
+console.log(obj.hasOwnProperty('y'));
+
+var obj1=Object.create(null);
+
+
+/*
+var o={x:1};
+	console.log('x' in o);
+	console.log(o.hasOwnProperty('x'));
+	function Foo(){};
+	Foo.prototype.z=3;
+	var obj=new Foo();
+	obj.x=1;
+	obj.y=2;
+//	console.log('x' in obj);
+//	console.log(obj.hasOwnProperty('x'));
+//	console.log(obj.propertyIsEnumerable('x'));
+//	console.log('z' in obj);
+//	console.log(obj.hasOwnProperty('z'));
+//	//属性是对象自己的并且是可枚举的返回true
+//	console.log(obj.propertyIsEnumerable('z'));
+//	console.log(obj.k!==undefined);
+//	console.log(obj.x!==undefined);
+//	console.log(obj.toString!==undefined);
+//	console.log(Object.prototype.propertyIsEnumerable('toString'));
+
+var obj={
+	x:1,
+	y:2,
+	z:3,
+	username:'king',	
+	age:12,
+	addr:'北京'
+};
+for(var p in obj){
+	console.log(p);
+}
+//返回所有自有属性的名称
+console.log(Object.getOwnPropertyNames(obj));
+console.log(Object.keys(obj));
+	
+	
+	*/
+
+		</script>
+	</body>
+</html>

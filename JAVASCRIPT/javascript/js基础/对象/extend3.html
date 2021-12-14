@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//共享属性迁移到原型
+			function Shape(){};
+			Shape.prototype.name="shape";
+			Shape.prototype.toString=function(){
+				return this.name;
+			}
+			
+			function TwoDshape(){};
+			TwoDshape.prototype=new Shape();
+			TwoDshape.prototype.constructor=TwoDshape;
+			TwoDshape.prototype.name="2d shape";
+			
+			function Triangle(side,height){
+				this.side=side;
+				this.height=height;			
+			}
+			Triangle.prototype=new TwoDshape();
+			Triangle.prototype.constructor=Triangle;
+			Triangle.prototype.name="trianngele";
+			Triangle.prototype.getArea=function(){
+				return this.side*this.height/2;
+			}
+			
+			var a =new Triangle(5,10);
+			console.log(a.getArea());
+			console.log(a.toString());
+			
+			console.log(a.hasOwnProperty("side"));
+			console.log(a.hasOwnProperty("name"));
+			//instanceof  是否是该构造器的实例
+			  
+			console.log(a instanceof Triangle);
+			console.log(a instanceof TwoDshape);
+			console.log(a instanceof Shape);
+			console.log(Triangle.prototype.isPrototypeOf(a));
+			console.log(TwoDshape.prototype.isPrototypeOf(a));
+			console.log(Shape.prototype.isPrototypeOf(a));
+			console.log(Object.prototype.isPrototypeOf(a));
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//闭包实现迭代器
+			function test(x){
+				var i = 0;
+				return function(){
+					return x[i++];
+				};
+			}
+			var next = test(["a","b","c","d"]);
+			alert(next());
+			alert(next());
+			alert(next());
+			alert(next());
+		</script>
+	</body>
+</html>

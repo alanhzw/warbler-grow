@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//测试编码URI的函数
+			var url="http://www.phpfamily.org/test.php?search= this is a test&sum=1+2";
+			var res=encodeURI(url);
+			document.write(res);
+			var res1=decodeURI(res);
+			document.write('<br/>'+res1+'<br/>');
+			url="http://www.phpfamily.org/test.php?search= this is a test&sum=1+2&test1=!.()*~";
+			res=encodeURIComponent(url);
+			document.write(res+'<br/>');
+			res1=decodeURIComponent(res);
+			document.write('<br/>'+res1+'<br/>');
+			document.write('<hr color="red"/>');
+			var str1='你好hello maizi http://maiziedu.com?search=javascript&test=this is a test&test1=-_*?';
+			var result=escape(str1);
+			document.write(result);
+			document.write('<br/>');
+			var result1=unescape(result);
+			document.write(result1);
+			document.write('<hr/>');
+			eval('var i=12;');
+//			alert(i);
+			document.write('<hr color="red"/>');
+			var var1=new Boolean(123);
+//			alert(var1);
+			var1=false;
+			var1='3king';
+			var1=34;
+			var1=345.67;
+			var1='3';
+			var1=undefined;
+			var1=null;
+			var1=NaN;
+			var1=new Date();
+//			alert(Number(var1));
+			var var2=true;
+			var2=false;
+			var2=23;
+			var2=12.3;
+			var2=null;
+			var2=undefined;
+			var2=NaN;
+			var2='king';
+			alert(String(var2));
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

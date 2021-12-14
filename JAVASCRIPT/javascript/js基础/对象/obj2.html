@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//
+//			var obj={};
+//			obj.x=1;
+//			obj.y=2;
+//			obj.x=123;
+//			obj.y=456;
+//			console.log(obj.x+''+obj.y);
+//			
+//			for (var p in obj){
+//				console.log(p);
+//			}
+//			
+//			console.log(Object.keys(obj));
+			//默认不可更改,不可枚举
+//			Object.defineProperty(obj,"x",{
+//				value:12,
+//			});
+//			console.log(obj.x);
+//			Object.defineProperty(obj,"y",{
+//				value:56,
+//				writable:true,//是否可写
+//				enumerable:true,//是否可枚举
+//				configurable:true,//是否可配置
+//				
+//			});
+//			
+//			delete obj.y;
+//			console.log(obj.y);
+//			
+//			Object.defineProperty(obj,"y",{
+//				writable:false,  
+//			})
+
+			var obj={};
+			Object.defineProperty(obj,"x",{
+				get:function(){
+					return 123;
+				}
+			});
+			console.log(obj.x);
+			
+			
+			var obj1={
+				__proto__:null,//没有继承而来的属性
+				value:1
+			};
+			
+			Object.defineProperty(obj1,"y",{
+				value:1,
+				writable:true,
+				enumerable:false,
+				configurable:false,
+			});
+			
+			obj1.y=6;
+			console.log(obj1.y);
+			
+		//如果属性不可配置,但是可以把writable的true变成false,但是不能把false变成true
+		
+			Object.defineProperty(obj1,"y",{
+				writable:false
+			});
+			obj1.y=10;
+			console.log(obj1.y);
+		
+		
+//		
+//		
+//			var o = {};
+//			o.x=5;
+//			Object.defineProperty(o,"x",{
+//				value:7,
+//				writable:true,
+//				enumerable:true,
+//				configurable:true,
+//			})
+//			
+//			console.log(o.x);
+
+
+
+		</script>
+	</body>
+</html>

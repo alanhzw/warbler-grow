@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<button id="landu">蓝毒</button>
+		<button id="baijin">白金</button><br>
+		<img src="../../../demo/原生js实现%20瀑布流布局/img/eg_4.jpg"  title="蓝毒">
+	</head>
+	<body>
+		
+	</body>
+	
+	<script type="text/javascript">
+		//修改元素属性 src
+		//1.获取元素
+		let ld = document.getElementById("landu");
+		let bj = document.getElementById("baijin");
+		let img = document.querySelector("img");
+		//2.注册事件
+		bj.onclick=function(){
+			img.src = "../../../demo/原生js实现%20瀑布流布局/img/eg_1.jpg ";
+			img.title = "白金";
+		}
+		ld.onclick=function(){
+			img.src = "../../../demo/原生js实现%20瀑布流布局/img/eg_4.jpg ";
+			img.title="蓝毒";
+		}
+
+	</script>
+</html>

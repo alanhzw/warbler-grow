@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 800px;
+				margin: 100px auto;
+				text-align: center;
+				border-collapse: collapse;
+				font-size: 14px;
+			}
+			thead tr{
+				height: 30px;
+				background-color: #0000FF;
+			}
+			tbody tr{
+				height: 30px;
+			}
+			tbody td{
+				border-bottom: 1px solid #FFC0CB;
+				font-size: 12px;
+				color: blueviolet;
+			}
+			.bg{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td>代码</td>
+					<td>名称</td>
+					<td>最新公布净值</td>
+					<td>累计净值</td>
+					<td>前单位净值</td>
+					<td>净值增长率</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>003526</td>
+					<td>农银金德三个月定期开放债卷</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.047</td>
+					<td>+0.04%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金德三个月定期开放债卷</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.047</td>
+					<td>+0.04%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金德三个月定期开放债卷</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.047</td>
+					<td>+0.04%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金德三个月定期开放债卷</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.047</td>
+					<td>+0.04%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金德三个月定期开放债卷</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.047</td>
+					<td>+0.04%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金德三个月定期开放债卷</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.047</td>
+					<td>+0.04%</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		//1.获取元素 tbody里面所有的行
+		let trs = document.querySelector("tbody").querySelectorAll("tr");
+		//2.循环绑定事件
+		for(let i = 0;i<trs.length;i++){
+			trs[i].onmouseover = function(){
+				this.className = "bg";
+			}
+			trs[i].onmouseout = function(){
+				this.className = "";
+			}
+		}
+	</script>
+</html>

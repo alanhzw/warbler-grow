@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var person = {};
+			Object.defineProperties(person,{
+				username:{
+					value:"king",
+					writable:true
+					
+				},
+				"age":{
+					value:12,
+					writable:false
+				}
+			});
+			console.log(person.username);
+			console.log(person["age"]);
+			//得到对象属性的描述
+			console.log(Object.getOwnPropertyDescriptor(person,"username"));
+			console.log(Object.getOwnPropertyDescriptor(person,"age"));
+			person.addr="beijing";
+			console.log(Object.getOwnPropertyDescriptor(person,"addr"));
+			
+		</script>
+	</body>
+</html>

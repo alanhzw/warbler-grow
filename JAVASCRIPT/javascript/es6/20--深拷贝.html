@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		/*	
+		如何实现深拷贝?
+			1.拷贝的数据里不能有对象/数组
+			2.如果有对象/数组怎么办?
+				遍历对象/数组,拿到每一项值,一直拿到的都是基本数据类型,
+				然后再去复制,就可以完成深拷贝
+		*/
+		
+		
+		
+		/*
+		  
+		 
+		知识点储备
+		
+			*如何判断数据类型 arr---Array  null---Null
+				1.typeof返回的数据类型只有:String,Number,Boolen,Undefined,Object,Function
+				2.Object.prototype.toString.call(obj);
+					let a = [1,3];
+					let b = Object.prototype.toString.call(a);
+					console.log(b);
+					let c = Object.prototype.toString.call(a).slice(8,-1);
+					console.log(c);
+			
+			*for in 循环 对象(属性名)  数组(下标)
+				let obj = {name:"hzw",age:18};
+				for( let i in obj){
+					console.log(i);
+				}
+				
+				let arr = [2,4,"hzw"];
+				for( let i in arr){
+					console.log(i);
+				}
+		
+					
+					
+		*/		
+
+			//定义检测数据类型的功能函数
+			
+			function check(target){
+				return Object.prototype.toString.call(target).slice(8,-1);
+			}
+			
+			
+			//实现深度克隆
+			
+			function clone(target){
+				//判断拷贝的数据类型
+				//初始化变量result 成为最终克隆的数据
+				let result,targetType = check(target);
+				if(targetType === "object"){
+					result = {};	
+				}else if(targetType === "Array"){
+					result = [];
+				}else{
+					return target;  
+				}
+				//遍历目标数据
+				for(let i in target){
+					//获取遍历数据结构的每一项值
+					let value = target[i];
+					//判断目标结构里的每一项值是否存在数组/对象
+					if(check(value) === "Object" || check(value) === "Array"){//对象/数组里嵌套了对象/数组
+						//继续遍历获取到的value值
+						result[i] = clone(value);
+					}else{//获取到的value值是基本数据类型或者是函数
+						result[i] = value;
+					}
+					
+				}
+				return result;
+			}
+			
+			let arr1 = [1,2,{name:"hzw",age:11}];
+			let arr2 =clone(arr1);
+			console.log(arr2);
+			arr2[2].name = "godv";
+			console.log(arr1,arr2);
+			
+			let obj1 = {name:"hzw",age:13};
+			let obj2 = clone(obj1);
+			obj2.name="godv";
+			console.log(obj1,obj2);
+			console.log(arr1,obj1);			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

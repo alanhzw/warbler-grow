@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style-type: none;
+				
+			}
+			.box{
+				width: 250px;
+				margin: 100px auto;
+				
+			}
+			.box li{
+				float:left;
+				width: 24px;
+				height: 24px;
+				background-color: pink;
+				margin: 15px;
+				background: url(../../../demo/原生js实现%20瀑布流布局/img/eg_13.jpg);
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//1.获取元素
+		var lis = document.querySelectorAll("li");
+		for(let i = 0; i<lis.length;i++){
+			//让索引号*44 就是每个li的背景y坐标
+			let index = i * 44 ;//y坐标 
+			lis[i].style.backgroundPosition = "0 -" + index + "px";
+			
+		}
+	</script>
+</html>

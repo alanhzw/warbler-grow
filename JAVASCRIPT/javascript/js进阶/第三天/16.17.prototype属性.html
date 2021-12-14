@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			 function Person(){
+			 	this.age=22;
+			 	this.name="hzw";
+			 }
+			 Person.prototype.headCount=1;
+			 var p = new Person;
+			 var p1= new Person;
+			 
+			 /*
+			 console.log(p.name);
+			 console.log(p1.age);
+			 console.log(p.headCount);
+			 Person.prototype.headCount=3;
+			 console.log(p.headCount);
+			 console.log(p1.headCount);
+			 p.headCount=4;
+			 console.log(p.headCount);
+			 console.log(p1.headCount);
+			 
+			 p.constructor={name:33};
+			 console.log(p.name);
+			 console.log(p.constructor.name);
+			 console.log(p.age);
+			 console.log(p.constructor.age);
+			 console.log(Person.prototype.headCount);
+			 
+			 console.log( p.__proto__);
+			 console.log(p.__proto__.headCount);
+			
+			 */
+			
+			//修改了原型属性会发生什么?
+			Person.prototype.headCount=3;
+			//变成了3
+			console.log(p.headCount);
+			//这个时候把原型属性修改成一个全新的东西
+			Person.prototype ={xx:"xx"};
+			//发现并不会影响已经创建的对象
+			console.log(p.xx);
+			//新建一个对象
+			var p2 = new Person();
+			//可以访问xx的属性,我们发现只会影响新建的对象
+			console.log(p2.xx);
+			
+			//prototype 函数才有
+			//__proto__ 对象才有
+			
+		</script>
+	</body>
+</html>

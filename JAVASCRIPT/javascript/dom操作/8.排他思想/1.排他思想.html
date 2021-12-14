@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 1.所有元素全部清除样式
+		2.给当前元素设置样式 -->
+		
+	</head>
+	<body>
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+		<button>按钮4</button>
+		<button>按钮5</button>
+	</body>
+	<script type="text/javascript">
+		//1.获取所有按钮元素
+		let btns = document.getElementsByTagName("button");
+		for(let i = 0 ; i<btns.length;i++){
+			btns[i].onclick = function(){
+				//先去掉所有按钮的背景颜色  然后改变当前元素背景颜色
+				for(let i = 0; i<btns.length;i++){
+					btns[i].style.backgroundColor = "";
+				}
+				this.style.backgroundColor = "pink";
+			}
+		}
+	</script>
+</html>

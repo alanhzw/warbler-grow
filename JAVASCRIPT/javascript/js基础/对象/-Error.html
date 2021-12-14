@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript">
+//		try{
+//			notExists();
+//		}catch(e){
+//			alert(e.name+":"+e.message);
+//		}
+//		alert('this is a test');
+//		try{
+//			var n=2;
+//			if(n==0){
+//				throw new Error('0不能当做除数');
+//			}else{
+//				alert(4/n);
+//			}
+//		}catch(e){
+//			alert(e.name+":"+e.message);
+//		}finally{
+//			alert('我总是被调用');
+//		}
+//	try{
+//		notExits();
+//	}catch(e){
+//		if(e instanceof EvalError){
+//			alert("Eval错误"+e.message);
+//		}else if(e instanceof RangeError){
+//			alert("Range错误"+e.message);
+//		}else if(e instanceof TypeError){
+//			alert("Type错误"+e.message);
+//		}else if(e instanceof ReferenceError){
+//			alert("Reference错误"+e.message);
+//		}else{
+//			alert('其它错误');
+//		}
+//	}
+	function MyError(msg){
+		this.name='MyError';
+		this.message=msg||'默认的自定义的错误信息';
+	}
+	MyError.prototype=Object.create(Error.prototype);
+	MyError.prototype.constructor=MyError;
+	try{
+		throw new MyError();
+	}catch(e){
+		console.log(e.name+":"+e.message);
+	}
+	
+	try{
+		throw new MyError('测试自定义的错误信息');		
+	}catch(e){
+		console.log(e.name+":"+e.message);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	</body>
+</html>

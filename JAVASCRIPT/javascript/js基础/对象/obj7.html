@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <script type="text/javascript">
+		 	var patt = new RegExp("javascript");
+		 	var res = patt.test("this is javascript dsad");
+		 	console.log(res);
+		 	patt = /javascript/;
+		 	patt = /javascript/i;
+		 	res = patt.test("this is a javascript  waeawe");
+		 	console.log(res);
+		 	
+		 	res = /[abc]/.test("blue");
+		 	console.log(res);
+		 	//查找返回字符串
+		 	var str = "this is a test";
+		 	res = str.match(/IS/ig);
+		 	console.log(res);
+		 	//查找返回位置
+		 	res = str.search(/Is/i);
+		 	console.log(res);
+		 	//替换
+		 	var str1 = str.replace(/IS/ig,'!');
+		 	console.log(str1);
+		 	
+			 str = "Hello Maizi  Edu ";
+			 res = str.replace(/[A-Z]/g,a);
+			 function a (match){
+			 	return "alb" + match.toLowerCase();
+			 }
+			console.log(res);
+			
+			//拆分
+			res=str.split(/e+/i);
+			console.log(res);
+		 </script>
+	</body>
+</html>

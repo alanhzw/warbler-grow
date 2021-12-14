@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function foo(a,b){
+				return a*b;
+			}
+			console.log(foo.length);
+			console.log(foo.constructor);
+			console.log(foo.prototype);
+			foo.prototype={};
+			
+			
+			function Product(name,color){
+				this.name=name;
+				this.color=color;
+				this.whatAreYou=function(){
+					return "this is a" + this.color+ " " +this.name;
+					
+				};
+				
+			}
+			
+			
+		/*	Product.prototype.price=200;
+			Product.prototype.rating=3;
+			Product.prototype.getInfo=function(){
+				return "等级:"+this.rating+"--价钱:"+this.price;
+			}
+			
+			
+		*/	
+			
+			
+			Product.prototype={
+				price:1000,
+				rating:3,
+				memory:64,
+				getInfo:function(){
+					return "等级:"+this.rating+"--价钱:"+this.price;
+				}
+				
+			};
+			
+			var p1 = new Product("苹果6","玫瑰金");
+			console.log(p1.name);
+			console.log(p1.color);
+			console.log(p1.whatAreYou());
+			console.log(p1.price);
+			console.log(p1.getInfo());
+			
+			
+			Product.prototype.get=function(what){
+				return this[what];
+			}
+			console.log(p1.get("prince"));
+			console.log(p1.get("name"));
+			Product.prototype.getInfo=function(){
+				return "memory" +Product.prototype.memory;
+				
+			}
+			
+			var p2 =new Product("mi","金");
+			Product.prototype.price=12112;
+			Product.prototype.memory=213;
+			console.log(p2.getInfo());
+			console.log(p2.memory);
+			console.log(p2.toString());
+			
+			//当对象需要转换为字符串时，会调用它的toString()方法.
+			//默认情况下，每个对象都会从Object上继承到toString()方法，如果这个方法没有被这个对象自身或者更接近的上层原型上的同名方法覆盖(遮蔽)，则调用该对象的toString()方法时会返回"[object type]"，这里的字符串type表示了一个对象类型
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			字符串扩展
+			1.includes(str):判断是否包含指定的字符串
+			2.startsWith(str):判断是否以指定字符串开头
+			3.endsWith(str):判断是否以指定字符串结尾
+			4.repeat(count):重复指定次数
+		-->
+		
+		
+		<!--
+			数值的扩展
+			1.二进制与八进制数值表示法:二进制用0b,八进制用0o
+			2.Number.isFinite(i):判断是否是有限大的数
+			3.Number.isNaN(i):判断是否是NaN
+			4.Number.isInteger(i):判断是否是整数
+			5.Number.parseInt(str):将字符串转换为对应的数值
+			6.Math.trunc(i):直接去除小数部分
+		-->
+		
+		<script type="text/javascript">
+			let str = "asdasdqwejhgajdadsas";
+			console.log(str.includes("z"));
+			console.log(str.includes("a"));
+			console.log(str.startsWith("a"));
+			console.log(str.endsWith("a"));
+			console.log(str.repeat(5));
+			
+			console.log(0b1010);
+			console.log(0o1010);
+			console.log(Number.isFinite(Infinity));
+			console.log(Number.isNaN(NaN));
+			console.log(Number.isInteger(150.2));
+			console.log(Number.parseInt('123as1d123'));
+			console.log(Math.trunc(123.5));
+			
+		</script>
+	</body>
+</html>

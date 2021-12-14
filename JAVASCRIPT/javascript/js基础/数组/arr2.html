@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var myGirls = ["Cecilie","Lone"];
+			var myBoys = ["Emil","Tobias","linus"];
+			var mySis = ["a","b"];
+			//合并数组  不会更改现有数组 返回一个新数组
+			var myChilder = myGirls.concat(myBoys);
+			document.write(myChilder + "<br />");
+			document.write(myChilder.join("*") + "<br />");
+			// 合并三个数组
+			var all = myGirls.concat(myBoys,mySis);
+			document.write(all.join("+"));
+			//concat也可以将值合并到数组
+			var arr1 = myBoys.concat(["c","d","e"]);
+			document.write("<br />" + arr1);
+		</script>
+	</body>
+</html>

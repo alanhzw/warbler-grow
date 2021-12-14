@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			作用域定义:确认一个成员,在整个程序里可以被访问的一个范围,
+					   可以用来做信息隐藏.
+			块作用域:js里没有这个概念	
+			函数作用域:也不遵循
+			动态作用域:js也没有这个概念
+			词法作用域:也叫 静态作用域或者闭包
+					    
+			*/
+			
+			/*
+			alert(a);//undefined
+			alert(b);//undefined
+			//alert(c);报错
+			//alert(d);报错
+			
+			var a =1;
+			if(false){
+				var b= 2;
+			}else{
+				 c = 3;
+			}
+			function f(){
+				var d =4;
+			}
+			
+			
+			
+			function f(){//解析的时候  scope==window
+				//执行的时候,创建自己的词法环境{x=100}  le-> f.[[scope]]
+				
+				var x=100;
+				function g(){//创建的时候 g.[[scope]]==f.le
+					//执行的时候,创建自己的词法环境le ->g.[[scope]]
+					
+				}
+				
+				g();
+				
+			}
+		*/
+			//形成了一个链条
+			//g.le->g.[scope]->f.le->f.[[scope]==window]
+		
+		
+		 /*
+		  创建函数的方式
+		  function f(){
+		  	
+		  }
+		  var f = function(){
+		  	
+		  }
+		  
+		  var f = function  x(argument){
+		  	
+		  }
+		  
+		  var  f = new Function("","alert('xx')");
+		  
+		  
+		   */
+		
+			/*
+			function f(){//预处理阶段scope==window
+				
+					var x =100;
+				
+				var g=function(){//预处理阶段g.scope=f.le
+					alert(x);
+				}
+				g();
+			}
+			f();
+			*/
+			//调用g的时候,自己的词法环境里没有x,接着
+			//去g的作用域也就是f的词法环境里找,所以找到x输入一百.
+		
+		 function f(){
+				
+				var x =100;
+			}
+		 //g.scope=window
+		 //使用new Function定义的函数的scope==window,此时window里面没有x,所以报错
+			var g= new Function("","alert(x)");//报错,x未定义
+			
+			g();
+		
+		
+		
+		
+		</script>
+	</body>
+</html>

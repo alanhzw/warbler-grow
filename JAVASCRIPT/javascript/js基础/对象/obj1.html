@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+//			var o = {x:1};
+		// in 判断 属性x 是否在 对象 o里
+//			document.write("x" in o);
+//		//  hasOwnProperty() 检测 x是否是 对象 o的自有属性
+//			document.write(o.hasOwnProperty("x"));
+			
+//			function Foo(){};
+//			Foo.prototype.z=3;
+//			var obj = new Foo();
+//			obj.x=1;
+//			obj.y=2;
+//			document.write("x" in obj);
+//			document.write(obj.hasOwnProperty("x"));
+//			//propertyIsEnumerable()检测属性是对象自己的,并且是可枚举的.
+//			console.log(obj.propertyIsEnumerable("x"));
+//			
+//			document.write("z" in obj);
+//			document.write(obj.hasOwnProperty("z"));
+//			console.log(obj.propertyIsEnumerable("z"));
+//			//检测有没有这个属性,true没有这个属性
+//			console.log(obj.k==undefined);
+//			console.log(obj.x==undefined);
+			function Foo(){};
+			Foo.prototype.a=4;
+			var obj = new Foo();
+			
+				obj.x=1;
+				obj.y=2;
+				obj.z=3;
+				obj.username="hzw";
+				obj.age=18;
+				obj.addr="北京";
+				
+			
+
+			 for (var p in obj){
+			 	console.log(p);
+			 }
+			//返回所有自有属性的名称
+			console.log(Object.getOwnPropertyNames(obj));
+			//Object.keys():方法会返回一个由给定对象的所有可枚举自身属性的属性名组成的数组，
+			//数组中属性名的排列顺序和使用for-in循环遍历该对象时返回的顺序一致
+			console.log(Object.keys(obj));
+			document.write("a" in obj);
+//			
+			
+		</script>
+	</body>
+</html>

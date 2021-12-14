@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				width: 200px;
+				height: 25px;
+				border: 1px solid #FFC0CB;
+				color: #CCCCCC;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="邮箱/手机号">
+	</body>
+	<script type="text/javascript">
+		let ipt = document.querySelector("input");
+		ipt.onfocus = function(){
+			ipt.style.color = "#000000";
+			if(this.value === "邮箱/手机号"){
+				this.value = "";
+			}else{
+				this.value = this.value;
+			}
+		}
+		ipt.onblur = function(){
+			ipt.style.color = "#CCCCCC";
+			if(this.value === ""){
+				this.value = "邮箱/手机号";
+			}else{
+				this.value = this.value;
+			}
+		}
+	</script>
+</html>

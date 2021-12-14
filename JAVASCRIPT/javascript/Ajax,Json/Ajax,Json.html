@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#aa{
+				width: 200px;
+				height: 30px;
+				border: solid black 2px;
+				
+			}
+			.bb{
+				width: 0px;
+				height: 30px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="aa">
+			<div class="bb"></div>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			//实例化一个XMLHttpRequest对象
+			let a = new XMLHttpRequest();
+			//调用open()方法
+			a.open("GET","test.txt",true);
+			//发送请求
+			a.send();
+			a.onreadystatechange= function(){
+//				if(a.status ==200 && a.readyState == 4){
+//					console.log("请求成功,且响应就绪");
+//					document.body.innerHTML = a.response;
+//				}
+			}
+			
+			
+			//Ajax实现进度条
+			a.onprogress = function(e){
+				let c = document.getElementsByClassName("bb")[0];
+				c.style.width = e.loaded / e.total * 200 +"px";
+//				console.log(e.loaded / e.total);
+			}
+		</script>
+	</body>
+</html>

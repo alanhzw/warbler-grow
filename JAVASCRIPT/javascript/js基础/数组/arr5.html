@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//forEach() 方法为每个数组元素调用一次函数（回调函数）
+			var txt = ""
+			var numbers= ["1","2","3","4","5"];
+			numbers.forEach(test);
+			
+//			请注意，该函数有 3 个参数：
+//			项目值
+//			项目索引
+//			数组本身
+//			当回调函数仅使用 value 参数时，可以省略索引和数组参数：
+			
+//				function myFunction(value, index, array) {
+//				  txt = txt + value + "<br>"; 
+//				}	
+
+			function test(value){
+				txt = txt + value  +"<br>" +"asd";
+			}
+			document.write(txt);
+			//map() 方法通过对每个数组元素执行函数来创建新数组。
+			//map() 方法不会对没有值的数组元素执行函数。
+			//map() 方法不会更改原始数组。
+			var numbers1= numbers.map(test1);
+			function test1(value){
+				return value*2;
+			}
+			document.write("<hr color='red' />"+numbers1);
+			
+			
+			//Array.filter()
+			//filter() 方法创建一个包含通过测试的数组元素的新数组。
+			
+			var over3 = numbers.filter(test2);
+			function test2(value){
+				return value>3;
+			}
+			document.write("<hr color='red' />" + over3);
+			
+			
+//			Array.reduce()
+//			reduce() 方法在每个数组元素上运行函数，以生成（减少它）单个值。
+//			reduce() 方法在数组中从左到右工作。
+//			reduce() 方法不会减少原始数组。
+			var numbers4= [1,2,3,4,5];
+			var sum = numbers4.reduce(test3,);
+			function test3(total,value){
+				return total+value;
+			}
+			document.write("<hr color='red' />" + sum);
+
+
+			//	reduce() 方法能够接受一个初始值			
+				var numbers5= [1,2,3,4,5];
+			var sum1 = numbers5.reduce(test4,100);
+			function test4(total,value){
+				return total+value;
+			}
+			document.write("<hr color='red' />" + sum1);
+			
+			
+//			Array.every()
+//			every() 方法检查所有数组值是否通过测试。
+
+
+			var over2 = numbers5.every(test5);
+			function test5(value){
+				return  value>2;
+			}
+			document.write(over2 + "<br />");
+
+//			Array.some()
+//			some() 方法检查某些数组值是否通过了测试。
+
+			var over1 = numbers5.some(test6);
+			function test6(value){
+				return value>1;
+			}
+			document.write(over1 + "<br />");
+			
+//			Array.indexOf()
+//			indexOf() 方法在数组中搜索元素值并返回其位置。
+//			注释：第一个项目的位置是 0，第二个项目的位置是 1，以此类推
+			
+			var size = ["big","middle","little"]
+			//			array.indexOf(item, start)
+//			start从哪里开始搜索。负值将从结尾开始的给定位置开始，并搜索到结尾。
+//			如果未找到项目，Array.indexOf() 返回 -1。		
+//			如果项目多次出现，则返回第一次出现的位置
+			var  a = size.indexOf("little");
+			document.write(a);
+
+
+//		Array.lastIndexOf()
+//		Array.lastIndexOf() 与 Array.indexOf() 类似，但是从数组结尾开始搜索。
+
+
+//		Array.find()
+//		find() 方法返回通过测试函数的第一个数组元素的值。
+
+		var b = numbers5.find(test7);
+		function test7(value){
+			return value>3;
+		};
+		document.write( "<br />"+b);
+
+//	Array.findIndex()
+//findIndex() 方法返回通过测试函数的第一个数组元素的索引。
+
+		var c = numbers5.findIndex(test7);
+		
+		document.write( "<br />"+c);
+			
+		</script>
+	</body>
+</html>

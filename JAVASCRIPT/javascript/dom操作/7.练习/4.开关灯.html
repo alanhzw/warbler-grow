@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color: #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn">开灯</button>
+	</body>
+	<script type="text/javascript">
+		let flag = 0 ;
+		let body = document.body;
+		console.dir(body);
+		let btn = document.querySelector(".btn");
+		btn.onclick = function(){
+			if(flag == 0){
+				body.style.backgroundColor = "blue";
+				btn.innerHTML = "关灯";
+				flag = 1;
+			}else{
+				body.style.backgroundColor = "black";
+				btn.innerHTML = "开灯";
+				flag = 0;
+			}
+			
+		}
+	</script>
+</html>

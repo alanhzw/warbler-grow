@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="test1"  id="btn1" />
+		<a href="http://www.baidu.com" id="a1">百度一下</a>
+		<script type="text/javascript">
+			//event.target返回触发事件的元素
+			//event.currentTarget返回绑定事件的元素
+			var handler = function(e){
+				switch(e.type){
+					case "click":
+						alert("点了我");
+						break;
+					case "mouseover" :
+						event.target.style.backgroundColor="red";
+						break;
+					case "mouseout":
+						event.target.style.backgroundColor="";
+						break;
+				}
+			};
+			btn1.onclick=handler;
+			btn1.onmouseover=handler;
+			btn1.onmouseout=handler;
+			//阻止事件的默认行为
+			//只有cancelable属性为true的时候才可以使用
+			var a1 = document.getElementById("a1");
+			a1.onclick= function(e){
+				
+				alert(e.cancelable);
+				e.preventDefault();
+			}
+		</script>
+	</body>
+</html>

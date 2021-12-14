@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//预处理阶段命名冲突问题
+			/*
+			alert(f);//function f(){console.log("111");	}
+			var f = 5;
+			function f(){
+				console.log("111");
+			}
+			
+			alert(f);//function f(){console.log("111");	}
+			function f(){
+				console.log("111");
+			}
+			var f = 5;//变量被忽略
+			
+			
+			alert(f);//function f(){console.log("222");	}
+			function f(){
+				console.log("111");
+			}//函数被覆盖
+			function f(){
+				console.log("222");
+			}
+				
+			
+			两种情况alert的都是函数体,说明不是简单从上倒下的扫描覆盖
+			并不是后面的覆盖前面的
+			
+			
+			处理方法:处理函数声明有冲突,会覆盖
+					 处理变量声明有冲突,会忽略
+					 函数是一等公民
+			*/
+			
+			
+			
+			
+			
+			
+			//预处理阶段
+			
+			/*
+			window
+			{
+				f:指向函数
+				a:undefined
+				g:undefined
+			}
+			*/
+			
+			
+			alert(a);//undefined
+			//alert(b);//报错
+			alert(f);//console.log("f");
+			alert(g);//undefined
+			
+			var a = 5;
+			b = 6;
+			alert(b);//6
+			function f(){
+				console.log("f");
+			}
+			var g = function (){
+				console.log("g");
+			}
+			alert(g);
+			console.log("g");
+			
+			//执行阶段
+			
+			/*
+			window
+			{
+				f:指向函数
+				a:5
+				b:6
+				g:指向函数
+			*/
+			
+			
+			
+		</script>
+	</body>
+</html>

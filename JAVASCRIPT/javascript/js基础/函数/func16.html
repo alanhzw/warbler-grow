@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//闭包的应用,设置和访问局部变量
+			var setValue,getValue;
+			(function(){
+				var n =0;
+				getValue=function(){
+					return n;
+				};
+				setValue= function(x){
+					n=x;
+				};
+			})();
+//			alert(n);  报错 n未定义
+			alert(getValue());
+			setValue(567);
+			alert(getValue());
+	
+		</script>
+	</body>
+</html>

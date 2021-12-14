@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>error对象</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			try{
+//				notExists();
+//			}catch(e){
+//				alert(e.name+':'+e.message);
+//			}
+//			
+//			alert("aa");
+
+//
+//		try{
+//			var n=1;
+//		}catch(e){
+//			alert(e.name+':'+e.message);
+//		}finally{
+//			alert("bbb");
+//		}
+//				
+			
+//			try{
+//				notExits();
+//			}catch(e){
+//				if(e instanceof EvalError){
+//					alert("eval错误"+e.message);
+//				}else if(e instanceof RangeError){
+//					alert("range错误"+e.message);
+//				}else if(e instanceof TypeError){
+//					alert("type错误"+e.message);
+//				}else{
+//					alert("其他错误");
+//				}
+//			}
+//			
+//			
+		function MyError(msg){
+		this.name='MyError';
+		this.message=msg||'默认的自定义的错误信息';
+	}
+	MyError.prototype=Object.create(Error.prototype);
+	MyError.prototype.constructor=MyError;
+	try{
+		throw new MyError();
+	}catch(e){
+		console.log(e.name+":"+e.message);
+	}
+	
+	try{
+		throw new MyError('测试自定义的错误信息');		
+	}catch(e){
+		console.log(e.name+":"+e.message);
+	}
+
+
+	var  o1 ={x:1};
+	var  o2 ={x:1};
+	console.log(o1 == o2);
+	var o3 = {x:1};
+	var o4 = o3 ;
+	console.log(o3==o4);
+	o4.x=123;
+	console.log(o3.x);
+	console.log(o4.x);
+	
+	
+	function f(o){
+		o.x=55;
+	}
+	f(o3);
+	console.log(o4.x);
+	console.log(o3 == o4);
+		</script>
+	</body>
+</html>

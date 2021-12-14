@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			(function(){
+				
+				//暴露外部使用的一个接口
+				var jQuery = window.jQuery = window.$ =function(){};
+				
+				//处理原型对象
+				
+				jQuery.fn = jQuery.prototype = {};
+				
+				//实现继承
+				jQuery.extend = jQuery.fn.extend = function(){};
+				
+				//添加静态方法
+				jQuery.extend({});
+				//添加实例方法
+				
+				jQuery.fn.extend({});
+				
+				
+				
+				
+			})();
+		</script>
+	</body>
+</html>

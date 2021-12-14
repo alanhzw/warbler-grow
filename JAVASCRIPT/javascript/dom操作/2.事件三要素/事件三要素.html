@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">唐伯虎</button>
+		<div id="div">123</div>
+	</body>
+	<script type="text/javascript">
+		//事件是由三部分组成  事件源   事件类型  事件处理程序   (事件三要素)
+		//事件源:事件被触发的对象
+		let btn = document.getElementById("btn");//获取事件源
+		//事件类型:如何触发  什么事件   (点击鼠标onclick 按下键盘等等)
+		//事件处理程序:通过一个函数赋值的方式完成
+		btn.onclick = function(){
+			alert("点秋香");
+		}	
+			
+			
+		let div = document.getElementById("div");
+		div.onclick = function(){
+			console.log("我被选中了");
+		}
+		
+		//常见的鼠标事件
+		// onclick 鼠标点击左键触发
+		// onmouseover 鼠标经过触发
+		// onmouseout 鼠标离开触发
+		// onfocus  获得鼠标焦点触发
+		// onblur  失去鼠标焦点触发
+		// onmousemove  鼠标移动触发
+		// onmouseup 鼠标弹起触发
+		// onmousedown 鼠标按下触发
+		
+		
+		
+	</script>
+</html>

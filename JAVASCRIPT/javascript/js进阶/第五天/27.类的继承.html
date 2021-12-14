@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建父类
+			//创建子类
+			//建立关系
+			
+			//inherit
+			function P(){
+				
+			}
+			
+			function C(){
+				
+			}
+			
+			//1.C.prototype=P.prototype  不推荐使用  子暴露给父
+			//2.C.protptype=new P();  浪费内存
+			/*
+			  
+			3.function F(){};
+			F.prototype = P.prototype;
+			var f = new F();
+			C.prototype = f;
+			*/
+			C.prototype= Object.create(P.prototype);
+		</script>
+	</body>
+</html>

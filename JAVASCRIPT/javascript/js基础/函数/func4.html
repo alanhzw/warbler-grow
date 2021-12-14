@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//全局变量和局部变量的区别
+//			function test(){
+//				var x=1;
+//				alert(x);
+//			}
+//			test();
+//			alert(x);
+//			function test1(){
+//				y=5;
+//				alert(y);
+//			}
+//			test1();
+//			alert(y);
+		var x=1,y=2;
+		function calc(x,y){
+			document.write('a的值为'+a+'<br/>');//undefined
+			document.write('函数体内x的值为：'+x+'<br/>');
+			document.write('函数体内y的值为：'+y+'<br/>');
+			var x=0,y=6;
+			z=x+y;
+			x=x+y;
+			var a=198;
+			document.write('a的值为：'+a+'<br/>');
+			document.write('x的值为：'+x+'<br/>');
+			return z;
+		}
+//		alert(calc(x,y));
+//		alert(x+'-'+y+'-'+z);
+		var a=1,b=2;
+		function test1(){
+			var a=5,b=10;
+			return a+b;
+
+		}
+		function test2(){
+			var a=11,b=22;
+			return a+b;
+		}
+		alert(test1());
+		alert(test2());
+		alert(a+'--'+b);
+			
+		</script>
+	</body>
+</html>

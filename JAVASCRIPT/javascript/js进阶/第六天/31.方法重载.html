@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<title>polymorphism</title>
+</head>
+<body>
+
+<p id="js" >this is for js</p>
+<script type="text/javascript">
+			
+		/*
+		
+			function demo(a,b){
+				//得到形参的个数
+				console.log(demo.length);
+				//得到实际参数的个数
+				console.log(arguments.length);
+				console.log(arguments[0]);
+				console.log(arguments[1]);				
+			}
+			demo(4,5,6);
+			
+		*/	
+			
+		//方法重载
+		
+		//1.参数个数不一样
+		
+		/*
+		function add(){
+			var total = 0;
+			for(var i = arguments.length-1;i>=0;i--){
+				total+=arguments[i];
+			};
+			return total;
+		}
+		
+		console.log(add(1));
+		console.log(add(1,2,3));
+		*/
+		
+		
+		//2.有无参数
+		
+		/*
+		function fontSize(){
+			var ele = document.getElementById("js");
+			if (arguments.length == 0){
+		
+				return ele.style.fontSize;
+			}else{
+				ele.style.fontSize = arguments[0];
+		
+			}
+		}
+		fontSize(25);
+		console.log(fontSize());
+		*/
+
+	
+		//3.参数类型不一样
+		 
+		function setting(){
+			var ele = document.getElementById("js");
+			if (typeof arguments[0] ==="object") {
+				for(p in arguments[0]){
+					ele.style[p]=arguments[0][p];
+				}
+			} else{
+				ele.style.fontSize=arguments[0];
+				ele.style.backgroundColor=arguments[1];
+			}
+		}
+		setting(25,"red");
+		setting({fontSize:28,backgroundColor:"green"});
+</script>
+</body>
+
+
+</html>

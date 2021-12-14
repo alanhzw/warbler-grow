@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="ul1">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+		</ul>
+		<div class="a">大哥</div>
+		<div class="a">三弟</div>
+		<div id="a">天</div>
+		<div id="a">地</div>
+		<ol id = "ol">
+			<li>生僻字1</li>
+			<li>生僻字2</li>
+			<li>生僻字3</li>
+			<li>生僻字4</li>
+		</ol>
+		<div id="text">2020-02-02</div>
+	</body>
+	<script type="text/javascript">
+		//1.通过id获取  参数 id  返回元素对象  document.getElementById("id");
+		let text = document.getElementById("text");
+		console.log(text);
+		//console.dir(text) 打印返回的元素对象  更好的查看里面的属性和方法
+		console.dir(text);
+		//2.通过标签名获取  document.getElementsByTagName("标签名")
+		//返回的是 获取过来元素对象的集合  以伪数组的形式储存 (只有一个或零个元素返回的也是伪数组)
+		let lis = document.getElementsByTagName("li");
+		console.log(lis);
+		console.log(lis[1]);
+		//采取遍历的方式依次打印里面的元素对象
+		for(let i = 0;i<lis.length;i++){
+			console.log(lis[i]);
+		}
+		//3.获取某个元素(父元素)内部所有指定标签名的子元素 element.getElementsByTagName("标签名");
+		// let ol = document.getElementsByTagName("ol");//[ol]
+		// let ollis = ol[0].getElementsByTagName("li");
+		//console.log(ollis);
+		
+		let ol = document.getElementById("ol");
+		let ollis = ol.getElementsByTagName("li");
+		console.log(ollis);
+		
+		//4.通过html5 新增的方法获取 只兼容ie9以上版本 
+		// document.getElementByclassName("类名");  根据类名获取某些元素集合
+		let ul = document.getElementsByClassName("ul1");
+		console.log(ul);
+		//5.document.querySelector("选择器");  根据指定选择器返回第一个元素对象
+		let firstbox = document.querySelector(".a");
+		console.log(firstbox);
+		let box1 = document.querySelector("#a");
+		console.log(box1);
+		let li1 = document.querySelector("li");		
+		console.log(li1);
+		//6.document.querySelectorAll("选择器"); 根据制定选择器返回所有元素的集合
+		let boxall = document.querySelectorAll(".a");
+		console.log(boxall);
+		let lisall = document.querySelectorAll("li");
+		console.log(lisall);
+		//7.获取特殊元素
+		//获取body元素 document.body;
+		let body= document.body;
+		console.log(body);
+		//获取html元素 document.documentElement;
+		let html = document.documentElement;
+		console.log(html);
+		
+	</script>
+</html>

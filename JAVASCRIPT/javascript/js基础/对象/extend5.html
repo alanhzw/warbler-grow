@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function Shape(){};
+			Shape.prototype.name="shape";
+			Shape.prototype.toString=function(){
+				return this.name;
+			}
+			
+			function TwoDshape(){};
+			
+			//声明临时构造器
+			
+			var f = function(){};
+			f.prototype=Shape.prototype;
+			TwoDshape.prototype=new f();
+			TwoDshape.prototype.constructor=TwoDshape;
+			TwoDshape.prototype.name="2d shape";
+			
+			function Triangle(side,height){
+				this.side=side;
+				this.height=height;			
+			}
+			
+			var f = function(){};
+			f.prototype =TwoDshape.prototype;
+			Triangle.prototype=new f();
+			Triangle.prototype.constructor=Triangle;
+			Triangle.prototype.name="trianngele";
+			Triangle.prototype.getArea=function(){
+				return this.side*this.height/2;
+			}
+			
+			
+			var my = new Triangle(5,10);
+			console.log(my.getArea());
+			console.log(my.toString());
+			
+			var s = new Shape();
+			console.log(s.name);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<!--		
+		1.Set容器:无序不可重复的多个value的集合体
+			*Set()
+			*Set(array)
+			*add(value)
+			*delete(value)
+			*has(value)
+			*clear()
+			*size
+		2.Map容器:无序的key不重复的多个key-value集合体
+			*Map()
+			*Map(array)
+			*set(key,value)//添加
+			*get(key)
+			*delete(key)
+			*has(key)
+			*clear()
+			*size
+	-->
+		
+		<script type="text/javascript">
+			let set = new Set([1,2,3,4,5,2,6]);
+			console.log(set);
+			set.add(7);
+			console.log(set.size,set);
+			console.log(set.has(1));
+			console.log(set.has(8));
+			set.clear();
+			console.log(set.size,set);
+			
+			
+			
+			let map = new Map([["aaa","hzw"],["bbb","god"]]);
+			console.log(map);
+			map.set(44,"ccc");
+			console.log(map);
+			map.delete("bbb");
+			console.log(map);
+		</script>
+	</body>
+</html>

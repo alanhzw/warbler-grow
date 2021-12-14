@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+					var person={
+			username:'king',
+			age:12,
+			salary:1234.56,
+			addr:'北京',
+			sex:'男'
+		};
+		//查询属性
+		console.log('用户名为：'+person.username+"\n"+'性别'+person.sex);
+		console.log('薪水：'+person['salary']+'\n'+'地址：'+person["addr"]);
+		//如果属性不确定需要使用[]
+		var key='username';
+		console.log(person.key);
+		console.log(person[key]);
+		console.log(person['key']);
+		function PersonInfo(name,age,sex){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+		}
+		var person1=new PersonInfo('king',34,'男');
+		console.log(person1.name+person['sex']);
+		//添加属性
+		var obj={};//空对象
+		obj.username='king';
+		obj.age=12;
+		obj.addr='北京';
+		obj['test']='this is a test';
+		console.log(obj.username+'\n'+obj.age+'\n'+obj.addr+'\n'+obj['test']);
+		
+		//修改指定属性
+		obj.username='queen';
+		obj['test']='麦子学院';
+		console.log('修改之后的名字'+obj.username);
+		console.log(obj['test']);
+		
+		//通过delete删除指定属性
+		delete obj.test;
+		console.log(obj['test']);
+		delete obj.username;
+		console.log(obj['username']);
+		
+		//通过for/in遍历属性
+		
+		var obj1={
+			x:1,
+			y:2,
+			test:'this is a test',
+			edu:'麦子学院'
+		};
+		for(var p in obj1){
+			console.log(p+'\n');
+		}
+		
+		//对象中有方法
+		var obj2={
+			username:'king',
+			age:12,
+			addr:'北京',
+			sayHi:function (){
+				return 'say Hi';
+			},
+			info:function(){
+				return '用户名：'+this.username+'\n'+'年龄：'+this.age+'\n地址：'+this.addr;
+			}
+		};
+		console.log(obj2.sayHi());
+		console.log(obj2.info());
+		console.log(obj2.info);
+		
+		function Person(username,age,sex,addr){
+			this.username=username;
+			this.age=age;
+			this.sex=sex;
+			this.addr=addr;
+			this.info=function(){
+				return this.username+this.addr;
+			}
+		}
+		var p1=new Person('queen',34,'女','上海');
+		console.log(p1.info());
+		p1.test='this is a test';
+		console.log(p1.test);
+		p1.info1=function(){
+			return 'this is a test1111';
+		};
+		console.log(p1.info1());
+		
+		</script>
+	</body>
+</html>

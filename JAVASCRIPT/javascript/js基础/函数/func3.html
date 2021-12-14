@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//变量作用域
+			var x=1;
+			function test(){
+				document.write('函数体内x的值为:'+x+'<br/>');
+				x=19;
+				document.write('函数体内对x重新赋值，此时x的值为：'+x+'<br/>');
+			}
+			document.write('函数体外x的值为：'+x+'<br/>');
+			test();
+			document.write('x的值为：'+x+'<br/>');
+			document.write('<hr color="red"/>');
+			
+		</script>
+	</body>
+</html>

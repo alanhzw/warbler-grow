@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 600px;
+				margin: 100px auto;
+			}
+			.message{
+				display:inline-block;
+				font-size: 12px;
+				color: #999;
+				background-image: url(../../../demo/原生js实现%20瀑布流布局/img/eg_15.jpg) no-repeat left center;
+				padding-left: 20px;
+			}
+			.wrong{
+				color: red;
+				background-image: url(../5.表单元素的属性操作/close.png);
+			}
+			.right{
+				color: #33CC99;
+				background-image: url(../5.表单元素的属性操作/open.png);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="register">
+			<input type="password" class="ipt" />
+			<p class="message">请输入6-16位密码</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//1.获取元素
+		var ipt = document.querySelector(".ipt");
+		var message = document.querySelector(".message");
+		//2.注册事件  鼠标失去焦点
+		ipt.onblur = function(){
+			if(this.value.length<6 || this.value.length>16){
+				message.className = "message wrong";
+				message.innerHTML = "您输入的位数不对要求6-16位";
+			}else{
+				message.className = "message right";
+				message.innerHTML = "您输入的正确";
+			}
+		}
+	</script>
+</html>

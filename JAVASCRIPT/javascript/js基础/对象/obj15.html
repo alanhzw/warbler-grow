@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//自身属性高于原型属性
+			function Product(name){
+				this.name=name;
+			}
+			Product.prototype.name="音箱";
+			var p1 = new Product("相机");
+			console.log(p1.name);
+			delete p1.name;
+			console.log(p1.name);
+			p1.name="手机";
+		
+			var obj ={
+				username:"king",
+				age:12,
+				addr:"北京",
+			};
+			for(var i in obj){
+				console.log(obj[i]);
+			}
+			
+			
+			
+			function Product(name,color){
+				this.name=name;
+				this.color=color;
+				this.someMethod=function(){
+					return "this is a test";
+				}
+			}
+			
+			Product.prototype.price=1234;
+			Product.prototype.memory=32;
+			
+			
+			var p1 = new Product("苹果","白色");
+			//可以得到原型上的属性
+			for(var p in p1){
+				console.log(p);
+			}
+			//只可以得到自身属性
+			for( var p in p1){
+				if(p1.hasOwnProperty(p)){
+					console.log(p);
+				}
+			}
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

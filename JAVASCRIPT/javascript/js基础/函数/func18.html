@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <script type="text/javascript">
+		 	//			function f(){
+//				var a=[];
+//				var i;
+//				for(i=0;i<3;i++){
+//					a[i]=function(){
+//						return i;
+//					};
+//				}
+//				return a;
+//			}
+//			var test=f();
+//			alert(test[0]());
+//			alert(test[1]());
+//			alert(test[2]());
+
+//		function f(){
+//			var a=[];
+//			var i;
+//			for(i=0;i<3;i++){
+//				a[i]=(function(x){
+//					return function(){
+//						return x;
+//					}
+//				})(i);
+//			}
+//			return a;
+//		}
+//			var test=f();
+//			alert(test[0]());
+//			alert(test[1]());
+//			alert(test[2]());
+		
+		function f(){
+			function test(x){
+				return function(){
+					return x;
+				}
+			}
+			var a=[];
+			var i;
+			for(i=0;i<3;i++){
+				a[i]=test(i);
+			}
+			return a;
+		}
+		var res=f();
+		alert(res[0]());
+		alert(res[1]());
+		alert(res[2]());
+		
+		
+			
+			
+		 </script>
+	</body>
+</html>

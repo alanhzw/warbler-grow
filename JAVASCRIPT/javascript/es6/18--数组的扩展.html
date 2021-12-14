@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	
+	<!--
+		1.Array.from(v):将伪数组对象或可遍历对象转换为真数组
+		2.Array.of(v1,v2,v3):将一系列值转换为数组
+		3.find(function(value,index,arr){return true}):找出第一个满足条件返回true的元素
+		4.findIndex(function(value,index,arr){return true}):找出第一个满足条件返回true的元素下标
+	-->
+	
+	
+	<body>
+		
+		<button>测试1</button>
+		<button>测试2</button>
+		<button>测试3</button>
+		
+		
+		<script type="text/javascript">
+			//得到一个位数组
+			let btns =  document.getElementsByTagName("button");
+			/*
+			 * 对伪数组遍历报错
+			btns.forEach(function(item,index){
+				console.log(item);
+			})
+			*/
+			//使用Array.from(v)包装
+			Array.from(btns).forEach(function(item,index){
+				console.log(item);
+			})
+			
+			
+			let arr = Array.of(1,2,3,4);
+			console.log(arr);
+			
+			
+			let arr1= [1,2,3,4,5,6,4,77];
+			let sult = arr1.find(function(item,index){
+				return item>4
+			});
+			console.log(sult);
+			let sult1 = arr1.findIndex(function(item,index){
+				return item>4
+			});
+			console.log(sult1);
+			
+		</script>
+	</body>
+</html>

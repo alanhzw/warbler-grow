@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="test1" id="btn1" />
+		<input type="button" value="test2" id="btn2" />
+		<script type="text/javascript">
+			//按照添加的先后顺序执行
+			//添加事件可以使用匿名函数或者事件处理函数
+			//取消事件不可以使用匿名函数,即使写的一样
+			var btn1 = document.getElementById("btn1");
+			btn1.addEventListener("click",function(){
+				alert("a");
+			},true);
+			var handler = function(){
+				alert("b");
+			};
+			
+			btn1.addEventListener("click",function(){
+				alert("c");
+			},true);
+			btn1.addEventListener("click",handler,true);
+			var count = 0;
+			var hand = function(){
+				alert(count++);
+				if (count==3) {
+					alert("事件被取消了");
+					btn2.removeEventListener("click",hand,false);
+				}
+			}
+			btn2.addEventListener("click",hand,false);
+		</script>
+	</body>
+</html>

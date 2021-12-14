@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	<!-- 
+		1.element.innerText
+		从起始位置到终止位置的内容
+		2.element.innerHTML (常用)
+		起始位置到终止位置的全部内容
+		3.区别
+		innerText不识别html标签并打印出来  HTML识别html标签
+		4.这两个属性是可读写的  可以获取元素里面的文字
+		innerText  但它去除html标签,同时空格和换行也会去掉
+		innerHTML  包括html标签,同时保留空格和换行 
+	-->
+		
+		
+		<style>
+			#div{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">显示当前系统时间</button>
+		<div id="div">某个时间</div>
+		<div id="dd">我测试HTML</div>
+		<div id="ddd">我测试Text</div>
+		<p id="p">不用事件</p>
+		<p id="pp">
+			我是文字
+			<span>我也是文字</span>
+		</p>
+	</body>
+	
+	<script type="text/javascript">	 
+		//获取元素
+		let btn = document.getElementById("btn");
+		let div = document.getElementById("div");
+		//注册事件
+		btn.onclick = function(){
+			div.innerText = "2020.02.02";
+		}
+		//不注册事件
+		let p = document.getElementById("p");
+		p.innerText=Date();
+
+
+		
+		let pp = document.getElementById("pp");		
+		console.log(pp.innerHTML);
+		console.log(pp.innerText);
+		
+		
+		
+		let dd = document.getElementById("dd");
+		let ddd = document.getElementById("ddd");
+		dd.innerHTML = "<strong>我</strong>字大";
+		ddd.innerText = "<strong>我</strong>字大";
+		
+		
+	</script>
+</html>

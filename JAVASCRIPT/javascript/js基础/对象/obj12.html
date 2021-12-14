@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+				var obj={
+		x:1,
+		y:2,
+		username:'king'
+	};
+	obj.age=12;
+	delete obj.x;
+//	Object.seal()和Object.preventExtensions()类似，
+//	除了能够将对象设置为不可扩展的，
+//	还可以将对象的所有自身属性都设置为不可配置的。
+//	也就是说不能给这个对象添加新属性，
+//	而且它已有的属性也不能删除或配置，
+//	不过它已有的可写属性依然可以设置。
+//	可以通过Object.isSealed()检测对象是否封闭
+	var o=Object.seal(obj);
+	console.log(obj===o);
+	console.log(Object.isExtensible(o));
+	obj.y=55;
+	console.log(obj.y);
+//	Object.defineProperty(obj,'username',{
+//		get :function(){
+//			return 'this is a test';
+//		}
+//	});
+	o.z=77;
+	console.log(o.z);
+	console.log(o.username);
+	delete o.username;
+	console.log(o.username);
+//	Object.defineProperties(obj,'username',{value:'queen'});
+	console.log(Object.isSealed(o));
+	console.log(o.username);
+	console.log(Object.getOwnPropertyDescriptor(obj,'username'));
+	
+	
+	
+	
+	/*
+	 
+	var obj={
+	prop:function(){},
+	foo:'king'
+};
+obj.test='this is a test';
+delete obj.prop;
+//Object.freeze()将更严格地锁定对象--冻结(frozen).
+//除了对象设置为不可扩展的和将其属性设置为不可配置的之外，
+//还可以将它自身的所有数据属性设置为只读
+//(如果对象的存储器属性具有setter方法，存取器属性将不受影响，仍可以通过给属性赋值调用它们)。
+//可以使用Object.isFroze()来检测对象是否冻结。
+var o=Object.freeze(obj);
+console.log(obj===o);
+console.log(Object.isFrozen(o));
+o.x=1;
+console.log(o.x);
+console.log(o.foo);
+o.foo='queen';
+console.log(o.foo);
+
+var obj1={
+internal:{}	
+};
+Object.freeze(obj1);
+obj1.internal.x=1;
+console.log(obj1.internal.x);
+
+function deepFreeze(obj){
+	var prop,propKey;
+	Object.freeze(obj);
+	for(propKey in obj){
+		prop=obj[propKey];
+		if(!obj.hasOwnProperty(propKey)||!(typeof prop==='object')||Object.isFrozen(prop)){
+			continue;
+		}
+		deepFreeze(prop);
+	}
+}
+
+var obj2={
+	internal:{}	
+};
+//深度冻结,对象里的子对象也不可配置,不可扩展,不可写
+deepFreeze(obj2);
+obj2.internal.x=1;
+console.log(obj2.internal.x);
+
+
+*/
+	
+	
+	
+	
+	
+	
+	
+		</script>
+	</body>
+</html>
