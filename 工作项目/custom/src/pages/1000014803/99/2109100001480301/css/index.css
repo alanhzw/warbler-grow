@@ -1,0 +1,395 @@
+html {
+    /*background: #f5e3ec;*/
+    /* max-width: 750px; */
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.van-popup {
+    background: none;
+    overflow: hidden;
+}
+
+.van-toast {
+    background-color: rgba(0,0,0,.7);
+}
+
+.show {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.index {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/92983/19/19127/2574826/61444e51Ef14e50b3/961ef961a1b447e5.png) no-repeat;
+    background-size: 100%;
+    height: 31.8rem;
+    position: relative;
+}
+
+.index-rule {
+    background-color: #0b2988;
+    padding: 0.2rem 0.6rem;
+    color: #fff;
+    font-size: 0.26rem;
+}
+
+.rule-button {
+    position: absolute;
+    top: 0.58rem;
+    right: 0;
+    width: 1.4rem;
+    height: 0.5rem;
+}
+
+.myPrize-button {
+    position: absolute;
+    top: 1.35rem;
+    right: 0;
+    width: 1.4rem;
+    height: 0.5rem;
+}
+
+.filter {
+    filter: grayscale(1);
+}
+
+.lottery-button {
+    position: absolute;
+    width: 1.8rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.lottery-button img {
+    width: 100%;
+    display: block;
+}
+
+.lottery-button0 {
+    top: 15rem
+}
+
+.lottery-button1 {
+    top: 18.85rem
+}
+
+.lottery-button2 {
+    top: 22.4rem
+}
+
+.lottery-button3 {
+    top: 25.7rem
+}
+
+.privacy-button {
+    position: absolute;
+    left: 2.78rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.privacy-button img {
+    display: block;
+    width: 0.15rem;
+    margin: auto;
+}
+
+.privacy-button0 {
+    top: 15.88rem;
+}
+
+.privacy-button1 {
+    top: 19.72rem;
+}
+
+.privacy-button2 {
+    top: 23.24rem;
+}
+
+.privacy-button3 {
+    top: 26.51rem;
+}
+
+.privacytext-button {
+    position: absolute;
+    left: 3.95rem;
+    width: 0.6rem;
+    height: 0.25rem;
+}
+
+.winner-list {
+    position: absolute;
+    top: 27.98rem;
+    left: 0.8rem;
+    right: 0.8rem;
+    height: 3.88rem;
+    overflow: hidden;
+}
+
+.winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+}
+
+.winner img {
+    width: 0.6rem;
+    height: 0.6rem;
+    object-fit: cover;
+    border-radius: 1.2rem;
+}
+
+.winner span {
+    display: block;
+    font-size: 0.28rem;
+    color: #000;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.winner-null {
+    text-align: center;
+    line-height: 3.9rem;
+    font-size: 0.26rem;
+    color: #24a978;
+}
+
+.rule {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/60339/26/16561/29478/613b09b1E955578e3/eb47317f67dcb2f6.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+    padding: 1.3rem 0.4rem 1.2rem 0.4rem;
+}
+
+.close-rule {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: auto;
+}
+
+.rule-text {
+    overflow-y: scroll;
+    height: 6.2rem;
+    font-size: 0.26rem;
+    color: #24a978;
+}
+
+.privacy {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/206537/6/664/29582/61401b6fE5af07fc3/bb2a6afd6017ebbd.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+    padding: 1.3rem 0.4rem 1.2rem 0.4rem;
+}
+
+.my-gift {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/198065/11/7905/31324/613b24bdE0c5e00fa/5e5c3ca4baf6a286.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+    padding: 2.1rem 0.4rem 1.2rem 0.4rem;
+}
+
+.my-gift-list {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.my-gift-list li {
+    color: #24a978;
+    font-size: 0.26rem;
+    line-height: 0.38rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.15rem 0;
+}
+.my-gift-list li span {
+    display: block;
+    text-align: center;
+}
+.my-gift-list li span:nth-child(1) {
+    width: 1.5rem;
+}
+
+.my-gift-list li span:nth-child(2) {
+    width: 1.5rem;
+}
+
+.my-gift-list li span:nth-child(3) {
+    width: 1.4rem;
+    background-color: #1652ff;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.gift-fail {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/81598/23/16189/57960/613b09b0E81268cc6/0a498575bb1f0cf8.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+}
+
+.close-gift-fail {
+    position: absolute;
+    top: 5.8rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 1rem;
+}
+
+.get-gift {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/199487/5/7838/53666/613b09b1Ea7b361da/7f48a0dfb277735f.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+}
+
+.get-gift-name {
+    position: absolute;
+    top: 3.9rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #24a978;
+    font-size: 0.6rem;
+
+}
+
+.close-get-gift {
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 1rem;
+}
+
+.get-Tickets {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/70210/10/16579/82934/613b09b2E97763e14/b03eb902b8d0bdce.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+}
+
+.get-Tickets-address {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 1rem;
+}
+
+.address {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/203510/1/6493/62593/61401b6fEc8c6f885/ed0bedca670c3895.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+}
+
+.submit-address {
+    position: absolute;
+    top: 6.3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 1rem;
+}
+
+.addess-formData {
+    position: absolute;
+    top: 1.59rem;
+    left: 2rem;
+    width: 3.78rem;
+    text-align: end;
+}
+
+.addess-formData input {
+    width: 100%;
+    height: 0.59rem;
+    margin-bottom: 0.2rem;
+    border: none;
+    background: none;
+    color: #0c3680;
+    font-size: 0.24rem;
+    padding: 0.05rem 0 0 0;
+}
+
+input::-webkit-input-placeholder {
+    color: #0c3680;
+}
+
+.sucess {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/203886/16/6097/52726/613b09b1E3d1678f9/0d11a1faef8a8331.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+}
+
+.close-sucess {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 1rem;
+}
+
+.opencard {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/80502/26/17617/93713/613b09b1E078bfc05/8f167b6e99870902.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 8.45rem;
+}
+
+.opencard-button {
+    position: absolute;
+    top: 5.9rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 1rem;
+}

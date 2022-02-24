@@ -1,0 +1,208 @@
+html {
+  /*background: #f5e3ec;*/
+  /* max-width: 750px; */
+  margin: 0 auto;
+}
+@font-face {
+  font-family: 'HYZhongDengXianJ';
+  src: url('../assets/HYg2gj.woff2') format('woff2'),
+      url('../assets/HYg2gj.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'HYZhongDengXianJ' !important;
+}
+
+.van-popup {
+  background: none;
+  overflow: hidden;
+}
+
+.van-toast {
+  background-color: rgba(0, 0, 0, 0.7);
+  flex-wrap: nowrap;
+  min-width: max-content;
+}
+
+.show {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.inxex {
+  background: url(//img10.360buyimg.com/imgzone/jfs/t1/199865/14/20083/878932/61b8519bEaff899d2/d3bc7091fa4d05ba.png) no-repeat;
+  background-size: 100%;
+  background-color: #2b76a0;
+  height: 16.24rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'HYZhongDengXianJ';
+  .logo {
+    padding: 1.1rem 0 1.4rem 0;
+    img {
+      display: block;
+      width: 1.87rem;
+      margin: 0 auto;
+    }
+  }
+  .piaodai {
+    position: absolute;
+    top: 0;
+    left: 0;
+    img {
+      width: 2rem;
+    }
+  }
+  .piaodai2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    img {
+      width: 2rem;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.form {
+  width: 95%;
+  height: 530px;
+  position: absolute;
+  background: url(//img10.360buyimg.com/imgzone/jfs/t1/196975/11/20540/327678/61b85bfeE56f7191e/bd072375b3d11214.png) no-repeat;
+  background-size: 100%;
+  padding: 0 0.2rem 0 0.2rem;
+  margin: 0 .2rem 0 .2rem;
+  top: 4.3rem;
+  .box {
+    height: .4rem;
+    padding: 0 0 0 0.4rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+    span {
+      font-size: 0.24rem;
+      line-height: 1rem;
+      letter-spacing: 0.024rem;
+      color: #ffffff;
+    }
+    input {
+      width: 3.55rem;
+      height: 100%;
+      font-size: 0.26rem;
+      color: #fff;
+      line-height: 0.4rem;
+      background: none;
+      border: 1px solid #fff;
+      border-radius: unset !important;
+      text-align: center;
+      padding-right: 0.1rem;
+      margin-left: 2.3rem;
+      margin-top: 0rem;
+      font-family: 'HYZhongDengXianJ';
+    }
+    p {
+      width: 3.55rem;
+      height: 100%;
+      font-size: 0.28rem;
+      color: #fff;
+      line-height: 0.4rem;
+      text-align: center;
+      padding-right: 0.32rem;
+      margin-left: 2.3rem;
+      margin-top: 0rem;
+      border: 1px solid #fff;
+      font-family: 'HYZhongDengXianJ';
+      position: relative;
+    }
+    p::before {
+      content: "";
+      display: block;
+      width: .55rem;
+      height: .38rem;
+      margin-left: 2.95rem;
+      //border: 1px solid transparent;
+      border-left: 1px solid #fff;
+      position: absolute;
+    }
+    p img {
+      position: absolute;
+      display: block;
+      top: .13rem;
+      right: .15rem;
+      width: .245rem;
+      border: 1px solid transparent;
+      border-left: #fff;
+    }
+  }
+}
+.box:nth-child(4) {
+  width: 3.55rem;
+  border: 1px solid #fff;
+  margin-left: 2.7rem;
+  box-sizing: border-box;
+  .little-icon{
+    display: block;
+    width: .59rem;
+    height: .4rem;
+    position: absolute;
+    // top: 4.1rem;
+    left: 5.88rem;
+    border: 1px solid transparent;
+    border-left-color: #fff;
+  }
+  .little-icon img {
+    position: absolute;
+    display: block;
+    top: .13rem;
+    right: .17rem;
+    width: .245rem;
+    // border: 1px solid transparent;
+  }
+}
+.animation {
+  transition: 0.5s;
+  width: 0.16rem;
+}
+.active {
+  transform: rotate(180deg);
+}
+.confirm {
+  display: block;
+  position: absolute;
+  top: 10.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  //margin: 3.3rem auto 1.7rem;
+  width: 2rem;
+  height: .6rem;
+}
+.open-card-img {
+  width: 6.5rem;
+}
+.go-open-card {
+  position: absolute;
+  bottom: 1.7rem;
+  left: 2.2rem;
+  width: 2.4rem;
+  height: 0.5rem;
+}
+.open-card-close {
+  position: absolute;
+  background: url(//img10.360buyimg.com/imgzone/jfs/t1/157490/40/22814/1850/61b95289E9d07f377/3dcfc3485a5f18d0.png) no-repeat;
+  background-size: 100%;
+  //right: 12px;
+  //top: 12px;
+  right: .25rem;
+  top: .25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}

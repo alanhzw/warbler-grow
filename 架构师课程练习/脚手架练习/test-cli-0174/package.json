@@ -1,0 +1,20 @@
+{
+  "name": "test-cli-0174",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "test-cli": "bin/index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dedent": "^0.7.0",
+    "test-cli-0174-lib": "^1.0.0",
+    "yargs": "^17.3.1"
+  }
+}

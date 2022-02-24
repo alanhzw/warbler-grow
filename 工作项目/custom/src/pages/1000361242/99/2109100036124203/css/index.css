@@ -1,0 +1,403 @@
+html {
+    /*background: #f5e3ec;*/
+    /* max-width: 750px; */
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.van-popup {
+    background: none;
+    overflow: hidden;
+}
+
+.van-toast {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.show {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.filter-gra {
+    filter: grayscale(1);
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.index {
+    width: 100%;
+    position: relative;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/210552/14/4246/2661220/6160f257E59bdb42d/e6e4292e48e0c37d.png) no-repeat;
+    background-size: 100%;
+    padding-top: 8.7rem;
+}
+
+.play1 {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/138600/36/22543/66143/6160f255E15692b61/c007784ec9aa969d.png) no-repeat;
+    background-size: 100%;
+    height: 4rem;
+    margin-bottom: 0.25rem;
+    padding: 1.22rem 0 0 5.7rem;
+}
+
+.gift-list img {
+    width: 1.3rem;
+    display: block;
+    margin-bottom: 0.175rem;
+}
+
+.play2 {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/210998/38/4341/99653/6160f255E5a36d425/4e03c6446ef8750e.png) no-repeat;
+    background-size: 100%;
+    height: 4.2rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.9rem 1rem 0;
+}
+
+.play2 .play2-button {
+    width: 2rem;
+    height: 0.5rem;
+}
+
+.sku-list {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/197059/36/12927/602494/61666c85E2364bd99/62a03814c3af43c2.png) no-repeat;
+    background-size: 100%;
+    height: 15.5rem;
+    padding: 0 0.25rem;
+}
+
+.sku-list ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sku-list ul li {
+    width: 3.4rem;
+    height: 4.35rem;
+    margin-bottom: 0.24rem;
+}
+
+.invite-bk {
+    background-image: linear-gradient(90deg, #1f3f94, #20439e);
+}
+
+.invite {
+    width: 7.5rem;
+    height: 100vh;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/205772/15/10304/829086/61613870E89e36d33/cb5e1fbe26e05495.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    padding-top: 5.2rem;
+}
+
+.close-invite {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/206611/19/4488/2128/61613e19Ee05fc7e9/432466c58d482a3a.png) no-repeat;
+    background-size: 100%;
+}
+
+.invite-box {
+    width: 100%;
+    height: 7rem;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/138783/21/26876/53083/61613870E051f4014/6e82a5dba5a1b9a3.png) no-repeat;
+    background-size: 100%;
+    padding: 1.5rem 0.2rem 0;
+}
+
+.invite-frinde-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.invite-frinde {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/168859/4/21407/18989/61613870E126e4898/e1a0dcc7087dfc93.png) no-repeat;
+    background-size: 100%;
+}
+
+.invite-frinde img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.invite-button {
+    margin-top: 0.8rem;
+}
+
+.invite-button img {
+    width: 4.5rem;
+    display: block;
+    margin: auto;
+}
+
+.show-rule {
+    position: absolute;
+    right: 0;
+    top: 2.3rem;
+    width: 1.3rem;
+    height: 0.45rem;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/205287/24/10203/6219/6160f254E919d9224/ebb306404137050b.png) no-repeat;
+    background-size: 100%;
+}
+
+.my-gift {
+    position: absolute;
+    right: 0;
+    top: 2.8rem;
+    width: 1.3rem;
+    height: 0.45rem;
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/207284/25/4331/6307/6160f255Ed4b0a7ba/a3e0814ed49e9eb8.png) no-repeat;
+    background-size: 100%;
+}
+
+.rule {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/203008/20/10522/123364/616133fdEd4a5a2f6/cfb914e43ba918af.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 7.67rem;
+    padding: 1.6rem 0.5rem 1.5rem 0.6rem;
+}
+
+.close-rule {
+    position: absolute;
+    bottom: 0.3rem;
+    right: 2.8rem;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.rule-text {
+    overflow-y: scroll;
+    height: 100%;
+    font-size: 0.26rem;
+    color: #282725;
+}
+
+.mygift {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/207741/9/4328/130419/616133fdEdbb302d0/ad1b66065f2ed11e.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 7.67rem;
+    padding: 2.55rem 0.5rem 1.5rem 0.5rem;
+}
+
+.close-mygift {
+    position: absolute;
+    bottom: 0.3rem;
+    right: 2.8rem;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.mygift-list {
+    overflow-y: scroll;
+    height: 100%;
+    font-size: 0.26rem;
+    color: #666666;
+}
+
+.mygift-list-gift {
+    width: 100%;
+    padding: 0.1rem 0.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.mygift-list-gift .mygift-img {
+    width: 0.9rem;
+    display: block;
+}
+
+.mygift-list-gift .mygift-text {
+    padding: 0 0.15rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mygift-list-gift .mygift-text p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.32rem;
+    color: #282725;
+    width: 50%;
+    text-align: center;
+}
+
+.mygift-button {
+    background-color: #e2231a;
+    color: #fff;
+    font-size: 0.24rem;
+    width: 1.3rem;
+    line-height: 0.5rem;
+    text-align: center;
+    border-radius: 0.6rem;
+}
+
+.more {
+    text-align: center;
+    font-size: 0.24rem;
+    color: #999;
+    padding: 0.28rem 0;
+}
+
+.mygift-empty {
+    text-align: center;
+    font-size: 0.24rem;
+    color: #999;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 1.6rem;
+    right: 0;
+    left: 0;
+    bottom: 1.5rem;
+}
+
+.record {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/194134/22/20089/53800/612734f5Ee8469575/ab73adcb4e4acc40.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 7.6rem;
+    padding: 2.1rem 0.4rem 1.15rem 0.45rem;
+}
+
+.close-record {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 1.7rem;
+    width: 3rem;
+    height: 0.6rem;
+}
+
+.record-list {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.record-list-tr {
+    display: flex;
+    align-items: center;
+    border-bottom: #666666 dashed 0.01rem;
+}
+
+.record-list-tr:last-child {
+    border: none !important;
+}
+
+.record-list-tr div {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.24rem;
+    color: #666666;
+    line-height: 0.6rem;
+}
+
+.open-card {
+    position: relative;
+}
+
+.open-card-img {
+    width: 6.5rem;
+    display: block;
+}
+
+.open-card-go {
+    position: absolute;
+    top: 4.35rem;
+    left: 1.8rem;
+    width: 3rem;
+    height: 1rem;
+
+}
+
+.open-card-close {
+    position: absolute;
+    bottom: 0.3rem;
+    right: 2.8rem;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.coupon-img {
+    width: 5.5rem;
+    display: block;
+}
+
+.coupon-button {
+    position: absolute;
+    bottom: 1.3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3rem;
+    height: 0.65rem;
+}
+
+.close-coupon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0.8rem;
+    height: 0.7rem;
+}
+
+.gift-img {
+    width: 5.5rem;
+    display: block;
+}
+
+.gift-name {
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 0.45rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-shadow: #f08919 0 0.05rem 0.05rem;
+}
+
+.close-gift {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 2.6rem;
+    height: 0.8rem;
+}

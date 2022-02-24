@@ -1,0 +1,25 @@
+{
+  "command": {
+    "create": {
+      "homepage": "https://github.com/lerna/lerna",
+      "license": "MIT"
+    },
+    "publish": {
+      "tempTag": true
+    },
+    "version": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "exact": true,
+      "message": "chore(release): %s"
+    }
+  },
+  "ignoreChanges": [
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/*.md"
+  ],
+  "useWorkspaces": true,
+  "version": "4.0.0"
+}

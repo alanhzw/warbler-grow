@@ -1,0 +1,367 @@
+html {
+    /*background: #f5e3ec;*/
+    /* max-width: 750px; */
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.van-popup {
+    background: none;
+    overflow: hidden;
+}
+
+.van-toast {
+    background-color: rgba(0,0,0,.7);
+}
+
+.show {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.index {
+    width: 100%;
+    position: relative;
+}
+
+.index-img {
+    display: block;
+    width: 100%;
+}
+
+.show-rule {
+    position: absolute;
+    right: 0;
+    top: 0.24rem;
+    width: 1.3rem;
+    height: 0.35rem;
+}
+
+.my-gift {
+    position: absolute;
+    right: 0;
+    top: 0.68rem;
+    width: 1.3rem;
+    height: 0.35rem;
+}
+
+.amount-spent {
+    position: absolute;
+    top: 9.9rem;
+    width: 100%;
+    padding: 0 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.amount-spent p {
+    font-size: 0.4rem;
+    color: #144899;
+    font-weight: bold;
+}
+
+.amount-spent span {
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    font-weight: bold;
+    color: #e6b160;
+}
+
+.invite-button {
+    position: absolute;
+    top: 10.75rem;
+    width: 100%;
+    padding: 0 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invite-button div {
+    width: 2.4rem;
+    height: 0.6rem;
+}
+
+.receive {
+    position: absolute;
+    top: 12.55rem;
+    right: 0.3rem;
+}
+
+.receive-button {
+    margin-bottom: 1.37rem;
+}
+
+.receive-button img {
+    width: 1.8rem;
+    display: block;
+}
+
+.receive-button-gray {
+    -webkit-filter: grayscale(100%);
+    /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
+
+.invitation-record {
+    position: absolute;
+    top: 20.1rem;
+    left: 0;
+    right: 0;
+    width: 3rem;
+    height: 0.4rem;
+    margin: 0 auto;
+}
+
+.sku-list {
+    position: absolute;
+    top: 21.1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 6rem;
+}
+
+.sku-list-button {
+    width: 2.45rem;
+    height: 0.55rem;
+    float: left;
+    margin-top: 4.52rem;
+}
+
+.sku-list-button:nth-child(odd) {
+    margin-right: 1rem;
+}
+
+.go-shop {
+    position: absolute;
+    top: 36.7rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 3.3rem;
+    height: 0.6rem;
+}
+
+.rule {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/202724/7/3212/24839/612734f4E1011cd2c/6525b865ec7ac40f.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 7.5rem;
+    padding: 1rem 0.4rem 0.3rem 0.4rem;
+}
+
+.close-rule {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+.rule-text {
+    overflow-y: scroll;
+    height: 6.2rem;
+    font-size: 0.26rem;
+    color: #666666;
+}
+
+.mygift {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/177927/8/21115/70518/612734f5E22ec0147/4f08ba9d5efc6533.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 7.6rem;
+    padding: 1.2rem 0.4rem 0.3rem 0.4rem;
+}
+
+.close-mygift {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.15rem;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+.mygift-list {
+    overflow-y: scroll;
+    height: 6.2rem;
+    font-size: 0.26rem;
+    color: #666666;
+}
+
+.mygift-list-gift {
+    width: 100%;
+    padding: 0.2rem;
+    background-color: #fff6ee;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.05rem;
+    border-radius: 0.05rem;
+}
+
+.mygift-list-gift .mygift-img {
+    width: 0.9rem;
+    display: block;
+}
+
+.mygift-list-gift .mygift-text {
+    padding: 0 0.15rem;
+    width: 3.1rem;
+}
+
+.mygift-list-gift .mygift-text p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mygift-list-gift .mygift-text p:first-child {
+    font-size: 0.3rem;
+    color: #ff9900;
+    line-height: 0.3rem;
+    margin-bottom: 0.11rem;
+}
+
+.mygift-list-gift .mygift-text p:nth-child(2) {
+    font-size: 0.2rem;
+    color: #666666;
+    line-height: 0.2rem;
+}
+
+.mygift-button {
+    color: #666;
+    font-size: 0.24rem;
+    width: 1.3rem;
+    line-height: 0.5rem;
+    text-align: center;
+    border-radius: 0.6rem;
+}
+
+.more {
+    text-align: center;
+    font-size: 0.24rem;
+    color: #999;
+    padding: 0.28rem 0;
+}
+
+.mygift-empty {
+    text-align: center;
+    font-size: 0.24rem;
+    color: #999;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.record {
+    background: url(//img10.360buyimg.com/imgzone/jfs/t1/194134/22/20089/53800/612734f5Ee8469575/ab73adcb4e4acc40.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: auto;
+    width: 6.5rem;
+    height: 7.6rem;
+    padding: 2.1rem 0.4rem 1.15rem 0.45rem;
+}
+
+.close-record {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 1.7rem;
+    width: 3rem;
+    height: 0.6rem;
+}
+
+.record-list {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.record-list-tr {
+    display: flex;
+    align-items: center;
+    border-bottom: #666666 dashed 0.01rem;
+}
+
+.record-list-tr:last-child {
+    border: none !important;
+}
+
+.record-list-tr div {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.24rem;
+    color: #666666;
+    line-height: 0.6rem;
+}
+
+.open-card-img {
+    width: 5.5rem;
+    display: block;
+}
+
+.coupon-img {
+    width: 5.5rem;
+    display: block;
+}
+
+.coupon-button {
+    position: absolute;
+    bottom: 1.3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3rem;
+    height: 0.65rem;
+}
+
+.close-coupon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0.8rem;
+    height: 0.7rem;
+}
+
+.gift-img {
+    width: 5.5rem;
+    display: block;
+}
+
+.gift-name {
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 0.45rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-shadow: #f08919 0 0.05rem 0.05rem;
+}
+
+.close-gift {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 2.6rem;
+    height: 0.8rem;
+}

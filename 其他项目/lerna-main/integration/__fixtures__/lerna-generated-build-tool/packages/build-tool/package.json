@@ -1,0 +1,10 @@
+{
+  "name": "@test/build-tool",
+  "version": "1.0.0",
+  "bin": {
+    "a-build-tool": "a-build-tool.js"
+  },
+  "scripts": {
+    "build": "node generate-build-tool.js"
+  }
+}

@@ -1,0 +1,26 @@
+.prize-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  padding-bottom: 40%;
+
+  .prize-name {
+    font-size: 20px;
+  }
+  .prize-product {
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+  }
+  .prize-other {
+    font-size: 32px;
+    width: 72px;
+    height: 120px;
+  }
+}

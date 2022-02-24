@@ -1,0 +1,254 @@
+html {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+}
+.gray {
+  filter: grayscale(1);
+}
+.gray-cover{
+  background-color: rgba(0,0,0,.4);
+}
+img{
+  width: 100%;
+  margin: .1rem auto;
+}
+input{
+  border: 0;
+}
+.van-popup {
+  background: none;
+  overflow: hidden;
+}
+.van-toast {
+  background-color: rgba(0,0,0,.7);
+  min-width: max-content;
+}
+.van-nav-bar .van-icon{
+  color: black!important;
+}
+.van-nav-bar__title{
+  font-weight: 600!important;
+  font-size: .4rem;
+}
+.main{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .main-title{
+    background: url("../assets/kv-title.png") no-repeat;
+    background-size: 100%;
+    width: 7.28rem;
+    height: 1.14rem;
+    margin-top: .1rem;
+  }
+  .lottery-status{
+    width: 97%;
+    background-color: #f4f4f4;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+
+    .lottery{
+      height: 1rem;
+      width: 6.26rem;
+      margin-top: .2rem;
+    }
+    .no-lottery{
+      height: 1.1rem;
+      font-weight: 600;
+      font-size: .35rem;
+      display: flex;
+      align-items: center;
+    }
+    .get-prize{
+      width: 2rem;
+      height: .4rem;
+      background-color: #e75152;
+      border-radius: 1rem;
+      border: 0;
+      font-size: .2rem;
+      color: #ffffff;
+      margin: .2rem auto;
+    }
+  }
+  .list-area{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 6.8rem;
+    background-color: #ffffff;
+    margin-bottom: 0.15rem;
+
+    .list-title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 0.8rem;
+      font-size: .3rem;
+    }
+    .list-item-title{
+      display: flex;
+      justify-content: space-around;
+      margin: 0rem 0 0.2rem;
+
+      >div{
+        background-color: #e75152;
+        color: #FFFFFF;
+        width: 2rem;
+        text-align: center;
+        border-radius: .1rem;
+      }
+    }
+    .prize-item{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: .28rem;
+      margin-bottom: .2rem;
+    }
+  }
+}
+.record{
+  position: relative;
+  width: 100%;
+
+  .record-title{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0.2rem auto;
+    font-weight: 600;
+  }
+  .record-list{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    .record-list-item{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #f4f4f4;
+      height: 0.8rem;
+      margin-bottom: 0.1rem;
+      width: 6.8rem;
+      font-size: .26rem;
+      text-align: center;
+    }
+  }
+}
+.fixInfo{
+  position: relative;
+  width: 100%;
+
+  .input-area{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 6.8rem;
+
+    .input-format{
+      display: flex;
+      align-items: center;
+      margin-top: 0.3rem;
+
+      .input-text{
+        width: 1.5rem;
+        font-weight: 600;
+        margin-left: .4rem;
+      }
+      .input-content{
+        width: 5rem;
+        height: 0.8rem;
+        background-color: #f4f4f4;
+        border-radius: 0.1rem;
+        padding-left: .2rem;
+      }
+    }
+  }
+  .text-alert{
+    font-size: .25rem;
+    opacity: .7;
+    margin-left: 2rem;
+    margin-top: .2rem;
+  }
+}
+.check-btn{
+  width: 5.5rem;
+  background-color: #fd5e5f;
+  height: 0.7rem;
+  margin: .8rem auto 0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+}
+.success{
+  position: relative;
+  width: 100%;
+
+  .success-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 4rem;
+    justify-content: space-around;
+  }
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 7.5rem;
+}
+.fixInfo-view{
+  width: 6.8rem;
+  height: 8rem;
+  position: relative;
+
+  .submit-btn{
+    width: 2.4rem;
+    height: 0.6rem;
+    position: absolute;
+    top: 6.18rem;
+    left: 2.2rem;
+  }
+  .close-btn{
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 3.15rem;
+    background: url("../assets/close.png") no-repeat;
+    background-size: 100%;
+  }
+  .address-formData {
+    position: absolute;
+    top: 2.45rem;
+    left: 2.85rem;
+    width: 1.8rem;
+    text-align: center;
+  }
+  .address-formData input {
+    width: 95%;
+    height: 0.59rem;
+    border: none;
+    background: none;
+    color: #a0a0a0;
+    font-size: 0.2rem;
+    padding: 0 0 0.11rem 0;
+  }
+  input::-webkit-input-placeholder {
+    color: #a0a0a0;
+  }
+}
