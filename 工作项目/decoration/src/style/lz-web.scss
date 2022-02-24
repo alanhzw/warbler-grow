@@ -1,0 +1,56 @@
+@import '~lz-crm/style/variables';
+
+.lz-form-item__content{
+  font-size: 12px;
+}
+// element 样式重写
+// button
+.lz-button--text {
+  color: #3399FF;
+}
+
+// table
+.lz-table {
+  font-size: 12px !important;
+  //
+  //.lz-button.lz-button--text.lz-button--small {
+  //  padding-top: 0;
+  //  padding-bottom: 0;
+  //}
+}
+
+.lz-operate-group-layout-more {
+  .lz-button {
+    height: 30px;
+  }
+}
+
+.lz-operate-group-layout-more-popover {
+  min-width: 72px;
+}
+
+// tab
+.lz-tabs {
+  .lz-tabs__nav {
+    border: none !important;
+  }
+
+  .lz-tabs__item {
+    background-color: white;
+  }
+
+  .lz-tabs__content {
+    background-color: $WHITE;
+    padding: 20px;
+    border-radius: 0 5px 5px 5px;
+  }
+}
+
+.lz-tabs--card > .lz-tabs__header {
+  margin-bottom: 0;
+  border-bottom: 0;
+
+  .lz-tabs__item.is-active {
+    background-color: $WHITE;
+  }
+}
