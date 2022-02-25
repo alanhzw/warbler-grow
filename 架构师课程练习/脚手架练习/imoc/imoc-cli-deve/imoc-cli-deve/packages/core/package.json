@@ -1,0 +1,30 @@
+{
+  "name": "@imoc-cli-deve/core",
+  "version": "1.0.4",
+  "description": "imoc-cli-dev core",
+  "author": "韩志伟 <hanzhiwei@lucidata.cn>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "bin": {
+    "imoc-cli-deve": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from core\""
+  },
+  "dependencies": {
+    "@imoc-cli-deve/utils": "file:../utils"
+  },
+  "gitHead": "ce807980a96c0fdb190d7880e2279f08efa7f8d4"
+}
