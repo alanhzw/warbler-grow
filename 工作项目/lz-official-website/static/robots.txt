@@ -1,0 +1,6 @@
+Disallow:/sitemap.xml
+Disallow:/js
+Disallow:/css
+Disallow:/package
+User-agent: *
+Disallow:

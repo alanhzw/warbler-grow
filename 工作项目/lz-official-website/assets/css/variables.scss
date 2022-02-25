@@ -1,0 +1,39 @@
+$--color-primary: #2647c8 !default;
+/// color|1|BackgroundColor|4
+$--color-white: #FFFFFF !default;
+/// color|1|BackgroundColor|4
+$--color-black: #000000 !default;
+$--color-footer-bg: #101F30;
+/// color|1|FontColor|2
+$--color-text-primary: #303133 !default;
+/// color|1|FontColor|2
+$--color-text-regular: #606266 !default;
+/// color|1|FontColor|2
+$--color-text-secondary: #909399 !default;
+/// color|1|FontColor|2
+$--color-text-placeholder: #C0C4CC !default;
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+
+/// color|[成功颜色,success color,success color]|SecondaryColor|1
+$--color-success: #67C23A !default;
+/// color|[警告颜色,warning color,warning color]|SecondaryColor|1
+$--color-warning: #E6A23C !default;
+/// color|[危险颜色,danger color,danger color]|SecondaryColor|1
+$--color-danger: #F56C6C !default;
+/// color|[信息颜色,info color,info color]|SecondaryColor|1
+$--color-info: #909399 !default;
+$--color-title: #333333 !default;
+$--color-firstTitle: #2647C8 !default;
+$--color-text: #666666 !default;
+
+$--nav-zIndex: 999;
+$-container-max-width: 17rem;
+$-padding: .20rem;

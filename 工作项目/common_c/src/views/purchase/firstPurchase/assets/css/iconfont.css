@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "my-icon"; /* Project id 3154128 */
+    src: url('./iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.my-icon {
+    font-family: 'my-icon';
+    position: relative;
+    font: 0.37333rem/1 "my-icon";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.my-icon-jiantou:before {
+    content: "\e601";
+}
+

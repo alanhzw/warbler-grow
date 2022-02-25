@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2039889_3nx98239b7t.css">
+  </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+      background: rgb(242, 242, 242);
+      margin: 0;
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    p {
+      margin: 0;
+    }
+  </style>
+  <body onload="onLoad()">
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+
+    <script src="https://cjwxpp.dianpusoft.cn/m/static/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cjwxpp.dianpusoft.cn/m/static/vuex/3.1.2/vuex.min.js"></script>
+    <script src="https://cjwxpp.dianpusoft.cn/m/static/vue-router/3.1.5/vue-router.min.js"></script>
+    <script src="https://cjwxpp.dianpusoft.cn/m/static/axios/0.25.0/axios.min.js"></script>
+    <script src="https://cjwxpp.dianpusoft.cn/m/static/localScrollFix/LocalScrollFix.js"></script>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+    /**
+   * 这一段每个页面都要，用来处理不同大小页面的兼容
+   * */
+  console.log('**************************************************')
+
+  function onLoad() {
+
+  }
+  (function(doc, win) {
+      var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function() {
+              var clientWidth = docEl.clientWidth;
+              let clientHeight = docEl.clientHeight;
+              if (!clientWidth) return;
+              if(clientWidth <= clientHeight) {  //竖屏
+                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+              } else{  //横屏
+                docEl.style.fontSize = 100 * (clientHeight / 750) + 'px';
+              }
+              // if (clientWidth >= 750) {
+              //     docEl.style.fontSize = '100px';
+              // } else {
+              //     docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+              // }
+          };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+
+      LocalScrollFix('.allpage')
+  })(document, window);
+
+ </script>
+  <script src="https://cjwxpp.dianpusoft.cn/m/static/vConsole/3.3.0/vconsole.min.js"></script>
+  <script>
+    (function () {
+      if (window.location.href.indexOf('showLog=true') > -1 && VConsole) {
+        var vConsole = new VConsole();
+      }
+    })()
+  </script>
+</html>
