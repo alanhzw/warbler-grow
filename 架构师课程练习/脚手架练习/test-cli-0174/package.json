@@ -15,8 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cli-spinner": "^0.2.10",
+    "cli-spinners": "^2.6.1",
     "commander": "^9.0.0",
     "dedent": "^0.7.0",
+    "inquirer": "^8.2.1",
+    "inquirer-autocomplete-prompt": "^2.0.0",
     "npminstall": "^5.5.0",
     "path-exists": "^5.0.0",
     "user-home": "^3.0.0",
