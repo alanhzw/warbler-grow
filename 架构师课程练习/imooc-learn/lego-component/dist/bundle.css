@@ -1,0 +1,14 @@
+
+h2.l-text-component[data-v-6bf95b7a],
+p.l-text-component[data-v-6bf95b7a] {
+  margin-bottom: 0;
+}
+button.l-text-component[data-v-6bf95b7a] {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.l-text-component[data-v-6bf95b7a] {
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  position: relative !important;
+}

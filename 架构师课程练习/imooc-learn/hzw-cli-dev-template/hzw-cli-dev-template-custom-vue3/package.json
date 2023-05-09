@@ -1,0 +1,12 @@
+{
+  "name": "hzw-cli-dev-template-custom-vue3",
+  "version": "1.0.4",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "dependencies": {
+    "fse": "^4.0.1"
+  }
+}
